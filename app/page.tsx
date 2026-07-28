@@ -6,12 +6,15 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Tours from "@/components/home/Tours";
 import Testimonials from "@/components/home/Contact";
 import Footer from "@/components/layout/Footer";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[var(--background)]">
       <Navbar />
+      <Suspense fallback={null}>
       <Hero />
+      </Suspense>
       <WhyChooseUs />
       <Services />
       <Tours />

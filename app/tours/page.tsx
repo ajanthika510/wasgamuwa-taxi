@@ -7,13 +7,16 @@ import JourneyTimeline from "@/components/tours/JourneyTimeline";
 import Footer from "@/components/layout/Footer";
 import FaqCTA from "@/components/tours/FaqCTA";
 import TourPackages from "@/components/tours/TourPackages";
+import { Suspense } from "react";
 
 export default function ToursPage() {
   return (
     
     <main className="bg-[#050816]">
       <Navbar/>
+       <Suspense fallback={null}>
       <Hero />
+      </Suspense>
       <FeaturedTours />
       <DestinationExplorer />
       <TravelExperiences />
