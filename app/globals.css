@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #f8fafc;
+  color: #111827;
+  overflow-x: hidden;
+}
+
+/* Selection */
+::selection {
+  background: #fbbf24;
+  color: white;
+}
+
+/* Premium Gradient */
+.hero-gradient {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(251,191,36,.18), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(59,130,246,.12), transparent 35%),
+    radial-gradient(circle at 50% 80%, rgba(16,185,129,.10), transparent 30%);
+}
+
+/* Floating Glow */
+.glow {
+  filter: blur(90px);
+  opacity: .5;
+}
+
+.glass {
+  backdrop-filter: blur(18px);
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
+}
+
+.hero-shadow {
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.15);
+}
+
+.text-gradient {
+  background: linear-gradient(
+      90deg,
+      #f59e0b,
+      #fbbf24,
+      #fde68a
+  );
+  -webkit-background-clip: text;
+  color: transparent;
 }

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Premium taxi and tourist service offering comfortable rides and curated tours across the region." />
+  <title>Wasgamuwa Taxi & Tours</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">🚖<span>Wasgamuwa</span></div>
+    <nav class="nav">
+      <a href="#hero">Home</a>
+      <a href="#services">Services</a>
+      <a href="#tours">Tours</a>
+      <a href="#booking">Booking</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <h1>Explore Comfort & Adventure</h1>
+      <p>Your journey begins with us – reliable taxis, unforgettable tours.</p>
+      <a href="#booking" class="cta-button">Book Now</a>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section id="services" class="services-section">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card glass">
+        <h3>City Taxi</h3>
+        <p>Fast, safe, and air‑conditioned rides across the city.</p>
+      </div>
+      <div class="service-card glass">
+        <h3>Airport Transfer</h3>
+        <p>Punctual pickups and drop‑offs to any airport.</p>
+      </div>
+      <div class="service-card glass">
+        <h3>Custom Tours</h3>
+        <p>Curated day‑trips to iconic attractions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tours Carousel -->
+  <section id="tours" class="tours-section">
+    <h2>Featured Tours</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev">&#9664;</button>
+      <div class="carousel-track">
+        <div class="tour-card glass">
+          <h3>Lake Serenity</h3>
+          <p>Half‑day boat ride with picnic.</p>
+        </div>
+        <div class="tour-card glass">
+          <h3>Mountain Escape</h3>
+          <p>Guided hike with breathtaking views.</p>
+        </div>
+        <div class="tour-card glass">
+          <h3>Cultural Heritage</h3>
+          <p>Visit historic temples and villages.</p>
+        </div>
+      </div>
+      <button class="carousel-btn next">&#9654;</button>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section id="booking" class="booking-section">
+    <h2>Book Your Ride / Tour</h2>
+    <form id="booking-form" class="booking-form glass">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="service">Service</label>
+      <select id="service" name="service" required>
+        <option value="taxi">City Taxi</option>
+        <option value="airport">Airport Transfer</option>
+        <option value="tour">Custom Tour</option>
+      </select>
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="date" required />
+
+      <button type="submit" class="cta-button">Submit</button>
+    </form>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="site-footer">
+    <div class="footer-content">
+      <p>© 2026 Wasgamuwa Taxi & Tours. All rights reserved.</p>
+      <p>Phone: +94 77 123 4567 | Email: info@wasgamuwa.com</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

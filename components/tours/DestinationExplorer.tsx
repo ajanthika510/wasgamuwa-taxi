@@ -1,0 +1,240 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  MapPin,
+  Clock3,
+  Mountain,
+  ArrowRight,
+} from "lucide-react";
+
+const destinations = [
+  {
+    id: 1,
+    name: "Ella",
+    duration: "1 Day",
+    image: "/images/ellaAd.jpg",
+    description:
+      "Explore the breathtaking Nine Arch Bridge, Little Adam's Peak and lush tea plantations.",
+    highlights: [
+      "Nine Arch Bridge",
+      "Little Adam's Peak",
+      "Tea Factory",
+    ],
+  },
+  {
+    id: 2,
+    name: "Sigiriya",
+    duration: "1 Day",
+    image: "/images/sigiriyaex.jpg",
+    description:
+      "Climb the famous Lion Rock Fortress and discover Sri Lanka's ancient heritage.",
+    highlights: [
+      "Lion Rock",
+      "Village Tour",
+      "Pidurangala",
+    ],
+  },
+  {
+    id: 3,
+    name: "Yala",
+    duration: "2 Days",
+    image: "/images/yala.jpg",
+    description:
+      "Experience thrilling wildlife safaris with elephants, leopards and exotic birds.",
+    highlights: [
+      "Leopard Safari",
+      "Jeep Tour",
+      "Wildlife",
+    ],
+  },
+  {
+    id: 4,
+    name: "Galle",
+    duration: "1 Day",
+    image: "/images/galleher.jpg",
+    description:
+      "Walk through the historic Dutch Fort, enjoy beaches and stunning sunsets.",
+    highlights: [
+      "Dutch Fort",
+      "Beach",
+      "Lighthouse",
+    ],
+  },
+];
+
+export default function DestinationExplorer() {
+  const [active, setActive] = useState(0);
+
+  return (
+    <section className="relative overflow-hidden bg-[#071018] py-28">
+
+      <div className="absolute left-0 top-0 h-80 w-80 rounded-full bg-amber-500/10 blur-[140px]" />
+      <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-[160px]" />
+
+      <div className="container mx-auto px-6">
+
+        <div className="mb-16 text-center">
+
+          <span className="rounded-full border border-amber-400/20 bg-amber-400/10 px-5 py-2 text-sm text-amber-300">
+            DESTINATIONS
+          </span>
+
+          <h2 className="mt-6 text-5xl font-black text-white">
+            Discover Amazing Places
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-slate-400">
+            Select a destination to explore what awaits you.
+          </p>
+
+        </div>
+
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+
+          {/* LEFT SIDE */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{
+                opacity: 0,
+                x: -40,
+                scale: 0.95,
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: 1,
+              }}
+              exit={{
+                opacity: 0,
+                x: 40,
+              }}
+              transition={{
+                duration: 0.6,
+              }}
+              className="relative h-[600px] overflow-hidden rounded-[40px]"
+            >
+              <Image
+                src={destinations[active].image}
+                alt={destinations[active].name}
+                fill
+                className="object-cover"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+              <div className="absolute bottom-0 p-10">
+
+                <div className="mb-4 flex gap-6 text-white">
+
+                  <span className="flex items-center gap-2">
+                    <MapPin size={17} />
+                    {destinations[active].name}
+                  </span>
+
+                  <span className="flex items-center gap-2">
+                    <Clock3 size={17} />
+                    {destinations[active].duration}
+                  </span>
+
+                </div>
+
+                <h3 className="text-5xl font-bold text-white">
+                  {destinations[active].name}
+                </h3>
+
+                <p className="mt-6 max-w-xl text-lg text-white/80">
+                  {destinations[active].description}
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+
+                  {destinations[active].highlights.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full bg-white/15 px-4 py-2 text-sm text-white backdrop-blur-xl"
+                    >
+                      {item}
+                    </span>
+                  ))}
+
+                </div>
+
+                <button className="mt-8 flex items-center gap-3 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 px-7 py-4 font-semibold text-black transition hover:scale-105">
+                  Explore Destination
+                  <ArrowRight size={18} />
+                </button>
+
+              </div>
+
+            </motion.div>
+          </AnimatePresence>
+
+          {/* RIGHT SIDE */}
+          <div className="space-y-5">
+
+            {destinations.map((item, index) => (
+              <motion.button
+                key={item.id}
+                onClick={() => setActive(index)}
+                whileHover={{
+                  x: 10,
+                }}
+                className={`group flex w-full items-center justify-between rounded-[28px] border p-6 text-left transition ${
+                  active === index
+                    ? "border-amber-400 bg-amber-400/10"
+                    : "border-white/10 bg-white/5 hover:bg-white/10"
+                }`}
+              >
+                <div>
+
+                  <div className="flex items-center gap-3">
+
+                    <div
+                      className={`flex h-12 w-12 items-center justify-center rounded-xl ${
+                        active === index
+                          ? "bg-amber-400 text-black"
+                          : "bg-white/10 text-white"
+                      }`}
+                    >
+                      <Mountain size={22} />
+                    </div>
+
+                    <div>
+
+                      <h3 className="text-xl font-bold text-white">
+                        {item.name}
+                      </h3>
+
+                      <p className="mt-1 text-sm text-slate-400">
+                        {item.duration}
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <ArrowRight
+                  className={`transition ${
+                    active === index
+                      ? "translate-x-2 text-amber-400"
+                      : "text-slate-500"
+                  }`}
+                />
+
+              </motion.button>
+            ))}
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
