@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -143,12 +144,6 @@ blur-[160px]
 
 />
 
-
-
-
-
-
-
 <div
 className="
 relative
@@ -157,10 +152,6 @@ mx-auto
 px-6
 "
 >
-
-
-
-
 
 {/* Heading */}
 
@@ -203,10 +194,6 @@ text-amber-600
 POPULAR TOURS
 
 </span>
-
-
-
-
 
 <h2
 className="
@@ -253,15 +240,6 @@ Private taxi journeys designed for unforgettable experiences.
 
 </motion.div>
 
-
-
-
-
-
-
-
-
-
 <div
 className="
 mt-20
@@ -270,12 +248,6 @@ gap-12
 lg:grid-cols-2
 "
 >
-
-
-
-
-
-
 
 {/* IMAGE AREA */}
 
@@ -335,10 +307,6 @@ object-cover
 
 />
 
-
-
-
-
 <div
 className="
 absolute
@@ -350,13 +318,6 @@ to-transparent
 "
 />
 
-
-
-
-
-
-
-
 <div
 className="
 absolute
@@ -365,10 +326,6 @@ p-10
 text-white
 "
 >
-
-
-
-
 
 <div
 className="
@@ -392,10 +349,6 @@ className="text-emerald-400"
 
 </span>
 
-
-
-
-
 <span className="flex items-center gap-2">
 
 <Clock3
@@ -406,10 +359,6 @@ className="text-amber-400"
 {tours[active].duration}
 
 </span>
-
-
-
-
 
 <span className="flex items-center gap-2">
 
@@ -427,12 +376,6 @@ text-amber-400
 
 
 </div>
-
-
-
-
-
-
 
 <h3
 className="
@@ -465,13 +408,7 @@ text-white/80
 
 </p>
 
-
-
-
-
-
-
-
+<Link href="/tours">
 <motion.button
 
 whileHover={{
@@ -501,7 +438,7 @@ Explore Tour
 <ArrowRight size={18}/>
 
 </motion.button>
-
+</Link>
 
 
 

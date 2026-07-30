@@ -50,6 +50,7 @@ export default function Services(){
 return (
 
 <section
+id="services"
 className="
 relative
 overflow-hidden
@@ -112,7 +113,7 @@ bg-[size:80px_80px]
 <div className="relative z-10">
 
 
-{/* WHITE HEADING */}
+{/* in another file SECTION HEADING */}
 <SectionHeading
 
 badge="OUR SERVICES"
@@ -122,8 +123,6 @@ title="Everything You Need For Your Journey"
 description="Premium transportation solutions designed for every traveller."
 
 />
-
-
 
 
 
@@ -145,6 +144,7 @@ services.map((service,index)=>(
 
 
 <motion.div
+
 
 key={service.title}
 
@@ -280,7 +280,7 @@ flex
 h-full
 flex-col
 justify-end
-p-8
+p-12
 "
 
 >
@@ -315,7 +315,7 @@ text-white
 className="
 mt-3
 font-[Inter]
-text-sm
+text-[20px]
 leading-6
 text-white/60
 "
@@ -341,7 +341,7 @@ className="
 mt-5
 flex
 flex-wrap
-gap-3
+gap-8
 "
 
 >
@@ -365,7 +365,7 @@ border-purple-400/20
 bg-purple-500/10
 px-3
 py-2
-text-xs
+text-[18px]
 font-medium
 text-white
 backdrop-blur

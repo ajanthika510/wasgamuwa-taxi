@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   MapPin,
-  Clock3,
   Star,
   ArrowRight,
 } from "lucide-react";
@@ -13,9 +13,7 @@ const tours = [
   {
     title: "Ella Scenic Escape",
     location: "Ella",
-    duration: "1 Day",
     rating: 4.9,
-    price: "From £95",
     image: "/images/ellaAd.jpg",
     tag: "Best Seller",
   },
@@ -30,7 +28,7 @@ const tours = [
     title: "Yala Wildlife Safari",
     location: "Yala",
     rating: 4.8,
-    image: "/images/tours/yala.jpg",
+    image: "/images/wild.png",
     tag: "Adventure",
   },
 ];
@@ -128,25 +126,7 @@ export default function FeaturedTours() {
                     {tour.location}
                   </span>
 
-                  <span className="flex items-center gap-2">
-                    <Clock3 size={16} />
-                    {tour.duration}
-                  </span>
-
-                </div>
-
-                <div className="mt-8 flex items-center justify-between">
-
-                  <div>
-                    <p className="text-xs uppercase tracking-wider text-slate-500">
-                      Starting From
-                    </p>
-
-                    <p className="text-2xl font-bold text-amber-400">
-                      {tour.price}
-                    </p>
-                  </div>
-
+                  <Link href="/#hero">
                   <motion.button
                     whileHover={{
                       scale: 1.05,
@@ -155,9 +135,10 @@ export default function FeaturedTours() {
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 px-5 py-3 font-semibold text-black"
                   >
-                    View Tour
+                    Book Tour
                     <ArrowRight size={18} />
                   </motion.button>
+                  </Link>
 
                 </div>
               </div>

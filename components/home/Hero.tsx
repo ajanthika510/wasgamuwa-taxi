@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 import BookingCard from "./BookingCard";
-
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
@@ -413,7 +413,7 @@ sm:flex-row
 >
 
 
-
+<Link href="/#hero">
 <button
 
 className="
@@ -449,12 +449,13 @@ group-hover:translate-x-2
 
 </button>
 
+</Link>
 
 
 
 
 
-
+<Link href="/#testimonials">
 
 <button
 
@@ -478,7 +479,7 @@ View Experiences
 
 </button>
 
-
+</Link>
 
 </div>
 

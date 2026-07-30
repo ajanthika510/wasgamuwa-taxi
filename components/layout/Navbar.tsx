@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "Services", href: "#services" },
+  { name: "Services", href: "/#services" },
   { name: "Tours", href: "./tours" },
   { name: "About Us", href: "./about" },
   { name: "Contact", href: "./contact" },
@@ -42,15 +42,15 @@ export default function Navbar() {
             <Image
               src="/images/logo_wasgamuwa.png"
               alt="Logo"
-              width={50}
-              height={50}
+              width={80}
+              height={80}
               className="rounded-full"
             />
             <div>
               <h2 className="text-2xl font-bold text-zinc-900">
                 Wasgamuwa
               </h2>
-              <p className="-mt-1 text-sm font-semibold text-amber-500">
+              <p className="-mt-1 text-[18px] font-semibold text-amber-500">
                 Taxi & Tours
               </p>
             </div>
@@ -62,7 +62,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="relative text-sm font-semibold text-zinc-700 transition hover:text-amber-500"
+                className="relative text-[20px] font-semibold text-zinc-700 transition hover:text-amber-500"
               >
                 {link.name}
 
@@ -72,7 +72,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right Buttons */}
-          <div className="hidden items-center gap-4 lg:flex">
+          <div className="ml-16 hidden items-center gap-4 lg:flex">
             <a
               href="tel:+94763434343"
               className="flex items-center gap-3 rounded-full border bg-white px-5 py-3 shadow-sm transition hover:shadow-lg"
@@ -83,9 +83,11 @@ export default function Navbar() {
               </span>
             </a>
 
+            <Link href="/#hero">
             <button className="rounded-xl bg-amber-400 px-6 py-3 font-semibold text-black transition hover:scale-105 hover:bg-amber-500">
               Book Now
             </button>
+            </Link>
           </div>
 
           {/* Mobile */}
@@ -119,9 +121,11 @@ export default function Navbar() {
                 </Link>
               ))}
 
+              <Link href="/#hero">
               <button className="mt-6 rounded-xl bg-amber-400 py-4 font-semibold">
                 Book Now
               </button>
+              </Link>
             </div>
           </motion.div>
         )}

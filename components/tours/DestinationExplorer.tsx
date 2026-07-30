@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   MapPin,
-  Clock3,
   Mountain,
   ArrowRight,
 } from "lucide-react";
@@ -14,7 +14,6 @@ const destinations = [
   {
     id: 1,
     name: "Ella",
-    duration: "1 Day",
     image: "/images/ellaAd.jpg",
     description:
       "Explore the breathtaking Nine Arch Bridge, Little Adam's Peak and lush tea plantations.",
@@ -27,7 +26,6 @@ const destinations = [
   {
     id: 2,
     name: "Sigiriya",
-    duration: "1 Day",
     image: "/images/sigiriyaex.jpg",
     description:
       "Climb the famous Lion Rock Fortress and discover Sri Lanka's ancient heritage.",
@@ -40,7 +38,6 @@ const destinations = [
   {
     id: 3,
     name: "Yala",
-    duration: "2 Days",
     image: "/images/yala.jpg",
     description:
       "Experience thrilling wildlife safaris with elephants, leopards and exotic birds.",
@@ -53,7 +50,6 @@ const destinations = [
   {
     id: 4,
     name: "Galle",
-    duration: "1 Day",
     image: "/images/galleher.jpg",
     description:
       "Walk through the historic Dutch Fort, enjoy beaches and stunning sunsets.",
@@ -135,10 +131,6 @@ export default function DestinationExplorer() {
                     {destinations[active].name}
                   </span>
 
-                  <span className="flex items-center gap-2">
-                    <Clock3 size={17} />
-                    {destinations[active].duration}
-                  </span>
 
                 </div>
 
@@ -162,11 +154,12 @@ export default function DestinationExplorer() {
                   ))}
 
                 </div>
-
+                <Link href="/#hero">
                 <button className="mt-8 flex items-center gap-3 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 px-7 py-4 font-semibold text-black transition hover:scale-105">
-                  Explore Destination
+                  Book to go to Destination
                   <ArrowRight size={18} />
                 </button>
+                </Link>
 
               </div>
 
@@ -208,10 +201,6 @@ export default function DestinationExplorer() {
                       <h3 className="text-xl font-bold text-white">
                         {item.name}
                       </h3>
-
-                      <p className="mt-1 text-sm text-slate-400">
-                        {item.duration}
-                      </p>
 
                     </div>
 

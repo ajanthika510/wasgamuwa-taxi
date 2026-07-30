@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  Clock,
   Car,
   Hotel,
   Map,
@@ -16,7 +16,7 @@ const packages = [
   {
     title: "Hill Country Escape",
     subtitle: "Mountains • Tea • Waterfalls",
-    image: "/images/tours/package-ella.jpg",
+    image: "/images/hill.png",
     rating: "4.9",
     features:[
       "Private Vehicle",
@@ -28,7 +28,7 @@ const packages = [
   {
     title: "Wildlife Adventure",
     subtitle: "Safari • Nature • Adventure",
-    image: "/images/tours/package-yala.jpg",
+    image: "/images/safaritour.jpg",
     rating: "5.0",
     features:[
       "Safari Jeep",
@@ -288,20 +288,6 @@ text-sm
 text-slate-300
 ">
 
-
-<span className="
-flex
-items-center
-gap-2
-">
-
-<Clock size={16}/>
-
-
-
-</span>
-
-
 <span className="
 font-bold
 text-amber-400
@@ -361,7 +347,7 @@ i===1?
 </div>
 
 
-
+<Link href="/#hero">
 <button className="
 group mt-8
 flex
@@ -389,6 +375,7 @@ group-hover:translate-x-1
 
 
 </button>
+</Link>
 
 
 </div>

@@ -4,7 +4,7 @@ import TrustBar from "@/components/home/TrustBar";
 import Services from "@/components/home/Services";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Tours from "@/components/home/Tours";
-import Testimonials from "@/components/home/Contact";
+import Testimonials from "@/components/home/Testimonials";
 import Footer from "@/components/layout/Footer";
 import { Suspense } from "react";
 

@@ -11,42 +11,42 @@ import {
 
 const gallery = [
   {
-    image: "/images/tours/gallery1.jpg",
+    image: "/images/sig.jpg",
     title: "Sigiriya Rock Fortress",
     location: "Sigiriya",
     height: "h-[520px]",
     rating: "4.9",
   },
   {
-    image: "/images/tours/gallery2.jpg",
+    image: "/images/ella9.jpeg",
     title: "Ella Nine Arch Bridge",
     location: "Ella",
     height: "h-[320px]",
     rating: "4.8",
   },
   {
-    image: "/images/tours/gallery3.jpg",
+    image: "/images/yala.jpg",
     title: "Yala National Park",
     location: "Yala",
     height: "h-[420px]",
     rating: "5.0",
   },
   {
-    image: "/images/tours/gallery4.jpg",
+    image: "/images/dutchfort.jpg",
     title: "Galle Dutch Fort",
     location: "Galle",
     height: "h-[300px]",
     rating: "4.7",
   },
   {
-    image: "/images/tours/gallery5.jpg",
+    image: "/images/nuwe.jpg",
     title: "Tea Plantations",
     location: "Nuwara Eliya",
     height: "h-[460px]",
     rating: "4.9",
   },
   {
-    image: "/images/tours/gallery6.jpg",
+    image: "/images/mirissa.jpg",
     title: "Mirissa Beach",
     location: "Mirissa",
     height: "h-[350px]",
@@ -177,14 +177,6 @@ export default function TravelExperiences() {
                   {item.title}
 
                 </h3>
-
-                <button className="mt-6 flex items-center gap-3 font-semibold text-white">
-
-                  Discover
-
-                  <ArrowUpRight className="transition group-hover:rotate-45" />
-
-                </button>
 
               </motion.div>
 

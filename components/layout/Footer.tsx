@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import {
   MapPin,
   Phone,
@@ -189,28 +191,31 @@ space-y-3
 text-white/60
 "
 >
-
+<Link href="/#hero">
 <li className="hover:text-yellow-400 transition">
 Home
 </li>
+</Link>
 
+<Link href="/about">
 <li className="hover:text-yellow-400 transition">
 About Us
 </li>
+</Link>
 
-
+<Link href="/tours">
 <li className="hover:text-yellow-400 transition">
 Tours
 </li>
+</Link>
 
 
 
-
-
+<Link href="/contact">
 <li className="hover:text-yellow-400 transition">
 Contact
 </li>
-
+</Link>
 
 </ul>
 
@@ -241,7 +246,7 @@ Our Services
 
 </h3>
 
-
+<Link href="/#services">
 <ul
 className="
 mt-5
@@ -273,7 +278,7 @@ Private Chauffeur
 
 
 </ul>
-
+</Link>
 
 </div>
 
@@ -454,7 +459,7 @@ Book your private journey today.
 
 
 
-
+<Link href="/#hero">
 <button
 
 className="
@@ -478,7 +483,7 @@ Book Now
 <ArrowRight size={18}/>
 
 </button>
-
+</Link>
 
 
 </motion.div>

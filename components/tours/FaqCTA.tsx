@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Plus,
@@ -198,15 +199,22 @@ export default function FaqCTA() {
 
                 {/* Buttons */}
                 <div className="mt-12 flex flex-wrap gap-5">
+                
+                <a
+  href={`https://wa.me/94763433434?text=${encodeURIComponent(
+    "Hello! I would like to book a custom tour with Wasgamuwa Taxi & Tours."
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="group flex items-center gap-3 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 px-8 py-4 font-semibold text-black transition hover:shadow-[0_0_35px_rgba(251,191,36,.45)]">
+    Request a Custom Tour
 
-                  <button className="group flex items-center gap-3 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 px-8 py-4 font-semibold text-black transition hover:shadow-[0_0_35px_rgba(251,191,36,.45)]">
+    <ArrowRight className="transition group-hover:translate-x-1" />
+  </button>
+</a>
 
-                    Request a Custom Tour
-
-                    <ArrowRight className="transition group-hover:translate-x-1" />
-
-                  </button>
-
+                  <Link href="/contact">
                   <button className="flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-xl transition hover:bg-white/20">
 
                     <CarFront size={18} />
@@ -214,6 +222,7 @@ export default function FaqCTA() {
                     Contact Us
 
                   </button>
+                  </Link>
 
                 </div>
 

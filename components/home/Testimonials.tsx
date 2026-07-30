@@ -1,367 +1,169 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  Star,
-  Quote,
-  MapPin,
-} from "lucide-react";
-
-import SectionHeading from "./SectionHeading";
-
+import { Quote, Star, ShieldCheck } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Williams",
-    country: "United Kingdom",
-    image: "/images/testimonials/user1.jpg",
-    text:
-      "The airport transfer was perfect. The driver arrived early, the vehicle was comfortable, and the whole experience was stress free.",
-    trip:
-      "Colombo Airport → Ella",
+    name: "Emily Antony",
+    location: "London, United Kingdom",
+    review:
+      "Excellent service from start to finish. The driver arrived early, the vehicle was spotless, and the journey was incredibly comfortable. Highly recommended.",
   },
-
   {
-    name: "Michael Brown",
-    country: "Australia",
-    image: "/images/testimonials/user2.jpg",
-    text:
-      "We travelled across Sri Lanka for 10 days. The driver was professional and helped us discover amazing places.",
-    trip:
-      "Island Tour",
+    name: "Daniel Wilson",
+    location: "Melbourne, Australia",
+    review:
+      "Booking was effortless and communication was excellent. The driver was professional and made our family trip completely stress-free.",
   },
-
   {
-    name: "Emma Johnson",
-    country: "Germany",
-    image: "/images/testimonials/user3.jpg",
-    text:
-      "Very clean vehicles and excellent communication. Highly recommended for anyone visiting Sri Lanka.",
-    trip:
-      "Kandy → Galle",
+    name: "Sophia Brown",
+    location: "Toronto, Canada",
+    review:
+      "The best taxi service we used during our Sri Lanka vacation. Safe driving, luxury vehicle, and exceptional hospitality.",
+  },
+  {
+    name: "Michael Lee",
+    location: "Singapore",
+    review:
+      "Punctual, friendly, and reliable. Every journey was smooth and comfortable. I'll definitely book again on my next visit.",
   },
 ];
 
-
-
-export default function Testimonials(){
-
-return (
-
-<section
-className="
-relative
-overflow-hidden
-bg-[#050816]
-py-28
-"
->
-
-
-{/* Background */}
-
-<div
-className="
-absolute
-left-0
-top-0
-h-[400px]
-w-[400px]
-rounded-full
-bg-amber-400/20
-blur-[140px]
-"
-/>
-
-
-<div
-className="
-absolute
-right-0
-bottom-0
-h-[400px]
-w-[400px]
-rounded-full
-bg-cyan-400/20
-blur-[140px]
-"
-/>
-
-
-
-<div className="
-container
-relative
-mx-auto
-px-6
-">
-
-
-<SectionHeading
-
-badge="TESTIMONIALS"
-
-title="What Our Passengers Say"
-
-description="
-Thousands of travellers trust us for comfortable and unforgettable journeys across Sri Lanka.
-"
-
-/>
-
-
-
-
-<div
-className="
-mt-16
-grid
-gap-8
-md:grid-cols-3
-"
->
-
-
-{
-testimonials.map((review,index)=>(
-
-
-<motion.div
-
-key={review.name}
-
-initial={{
-opacity:0,
-y:60
-}}
-
-whileInView={{
-opacity:1,
-y:0
-}}
-
-viewport={{
-once:true
-}}
-
-transition={{
-duration:.7,
-delay:index*.15
-}}
-
-whileHover={{
-y:-15,
-scale:1.03
-}}
-
-className="
-group
-relative
-rounded-[35px]
-border
-border-white/10
-bg-white/5
-p-8
-backdrop-blur-xl
-"
->
-
-
-{/* Glow */}
-
-<div
-className="
-absolute
-inset-0
-rounded-[35px]
-bg-gradient-to-br
-from-amber-400/20
-to-transparent
-opacity-0
-transition
-duration-500
-group-hover:opacity-100
-"
-/>
-
-
-
-<div
-className="
-relative
-"
->
-
-
-<Quote
-size={45}
-className="
-text-amber-400/50
-"
-/>
-
-
-
-{/* Stars */}
-
-<div
-className="
-mt-5
-flex
-gap-1
-"
->
-
-{
-[1,2,3,4,5].map(i=>(
-
-<Star
-
-key={i}
-
-size={18}
-
-className="
-fill-yellow-400
-text-yellow-400
-"
-
-/>
-
-))
-}
-
-</div>
-
-
-
-<p
-className="
-mt-6
-leading-8
-text-white/80
-"
->
-
-"{review.text}"
-
-</p>
-
-
-
-
-<div
-className="
-mt-8
-flex
-items-center
-gap-4
-"
->
-
-
-<div
-className="
-relative
-h-14
-w-14
-overflow-hidden
-rounded-full
-border
-border-white/20
-"
->
-
-<Image
-
-src={review.image}
-
-alt={review.name}
-
-fill
-
-className="
-object-cover
-"
-
-/>
-
-</div>
-
-
-
-<div>
-
-<h4
-className="
-font-bold
-text-white
-"
->
-
-{review.name}
-
-</h4>
-
-
-<p
-className="
-text-sm
-text-white/50
-"
->
-
-{review.country}
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-<div
-className="
-mt-6
-flex
-items-center
-gap-2
-text-sm
-text-amber-300
-"
->
-
-<MapPin size={15}/>
-
-{review.trip}
-
-</div>
-
-
-</div>
-
-
-
-</motion.div>
-
-
-))
-}
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-);
-
+const stats = [
+  {
+    number: "4.9/5",
+    label: "Average Rating",
+  },
+  {
+    number: "2,500+",
+    label: "Happy Customers",
+  },
+  {
+    number: "15,000+",
+    label: "Successful Trips",
+  },
+  {
+    number: "100%",
+    label: "Professional Drivers",
+  },
+];
+
+export default function Testimonials() {
+  return (
+    <section className="relative overflow-hidden bg-[#F8F6F2] py-24">
+      {/* Background Glow */}
+      <div className="absolute -top-40 -left-32 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-[120px]" />
+      <div className="absolute -bottom-40 -right-32 h-96 w-96 rounded-full bg-black/5 blur-[120px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: .6 }}
+          viewport={{ once: true }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <span className="rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-5 py-2 text-sm font-semibold tracking-wider text-[#B8860B] uppercase">
+            Testimonials
+          </span>
+
+          <h2 className="mt-6 text-4xl font-bold text-[#111827] md:text-5xl">
+            Trusted by Travelers Across Sri Lanka
+          </h2>
+
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            From airport transfers to long-distance journeys, our professional
+            drivers and premium vehicles deliver an experience our customers
+            genuinely love.
+          </p>
+        </motion.div>
+
+        {/* Cards */}
+        <div className="mt-20 grid gap-8 md:grid-cols-2">
+          {testimonials.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: index * 0.15,
+                duration: .6,
+              }}
+              whileHover={{
+                y: -8,
+                transition: { duration: .25 },
+              }}
+              className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:shadow-2xl"
+            >
+              {/* Quote */}
+              <div className="absolute right-6 top-6">
+                <Quote
+                  size={54}
+                  className="text-[#D4AF37]/20 transition-transform duration-300 group-hover:rotate-12"
+                />
+              </div>
+
+              {/* Stars */}
+              <div className="mb-6 flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    size={18}
+                    className="fill-[#D4AF37] text-[#D4AF37]"
+                  />
+                ))}
+              </div>
+
+              <p className="leading-8 text-gray-600">
+                "{item.review}"
+              </p>
+
+              <div className="mt-8 flex items-center justify-between">
+                <div>
+                  <h4 className="text-lg font-semibold text-[#111827]">
+                    {item.name}
+                  </h4>
+
+                  <p className="mt-1 text-sm text-gray-500">
+                    {item.location}
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2 rounded-full bg-green-50 px-3 py-2 text-sm font-medium text-green-700">
+                  <ShieldCheck size={18} />
+                  Verified
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: .7 }}
+          className="mt-24 rounded-[32px] bg-[#111827] px-8 py-12"
+        >
+          <div className="grid gap-10 text-center sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((item, index) => (
+              <div key={index}>
+                <h3 className="text-4xl font-bold text-[#D4AF37]">
+                  {item.number}
+                </h3>
+
+                <p className="mt-3 text-gray-300">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
 }

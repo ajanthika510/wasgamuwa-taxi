@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Coffee,
@@ -206,12 +207,14 @@ export default function JourneyTimeline() {
           transition={{ delay: 0.3 }}
           className="mt-24 text-center"
         >
+          <Link href="/#hero">
           <button className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 px-8 py-4 text-lg font-semibold text-black transition hover:shadow-[0_0_40px_rgba(251,191,36,.35)]">
             Book This Experience
             <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
           </button>
+          </Link>
         </motion.div>
-
+        
       </div>
     </section>
   );
