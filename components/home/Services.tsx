@@ -12,108 +12,148 @@ import SectionHeading from "./SectionHeading";
 
 const services = [
   {
-    title:"Airport Transfers",
-    description:"Reliable pickup and drop-off with professional drivers.",
-    image:"/images/airport.jpg",
-    color:"from-purple-500 to-fuchsia-500",
-    features:["24/7 Service","Flight Tracking"]
+    title: "Airport Transfers",
+    description:
+      "Reliable pickup and drop-off with professional drivers.",
+    image: "/images/airport.jpg",
+    color: "from-purple-500 to-fuchsia-500",
+    features: [
+      "24/7 Service",
+      "Flight Tracking",
+    ],
   },
 
   {
-    title:"Taxi Service",
-    description:"Comfortable city rides with premium vehicles.",
-    image:"/images/taxi.jpg",
-    color:"from-indigo-500 to-purple-600",
-    features:["Luxury Cars","Door Pickup"]
+    title: "Taxi Service",
+    description:
+      "Comfortable city rides with premium vehicles.",
+    image: "/images/taxi.jpg",
+    color: "from-indigo-500 to-purple-600",
+    features: [
+      "Luxury Cars",
+      "Door Pickup",
+    ],
   },
 
   {
-    title:"Safari Tours",
-    description:"Explore Sri Lanka wildlife with expert drivers.",
-    image:"/images/safaritour.jpg",
-    color:"from-emerald-400 to-green-600",
-    features:["Private Safari","Guides"]
+    title: "Safari Tours",
+    description:
+      "Explore Sri Lanka wildlife with expert drivers.",
+    image: "/images/safaritour.jpg",
+    color: "from-emerald-400 to-green-600",
+    features: [
+      "Private Safari",
+      "Guides",
+    ],
   },
 
   {
-    title:"Custom Tours",
-    description:"Create your own Sri Lanka travel experience.",
-    image:"/images/customtour.jpg",
-    color:"from-pink-500 to-purple-600",
-    features:["Flexible Route","Hotels"]
+    title: "Custom Tours",
+    description:
+      "Create your own Sri Lanka travel experience.",
+    image: "/images/customtour.jpg",
+    color: "from-pink-500 to-purple-600",
+    features: [
+      "Flexible Route",
+      "Hotels",
+    ],
   },
 ];
 
 
-export default function Services(){
+
+export default function Services() {
+
 
 return (
 
 <section
- id="services"
+
+id="services"
+
 className="
 relative
+scroll-mt-24
 overflow-hidden
-py-28
 bg-gradient-to-b
 from-[#030014]
 via-[#1A093E]
 to-[#2A1263]
+py-20
+sm:py-24
+lg:py-28
 "
+
 >
 
 
-{/* Background Purple Glow */}
+{/* Glow Background */}
+
 
 <div
+
 className="
 absolute
 -left-40
 top-20
-h-[550px]
-w-[550px]
+h-[350px]
+w-[350px]
+sm:h-[500px]
+sm:w-[500px]
 rounded-full
 bg-purple-600/20
-blur-[180px]
+blur-[150px]
 "
+
 />
+
 
 
 <div
+
 className="
 absolute
-right-[-100px]
+right-[-120px]
 bottom-0
-h-[500px]
-w-[500px]
+h-[350px]
+w-[350px]
+sm:h-[500px]
+sm:w-[500px]
 rounded-full
 bg-fuchsia-500/20
-blur-[160px]
+blur-[140px]
 "
+
 />
+
+
 
 
 
 {/* Grid Background */}
 
 <div
+
 className="
 absolute
 inset-0
-opacity-[0.06]
+opacity-[0.05]
 bg-[linear-gradient(rgba(255,255,255,.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.2)_1px,transparent_1px)]
-bg-[size:80px_80px]
+bg-[size:60px_60px]
 "
+
 />
 
 
 
 
 
-<div className="relative z-10">
+<div className="
+relative
+z-10
+">
 
 
-{/* in another file SECTION HEADING */}
 <SectionHeading
 
 badge="OUR SERVICES"
@@ -126,16 +166,25 @@ description="Premium transportation solutions designed for every traveller."
 
 
 
+
+
+
 <div
+
 className="
 container
 mx-auto
-mt-16
+mt-12
 grid
-gap-10
-px-6
+grid-cols-1
+gap-6
+px-4
+sm:px-6
 md:grid-cols-2
+lg:mt-16
+lg:gap-10
 "
+
 >
 
 
@@ -167,9 +216,10 @@ once:true
 
 
 transition={{
-delay:index*.12,
+delay:index * 0.12,
 duration:.7
 }}
+
 
 
 whileHover={{
@@ -179,17 +229,20 @@ rotateY:-3
 }}
 
 
+
 style={{
 transformStyle:"preserve-3d"
 }}
 
 
+
 className="
 group
 relative
-h-[330px]
+min-h-[360px]
 overflow-hidden
-rounded-[35px]
+rounded-[30px]
+sm:min-h-[330px]
 border
 border-white/10
 bg-white/[0.06]
@@ -200,21 +253,31 @@ shadow-[0_25px_80px_rgba(0,0,0,.5)]
 >
 
 
+
+
 {/* Image */}
 
+
 <motion.div
+
 
 whileHover={{
 scale:1.08,
 rotate:2
 }}
 
+
+
 className="
 absolute
-right-5
-top-5
-h-48
-w-48
+right-4
+top-4
+h-32
+w-32
+sm:h-40
+sm:w-40
+lg:h-48
+lg:w-48
 overflow-hidden
 rounded-3xl
 shadow-2xl
@@ -231,11 +294,18 @@ alt={service.title}
 
 fill
 
+sizes="
+(max-width:640px) 130px,
+( max-width:1024px) 160px,
+190px
+"
+
 className="
 object-cover
 "
 
 />
+
 
 </motion.div>
 
@@ -243,23 +313,25 @@ object-cover
 
 
 
-{/* Gradient Glow */}
+
+{/* Image Glow */}
+
 
 <div
 
 className={`
-
 absolute
-right-10
-top-10
-h-44
-w-44
+right-8
+top-8
+h-32
+w-32
+sm:h-44
+sm:w-44
 rounded-full
 bg-gradient-to-r
 ${service.color}
 opacity-30
 blur-3xl
-
 `}
 
 />
@@ -272,22 +344,29 @@ blur-3xl
 
 {/* Content */}
 
+
 <div
 
 className="
 relative
 flex
-h-full
+min-h-[360px]
 flex-col
 justify-end
-p-12
+p-6
+sm:min-h-[330px]
+sm:p-8
+lg:p-12
 "
 
 >
 
 
+
 <div
-className="max-w-[240px]"
+className="
+max-w-[250px]
+"
 >
 
 
@@ -295,10 +374,11 @@ className="max-w-[240px]"
 
 className="
 font-[Playfair_Display]
-text-3xl
+text-2xl
 font-bold
 tracking-tight
 text-white
+sm:text-3xl
 "
 
 >
@@ -315,9 +395,11 @@ text-white
 className="
 mt-3
 font-[Inter]
-text-[20px]
+text-sm
 leading-6
 text-white/60
+sm:text-base
+lg:text-lg
 "
 
 >
@@ -333,7 +415,11 @@ text-white/60
 
 
 
+
+
+
 {/* Features */}
+
 
 <div
 
@@ -341,14 +427,15 @@ className="
 mt-5
 flex
 flex-wrap
-gap-8
+gap-2
+sm:gap-3
 "
 
 >
 
 
 {
-service.features.map(item=>(
+service.features.map((item)=>(
 
 
 <span
@@ -358,17 +445,18 @@ key={item}
 className="
 flex
 items-center
-gap-2
+gap-1.5
 rounded-full
 border
 border-purple-400/20
 bg-purple-500/10
 px-3
 py-2
-text-[18px]
+text-xs
 font-medium
 text-white
 backdrop-blur
+sm:text-sm
 "
 
 >
@@ -403,7 +491,9 @@ text-fuchsia-400
 
 
 
+
 {/* Button */}
+
 
 <motion.button
 
@@ -411,13 +501,15 @@ whileHover={{
 x:5
 }}
 
+
+
 className="
 absolute
-bottom-8
-right-8
+bottom-5
+right-5
 flex
-h-12
-w-12
+h-11
+w-11
 items-center
 justify-center
 rounded-full
@@ -428,6 +520,8 @@ text-white
 shadow-lg
 transition
 group-hover:scale-110
+sm:bottom-8
+sm:right-8
 "
 
 >
@@ -437,6 +531,8 @@ group-hover:scale-110
 
 
 </motion.button>
+
+
 
 
 
@@ -457,7 +553,6 @@ group-hover:scale-110
 
 
 </div>
-
 
 
 </div>

@@ -19,9 +19,7 @@ export const metadata: Metadata = {
   description:
     "Professional Taxi & Tour Services Across Sri Lanka. Airport Transfers, Day Tours & Safari Transport.",
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "./logo.png",
   },
 };
 
