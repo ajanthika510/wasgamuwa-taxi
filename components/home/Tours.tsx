@@ -61,6 +61,7 @@ const [active,setActive] = useState(0);
 return (
 
 <section
+id="tours"
 className="
 relative
 overflow-hidden

@@ -19,13 +19,56 @@ export default function ContactSection() {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => {
+
+  const { name, value } = e.target;
+
+
+  // Full name: allow only letters and spaces
+  if (name === "name") {
+
+    const onlyLetters = value.replace(
+      /[^a-zA-Z\s]/g,
+      ""
+    );
+
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      name: onlyLetters,
     });
-  };
+
+    return;
+  }
+
+
+
+  // Phone: allow only numbers
+  if (name === "phone") {
+
+    const onlyNumbers = value.replace(
+      /[^0-9]/g,
+      ""
+    );
+
+
+    setFormData({
+      ...formData,
+      phone: onlyNumbers,
+    });
+
+    return;
+  }
+
+
+
+  setFormData({
+    ...formData,
+    [name]: value,
+  });
+
+};
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -123,7 +166,7 @@ ${formData.message}
               {
                 icon: Mail,
                 title: "Email",
-                value: "info@wasgamutaxi.com",
+                value: "wasgamuwataxi@gmail.com",
               },
               {
                 icon: MapPin,
@@ -173,6 +216,8 @@ ${formData.message}
               <input
                 type="text"
                 name="name"
+                inputMode="text"
+                pattern="[A-Za-z\s]+"
                 required
                 value={formData.name}
                 onChange={handleChange}
@@ -193,6 +238,8 @@ ${formData.message}
               <input
                 type="tel"
                 name="phone"
+                inputMode="numeric"
+                pattern="[0-9]*"
                 required
                 value={formData.phone}
                 onChange={handleChange}

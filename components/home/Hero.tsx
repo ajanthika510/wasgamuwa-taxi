@@ -413,7 +413,7 @@ sm:flex-row
 >
 
 
-<Link href="/#hero">
+<Link href="/#tours">
 <button
 
 className="
@@ -434,7 +434,7 @@ hover:scale-105
 
 >
 
-Start Your Journey
+Explore Journey
 
 
 <ArrowRight

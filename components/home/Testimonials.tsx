@@ -51,7 +51,9 @@ const stats = [
 
 export default function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-[#F8F6F2] py-24">
+    <section 
+    id="testimonials"
+    className="relative overflow-hidden bg-[#F8F6F2] py-24">
       {/* Background Glow */}
       <div className="absolute -top-40 -left-32 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-[120px]" />
       <div className="absolute -bottom-40 -right-32 h-96 w-96 rounded-full bg-black/5 blur-[120px]" />

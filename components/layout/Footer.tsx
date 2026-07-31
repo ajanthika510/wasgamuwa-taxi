@@ -233,7 +233,6 @@ Contact
 
 <div>
 
-
 <h3
 className="
 text-lg
@@ -241,12 +240,10 @@ font-semibold
 text-yellow-400
 "
 >
-
 Our Services
-
 </h3>
 
-<Link href="/#services">
+
 <ul
 className="
 mt-5
@@ -255,30 +252,58 @@ text-white/60
 "
 >
 
-
 <li>
+<Link
+href="/#services"
+className="transition hover:text-yellow-400"
+>
 Airport Transfers
+</Link>
 </li>
 
+
 <li>
+<Link
+href="/#services"
+className="transition hover:text-yellow-400"
+>
 Wildlife Safari Tours
+</Link>
 </li>
 
+
 <li>
+<Link
+href="/#services"
+className="transition hover:text-yellow-400"
+>
 Custom Sri Lanka Tours
+</Link>
 </li>
 
+
 <li>
+<Link
+href="/#services"
+className="transition hover:text-yellow-400"
+>
 Hotel Transfers
+</Link>
 </li>
 
+
 <li>
+<Link
+href="/#services"
+className="transition hover:text-yellow-400"
+>
 Private Chauffeur
+</Link>
 </li>
 
 
 </ul>
-</Link>
+
 
 </div>
 
@@ -375,7 +400,7 @@ size={20}
 />
 
 <span>
-info@wasgamuwataxi.com
+wasgamuwataxi@gmail.com
 </span>
 
 </div>
@@ -515,7 +540,21 @@ text-white/50
 All rights reserved.
 <br>
 </br>
-Designed and Developed by Neirah Tech Solution.
+<p>
+
+            Designed and Developed by{" "}
+
+            <a
+              href="https://www.neirahtech.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-400 font-semibold hover:text-cyan-300 transition"
+            >
+              Neirahtech
+            </a>
+
+          </p>
+
 
 
 </div>
