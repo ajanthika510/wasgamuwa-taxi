@@ -1,10 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
+  Plane,
+  Car,
+  PawPrint,
+  Map,
   Check,
+  ArrowUpRight,
 } from "lucide-react";
 
 import SectionHeading from "./SectionHeading";
@@ -13,49 +18,69 @@ import SectionHeading from "./SectionHeading";
 const services = [
   {
     title: "Airport Transfers",
+    subtitle: "Start Your Journey Smoothly",
     description:
-      "Reliable pickup and drop-off with professional drivers.",
+      "Reliable airport pickup and drop-off services with professional drivers and comfortable vehicles.",
     image: "/images/airport.jpg",
-    color: "from-purple-500 to-fuchsia-500",
+    icon: Plane,
+    location: "Colombo Airport → Any Destination",
+    button: "Book Airport Pickup",
+    href: "/#hero",
     features: [
       "24/7 Service",
       "Flight Tracking",
+      "Meet & Greet",
     ],
   },
 
   {
-    title: "Taxi Service",
+    title: "Premium Taxi Service",
+    subtitle: "Travel With Comfort",
     description:
-      "Comfortable city rides with premium vehicles.",
+      "Experience safe and comfortable rides around Sri Lanka with modern luxury vehicles.",
     image: "/images/taxi.jpg",
-    color: "from-indigo-500 to-purple-600",
+    icon: Car,
+    location: "City Rides & Long Distance",
+    button: "Book Ride",
+    href: "/#hero",
     features: [
-      "Luxury Cars",
+      "Luxury Vehicles",
+      "Professional Drivers",
       "Door Pickup",
     ],
   },
 
   {
-    title: "Safari Tours",
+    title: "Safari Adventures",
+    subtitle: "Discover Wild Sri Lanka",
     description:
-      "Explore Sri Lanka wildlife with expert drivers.",
+      "Explore Sri Lanka wildlife with experienced local drivers and flexible safari journeys.",
     image: "/images/safaritour.jpg",
-    color: "from-emerald-400 to-green-600",
+    icon: PawPrint,
+    location: "Yala • Udawalawe • Wilpattu",
+    button: "View Safari",
+    href: "/tours",
     features: [
       "Private Safari",
-      "Guides",
+      "Local Guides",
+      "Flexible Trips",
     ],
   },
 
   {
-    title: "Custom Tours",
+    title: "Custom Island Tours",
+    subtitle: "Create Your Experience",
     description:
-      "Create your own Sri Lanka travel experience.",
+      "Build your dream Sri Lankan holiday with personalized routes and destinations.",
     image: "/images/customtour.jpg",
-    color: "from-pink-500 to-purple-600",
+    icon: Map,
+    location: "Beach • Mountains • Culture",
+    button: "Plan My Trip",
+    href: "/tours",
     features: [
-      "Flexible Route",
-      "Hotels",
+      "Custom Routes",
+      "Hotel Support",
+      "Complete Planning",
     ],
   },
 ];
@@ -73,94 +98,72 @@ id="services"
 
 className="
 relative
-scroll-mt-24
+overflow-x-hidden
 overflow-hidden
 bg-gradient-to-b
 from-[#030014]
-via-[#1A093E]
+via-[#170832]
 to-[#2A1263]
-py-20
-sm:py-24
-lg:py-28
+py-24
 "
 
 >
 
 
-{/* Glow Background */}
-
+{/* Glow */}
 
 <div
-
 className="
 absolute
--left-40
-top-20
-h-[350px]
-w-[350px]
-sm:h-[500px]
-sm:w-[500px]
+left-[-200px]
+top-40
+h-[450px]
+w-[450px]
 rounded-full
-bg-purple-600/20
-blur-[150px]
+bg-purple-600/30
+blur-[160px]
 "
-
 />
 
 
-
 <div
-
 className="
 absolute
-right-[-120px]
-bottom-0
-h-[350px]
-w-[350px]
-sm:h-[500px]
-sm:w-[500px]
+right-[-200px]
+bottom-20
+h-[450px]
+w-[450px]
 rounded-full
 bg-fuchsia-500/20
-blur-[140px]
+blur-[160px]
 "
-
 />
 
 
 
 
-
-{/* Grid Background */}
 
 <div
-
 className="
-absolute
-inset-0
-opacity-[0.05]
-bg-[linear-gradient(rgba(255,255,255,.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.2)_1px,transparent_1px)]
-bg-[size:60px_60px]
-"
-
-/>
-
-
-
-
-
-<div className="
 relative
 z-10
-">
+container
+mx-auto
+px-5
+"
+>
 
 
 <SectionHeading
 
 badge="OUR SERVICES"
 
-title="Everything You Need For Your Journey"
+title="Your Journey Begins Here"
 
-description="Premium transportation solutions designed for every traveller."
+description="
+From airport arrivals to island adventures,
+we create unforgettable travel experiences.
+"
 
 />
 
@@ -170,118 +173,183 @@ description="Premium transportation solutions designed for every traveller."
 
 
 <div
-
 className="
-container
+relative
 mx-auto
-mt-12
-grid
-grid-cols-1
-gap-6
-px-4
-sm:px-6
-md:grid-cols-2
-lg:mt-16
-lg:gap-10
+mt-20
+max-w-6xl
 "
-
 >
 
 
-{
-services.map((service,index)=>(
+{/* Timeline Line */}
 
+<div
+
+className="
+absolute
+left-6
+top-0
+h-full
+w-[2px]
+bg-gradient-to-b
+from-purple-400
+via-fuchsia-500
+to-transparent
+
+lg:left-1/2
+lg:-translate-x-1/2
+"
+
+/>
+
+
+
+
+
+{
+services.map((service,index)=>{
+
+
+const Icon = service.icon;
+
+const reverse = index % 2 !== 0;
+
+
+
+return (
 
 <motion.div
-
 
 key={service.title}
 
 
 initial={{
 opacity:0,
-y:50
+y:70
 }}
-
 
 whileInView={{
 opacity:1,
 y:0
 }}
 
-
 viewport={{
 once:true
 }}
 
-
 transition={{
-delay:index * 0.12,
-duration:.7
-}}
-
-
-
-whileHover={{
-y:-10,
-rotateX:3,
-rotateY:-3
-}}
-
-
-
-style={{
-transformStyle:"preserve-3d"
+duration:.8,
+delay:index*.15
 }}
 
 
 
 className="
-group
 relative
-min-h-[360px]
-overflow-hidden
-rounded-[30px]
-sm:min-h-[330px]
+mb-20
+pl-16
+
+lg:grid
+lg:grid-cols-2
+lg:gap-16
+lg:pl-0
+"
+
+
+>
+
+
+{/* ICON */}
+
+<div
+
+className="
+absolute
+left-0
+top-8
+
+flex
+h-12
+w-12
+items-center
+justify-center
+
+rounded-full
+
 border
-border-white/10
-bg-white/[0.06]
-backdrop-blur-xl
-shadow-[0_25px_80px_rgba(0,0,0,.5)]
+border-purple-300/30
+
+bg-gradient-to-br
+from-purple-500
+to-fuchsia-600
+
+text-white
+
+shadow-[0_0_35px_rgba(168,85,247,.6)]
+
+
+lg:left-1/2
+lg:h-16
+lg:w-16
+lg:-translate-x-1/2
+
 "
 
 >
 
 
+<Icon
+
+size={22}
+
+/>
 
 
-{/* Image */}
+</div>
+
+
+
+
+
+
+
+{/* IMAGE */}
+
+
+<div
+
+className={`
+${reverse ? "lg:order-2" : ""}
+`}
+
+>
 
 
 <motion.div
 
-
 whileHover={{
-scale:1.08,
-rotate:2
+scale:1.04
 }}
 
-
-
 className="
-absolute
-right-4
-top-4
-h-32
-w-32
-sm:h-40
-sm:w-40
-lg:h-48
-lg:w-48
+group
+relative
+
+h-[260px]
+
+sm:h-[320px]
+
 overflow-hidden
-rounded-3xl
+
+rounded-[32px]
+
+border
+border-white/10
+
 shadow-2xl
 "
+
 
 >
 
@@ -295,13 +363,30 @@ alt={service.title}
 fill
 
 sizes="
-(max-width:640px) 130px,
-( max-width:1024px) 160px,
-190px
+(max-width:640px) 100vw,
+50vw
 "
 
 className="
 object-cover
+transition
+duration-700
+group-hover:scale-110
+"
+
+/>
+
+
+
+<div
+
+className="
+absolute
+inset-0
+bg-gradient-to-t
+from-black/80
+via-black/20
+to-transparent
 "
 
 />
@@ -310,75 +395,85 @@ object-cover
 </motion.div>
 
 
+</div>
 
 
 
 
-{/* Image Glow */}
 
+
+
+{/* CONTENT */}
 
 <div
 
 className={`
-absolute
-right-8
-top-8
-h-32
-w-32
-sm:h-44
-sm:w-44
-rounded-full
-bg-gradient-to-r
-${service.color}
-opacity-30
-blur-3xl
+mt-6
+
+lg:mt-0
+
+${reverse ? "lg:order-1" : ""}
+
 `}
 
-/>
-
-
-
-
-
-
-
-{/* Content */}
+>
 
 
 <div
 
 className="
-relative
-flex
-min-h-[360px]
-flex-col
-justify-end
+rounded-[32px]
+
+border
+border-white/10
+
+bg-white/[0.07]
+
 p-6
-sm:min-h-[330px]
+
 sm:p-8
-lg:p-12
+
+backdrop-blur-xl
+
+shadow-2xl
 "
 
 >
 
 
 
-<div
+<p
+
 className="
-max-w-[250px]
+text-xs
+uppercase
+tracking-[3px]
+text-purple-300
 "
+
 >
+
+{service.subtitle}
+
+</p>
+
+
+
 
 
 <h3
 
 className="
+mt-3
+
 font-[Playfair_Display]
-text-2xl
+
+text-3xl
+
 font-bold
-tracking-tight
+
 text-white
-sm:text-3xl
+
 "
 
 >
@@ -390,16 +485,16 @@ sm:text-3xl
 
 
 
+
 <p
 
 className="
-mt-3
-font-[Inter]
-text-sm
-leading-6
-text-white/60
-sm:text-base
-lg:text-lg
+mt-4
+
+leading-7
+
+text-white/65
+
 "
 
 >
@@ -409,6 +504,26 @@ lg:text-lg
 </p>
 
 
+
+
+
+
+
+<div
+
+className="
+mt-5
+
+text-sm
+
+text-white/70
+
+"
+
+>
+
+{service.location}
+
 </div>
 
 
@@ -417,46 +532,51 @@ lg:text-lg
 
 
 
-
-{/* Features */}
-
-
 <div
 
 className="
-mt-5
+mt-6
+
 flex
+
 flex-wrap
+
 gap-2
-sm:gap-3
+
 "
 
 >
 
-
 {
-service.features.map((item)=>(
+service.features.map(feature=>(
 
 
 <span
 
-key={item}
+key={feature}
 
 className="
 flex
+
 items-center
-gap-1.5
+
+gap-2
+
 rounded-full
+
 border
+
 border-purple-400/20
+
 bg-purple-500/10
+
 px-3
+
 py-2
+
 text-xs
-font-medium
+
 text-white
-backdrop-blur
-sm:text-sm
 "
 
 >
@@ -473,7 +593,7 @@ text-fuchsia-400
 />
 
 
-{item}
+{feature}
 
 
 </span>
@@ -483,7 +603,6 @@ text-fuchsia-400
 
 }
 
-
 </div>
 
 
@@ -492,53 +611,67 @@ text-fuchsia-400
 
 
 
-{/* Button */}
+<Link
 
-
-<motion.button
-
-whileHover={{
-x:5
-}}
-
-
+href={service.href}
 
 className="
-absolute
-bottom-5
-right-5
+mt-7
+
 flex
-h-11
-w-11
+
+w-full
+
+sm:w-fit
+
 items-center
+
 justify-center
+
+gap-2
+
 rounded-full
+
 bg-gradient-to-r
+
 from-purple-500
+
 to-fuchsia-500
+
+px-6
+
+py-3
+
+text-sm
+
+font-semibold
+
 text-white
-shadow-lg
+
+shadow-xl
+
 transition
-group-hover:scale-110
-sm:bottom-8
-sm:right-8
+
+hover:scale-105
 "
 
 >
 
+{service.button}
 
-<ArrowUpRight size={20}/>
+<ArrowUpRight size={16}/>
 
-
-</motion.button>
-
-
+</Link>
 
 
 
 
 
 </div>
+
+
+</div>
+
 
 
 
@@ -547,7 +680,9 @@ sm:right-8
 </motion.div>
 
 
-))
+)
+
+})
 
 }
 
