@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 
 
+
 const routes = [
   {
     title: "Colombo to Kandy Taxi",
@@ -35,7 +36,6 @@ const routes = [
       "Reliable taxi service connecting Sigiriya and Kandy with flexible pickup locations and comfortable vehicles.",
   },
 
-
   {
     title: "Airport to Sigiriya Transfer",
     location: "Airport → Sigiriya",
@@ -45,7 +45,6 @@ const routes = [
     description:
       "Direct airport taxi transfer to Sigiriya Lion Rock with experienced local drivers.",
   },
-
 
   {
     title: "Sigiriya to Ella Taxi",
@@ -57,7 +56,6 @@ const routes = [
       "Enjoy a scenic private journey from Sigiriya to Ella through Sri Lanka's beautiful countryside.",
   },
 
-
   {
     title: "Airport to Wasgamuwa Taxi",
     location: "Airport → Wasgamuwa",
@@ -67,8 +65,8 @@ const routes = [
     description:
       "Safe long-distance airport transfer service to Wasgamuwa with comfortable private vehicles.",
   },
-
 ];
+
 
 
 
@@ -87,10 +85,15 @@ id="routes"
 className="
 relative
 overflow-hidden
-py-32
 bg-[#F8FAFC]
+py-20
+md:py-28
+lg:py-32
 "
 >
+
+
+
 
 
 {/* Background */}
@@ -103,6 +106,10 @@ inset-0
 bg-[radial-gradient(circle_at_top,#E2E8F0,transparent_50%)]
 "
 />
+
+
+
+
 
 
 
@@ -126,14 +133,21 @@ className="
 absolute
 top-20
 left-10
-h-[350px]
-w-[350px]
+h-[300px]
+w-[300px]
+
+sm:h-[350px]
+sm:w-[350px]
+
 rounded-full
 bg-amber-400/20
 blur-[150px]
 "
 
 />
+
+
+
 
 
 
@@ -158,8 +172,13 @@ className="
 absolute
 bottom-10
 right-10
-h-[400px]
-w-[400px]
+
+h-[320px]
+w-[320px]
+
+sm:h-[400px]
+sm:w-[400px]
+
 rounded-full
 bg-emerald-400/20
 blur-[160px]
@@ -169,14 +188,23 @@ blur-[160px]
 
 
 
+
+
+
+
 <div
 className="
 relative
 container
 mx-auto
-px-6
+px-5
+sm:px-6
 "
 >
+
+
+
+
 
 
 
@@ -199,9 +227,14 @@ viewport={{
 once:true
 }}
 
-className="text-center"
+className="
+text-center
+"
 
 >
+
+
+
 
 
 <span
@@ -209,14 +242,20 @@ className="
 inline-flex
 items-center
 gap-2
+
 rounded-full
+
 border
 border-amber-400/30
+
 bg-amber-400/10
+
 px-5
 py-2
+
 text-sm
 font-medium
+
 text-amber-600
 "
 >
@@ -229,18 +268,30 @@ POPULAR TAXI ROUTES
 
 
 
+
+
+
+
 <h2
 className="
 mt-8
+
 font-[Playfair_Display]
-text-5xl
+
+text-4xl
+
 font-bold
+
 text-slate-900
+
+sm:text-5xl
+
 md:text-6xl
 "
 >
 
-Travel Across
+Travel Across  
+<br></br>
 
 <span
 className="
@@ -248,20 +299,32 @@ text-amber-500
 "
 >
 
- Sri Lanka
+SriLanka
 
 </span>
 
+
 </h2>
+
+
+
+
 
 
 
 <p
 className="
 mx-auto
+
 mt-5
+
 max-w-2xl
+
+text-sm
+
 text-slate-500
+
+sm:text-base
 "
 >
 
@@ -271,18 +334,34 @@ Private taxi transfers connecting Sri Lanka's most popular destinations.
 
 
 
+
+
+
 </motion.div>
+
+
+
 
 {/* CONTENT */}
 
 <div
 className="
-mt-20
+mt-14
+
 grid
-gap-12
+
+gap-8
+
+md:mt-20
+
+md:gap-12
+
 lg:grid-cols-2
 "
 >
+
+
+
 
 
 {/* MAIN IMAGE */}
@@ -295,11 +374,13 @@ lg:grid-cols-2
 
 key={active}
 
+
 initial={{
 opacity:0,
 scale:1.15,
 filter:"blur(12px)"
 }}
+
 
 animate={{
 opacity:1,
@@ -307,23 +388,37 @@ scale:1,
 filter:"blur(0px)"
 }}
 
+
 exit={{
 opacity:0,
 scale:.9
 }}
 
+
 transition={{
 duration:.8
 }}
 
+
 className="
 relative
-h-[650px]
+
+h-[480px]
+
 overflow-hidden
-rounded-[40px]
+
+rounded-[32px]
+
 border
+
 border-slate-200
+
 shadow-2xl
+
+sm:h-[550px]
+
+lg:h-[650px]
+
 "
 
 >
@@ -347,39 +442,77 @@ object-cover
 
 
 
+
+
+
 <div
 className="
 absolute
+
 inset-0
+
 bg-gradient-to-t
+
 from-[#0F172A]
+
 via-black/50
+
 to-transparent
+
 "
 />
 
 
 
+
+
+
+
+
 <div
+
 className="
 absolute
+
 bottom-0
-p-10
+
+p-6
+
 text-white
+
+sm:p-8
+
+lg:p-10
+
 "
+
 >
+
+
+
+
 
 
 <div
+
 className="
 mb-5
+
 flex
+
 flex-wrap
-gap-5
+
+gap-4
+
 text-sm
+
 text-white/80
+
 "
+
 >
+
+
 
 
 
@@ -403,7 +536,11 @@ text-emerald-400
 
 {routes[active].location}
 
+
 </span>
+
+
+
 
 
 
@@ -425,9 +562,15 @@ text-amber-400
 
 />
 
+
 {routes[active].duration}
 
+
 </span>
+
+
+
+
 
 
 
@@ -450,9 +593,13 @@ text-amber-400
 
 />
 
+
 {routes[active].rating}
 
+
 </span>
+
+
 
 
 
@@ -462,16 +609,29 @@ text-amber-400
 
 
 
+
+
+
+
 <h3
+
 className="
 font-[Playfair_Display]
-text-4xl
+
+text-3xl
+
 font-bold
+
+sm:text-4xl
+
 md:text-5xl
+
 "
+
 >
 
 {routes[active].title}
+
 
 </h3>
 
@@ -479,18 +639,34 @@ md:text-5xl
 
 
 
+
+
+
+
 <p
+
 className="
 mt-5
+
 max-w-xl
-text-lg
+
+text-base
+
 text-white/80
+
+sm:text-lg
+
 "
+
 >
 
 {routes[active].description}
 
+
 </p>
+
+
+
 
 
 
@@ -505,25 +681,51 @@ whileHover={{
 scale:1.05
 }}
 
+
 className="
 mt-8
+
 flex
+
 items-center
+
 gap-3
+
+
 rounded-full
+
+
 bg-gradient-to-r
+
 from-amber-400
+
 to-amber-500
-px-8
-py-4
+
+
+px-7
+
+py-3
+
+
 font-semibold
+
+
 text-slate-900
+
+
 shadow-lg
+
+
+sm:px-8
+
+sm:py-4
+
 "
 
 >
 
 Book Taxi
+
 
 <ArrowRight size={18}/>
 
@@ -535,7 +737,12 @@ Book Taxi
 
 
 
+
+
+
 </div>
+
+
 
 
 
@@ -543,7 +750,6 @@ Book Taxi
 
 
 </AnimatePresence>
-
 
 
 
@@ -560,6 +766,7 @@ space-y-5
 
 
 {
+
 routes.map((route,index)=>(
 
 
@@ -569,29 +776,50 @@ routes.map((route,index)=>(
 key={route.title}
 
 
+
 initial={{
+
 opacity:0,
+
 x:50
+
 }}
+
+
 
 whileInView={{
+
 opacity:1,
+
 x:0
+
 }}
+
+
 
 viewport={{
+
 once:true
+
 }}
 
+
+
 transition={{
+
 delay:index*0.1
+
 }}
+
 
 
 
 whileHover={{
+
 x:15,
+
 scale:1.03
+
 }}
 
 
@@ -601,12 +829,21 @@ onClick={()=>setActive(index)}
 
 
 className={`
+
 cursor-pointer
+
 rounded-3xl
+
 border
-p-5
+
+p-4
+
+sm:p-5
+
 bg-white
+
 transition
+
 
 ${
 active===index
@@ -618,6 +855,7 @@ active===index
 :
 
 "border-slate-200"
+
 }
 
 `}
@@ -625,24 +863,53 @@ active===index
 >
 
 
+
+
+
+
 <div
+
 className="
 flex
-gap-5
+
+gap-4
+
+sm:gap-5
+
 "
+
 >
 
 
 
+
+
+
+
+{/* IMAGE */}
+
+
 <div
+
 className="
 relative
-h-28
-w-36
+
+h-24
+
+w-28
+
 shrink-0
+
 overflow-hidden
+
 rounded-2xl
+
+sm:h-28
+
+sm:w-36
+
 "
+
 >
 
 
@@ -656,9 +923,13 @@ fill
 
 className="
 object-cover
+
 transition
+
 duration-700
+
 hover:scale-110
+
 "
 
 />
@@ -670,71 +941,143 @@ hover:scale-110
 
 
 
+
+
+
+{/* DETAILS */}
+
+
 <div
+
 className="
 flex-1
+
 "
+
 >
+
+
+
+
 
 
 <h3
+
 className="
-text-xl
+text-base
+
 font-bold
+
 text-slate-900
+
+sm:text-xl
+
 "
+
 >
 
 {route.title}
+
 
 </h3>
 
 
 
+
+
+
+
+
 <p
+
 className="
 mt-2
+
 text-sm
+
 font-medium
+
 text-emerald-600
+
 "
+
 >
 
 {route.location}
 
+
 </p>
+
+
+
+
+
 
 
 
 <p
+
 className="
 mt-2
+
 text-sm
+
 text-slate-500
+
 "
+
 >
 
 {route.duration}
+
 
 </p>
 
 
 
+
+
+
+
+
 <div
+
 className="
 mt-3
+
 inline-flex
+
 items-center
+
 gap-1
+
+
 rounded-full
+
+
 bg-amber-50
+
+
 px-3
+
+
 py-1
+
+
 text-xs
+
+
 font-semibold
+
+
 text-amber-600
+
 "
+
 >
+
+
+
 
 
 <Star
@@ -743,25 +1086,41 @@ size={13}
 
 className="
 fill-amber-400
+
 text-amber-400
+
 "
 
 />
 
 
+
+
 {route.rating}
+
 
 Rated Route
 
-</div>
-
-
 
 </div>
 
 
 
+
+
+
+
 </div>
+
+
+
+
+
+
+
+</div>
+
+
 
 
 
@@ -773,19 +1132,24 @@ Rated Route
 }
 
 
-</div>
-
-
-
 
 </div>
 
 
 
+
+
+
 </div>
+
+
+
+</div>
+
 
 
 </section>
+
 
 
 );
