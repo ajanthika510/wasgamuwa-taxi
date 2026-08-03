@@ -94,7 +94,7 @@ setBookingData
 return (
 
 <section
-
+id="hero"
 className="
 relative
 overflow-hidden
@@ -500,7 +500,7 @@ sm:flex-row
 
 <Link
 
-href="/#tours"
+href="#routes"
 
 className="
 w-full

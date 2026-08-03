@@ -71,7 +71,7 @@ const routes = [
 
 
 
-export default function PopularRoutes(){
+export default function Tours(){
 
 
 const [active,setActive] = useState(0);
@@ -672,7 +672,7 @@ sm:text-lg
 
 
 
-<Link href="/booking">
+<Link href="#hero">
 
 
 <motion.button
