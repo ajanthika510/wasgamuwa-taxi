@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/home/Hero";
+import TrustBar from "@/components/home/TrustBar";
 import Services from "@/components/home/Services";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Tours from "@/components/home/Tours";
@@ -57,6 +58,9 @@ return (
   <Hero />
 </Suspense>
 
+<div className="-mt-16 relative z-30">
+   <TrustBar />
+</div>
 
 <WhyChooseUs />
 

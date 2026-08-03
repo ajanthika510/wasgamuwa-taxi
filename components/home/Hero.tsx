@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -94,15 +95,13 @@ return (
 <section
 className="
 relative
-min-h-screen
 overflow-hidden
 bg-black
 pt-20
+min-h-[750px]
+lg:min-h-screen
 "
 >
-
-
-
 
 
 {/* Background */}
@@ -216,20 +215,19 @@ blur-[160px]
 
 
 {/* CONTENT */}
-
 <div
-
 className="
 relative
 mx-auto
 flex
-min-h-[calc(100vh-80px)]
+min-h-[650px]
 max-w-7xl
 items-center
-px-6
-py-12
+px-5
+py-16
+sm:px-6
+lg:min-h-[calc(100vh-80px)]
 "
-
 >
 
 
@@ -240,8 +238,9 @@ className="
 grid
 w-full
 items-center
-gap-12
-lg:grid-cols-[1fr_420px]
+gap-10
+lg:grid-cols-[1fr_400px]
+xl:grid-cols-[1fr_420px]
 "
 
 >
@@ -333,11 +332,12 @@ Premium Taxi & Island Tours
 
 className="
 mt-8
-text-4xl
 font-black
+text-4xl
 leading-[0.95]
 sm:text-5xl
-lg:text-6xl
+md:text-6xl
+xl:text-7xl
 "
 
 >
@@ -377,7 +377,8 @@ Taxi Service
 
 className="
 mt-8
-max-w-xl
+max-w-lg
+lg:max-w-xl
 text-base
 leading-7
 text-white/70
@@ -483,77 +484,7 @@ View Experiences
 
 </div>
 
-
-
-
-
-
-
-
-
-
-{/* TRUST */}
-
-<div
-
-className="
-mt-12
-flex
-flex-wrap
-gap-8
-"
-
->
-
-
-<Trust
-
-icon={<Star/>}
-
-title="4.9"
-
-text="Guest Rating"
-
-/>
-
-
-<Trust
-
-icon={<Clock3/>}
-
-title="24/7"
-
-text="Support"
-
-/>
-
-
-
-<Trust
-
-icon={<MapPin/>}
-
-title="Island"
-
-text="Wide Tours"
-
-/>
-
-
-</div>
-
-
-
-
 </motion.div>
-
-
-
-
-
-
-
-
 
 {/* RIGHT BOOKING */}
 
@@ -611,9 +542,6 @@ bookingData={bookingData}
 
 
 </div>
-
-
-
 </section>
 
 )
@@ -701,10 +629,7 @@ text-white/60
 
 </p>
 
-
 </div>
-
-
 
 </div>
 

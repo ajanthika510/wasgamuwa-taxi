@@ -12,60 +12,223 @@ import {
 const features = [
   {
     icon: ShieldCheck,
-    title: "Safe & Secure",
-  },
-  {
-    icon: Clock3,
-    title: "24/7 Service",
+    title: "Licensed",
+    subtitle: "Taxi Service",
   },
   {
     icon: Plane,
-    title: "Airport Transfers",
+    title: "Airport",
+    subtitle: "Transfers",
   },
   {
     icon: Car,
-    title: "Island-wide Tours",
+    title: "Island-wide",
+    subtitle: "Tours",
+  },
+  {
+    icon: Clock3,
+    title: "24/7",
+    subtitle: "Available",
   },
   {
     icon: BadgeCheck,
-    title: "Professional Drivers",
+    title: "English",
+    subtitle: "Drivers",
   },
 ];
 
 export default function TrustBar() {
   return (
-    <section className="relative -mt-16 z-20">
-      <div className="container">
-        <div className="grid grid-cols-2 gap-4 rounded-3xl bg-white p-6 shadow-xl lg:grid-cols-5">
+    <section
+      className="
+        relative
+        overflow-hidden
+        py-8
+        sm:py-10
+        lg:py-14
+        bg-gradient-to-b
+        from-[#090909]
+        via-[#111111]
+        to-[#1a1028]
+      "
+    >
+      {/* Top Glow */}
+      <div
+        className="
+          absolute
+          left-1/2
+          top-0
+          -translate-x-1/2
+          h-40
+          w-[28rem]
+          rounded-full
+          bg-yellow-400/15
+          blur-3xl
+        "
+      />
 
-          {features.map((item, index) => {
-            const Icon = item.icon;
+      {/* Bottom Glow */}
+      <div
+        className="
+          absolute
+          bottom-0
+          left-1/2
+          -translate-x-1/2
+          h-40
+          w-[34rem]
+          rounded-full
+          bg-purple-700/20
+          blur-3xl
+        "
+      />
 
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.1,
-                }}
-                className="flex flex-col items-center gap-3 text-center"
-              >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100">
-                  <Icon className="text-amber-500" size={28} />
-                </div>
+      <motion.div
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+      >
+        <div
+          className="
+            overflow-hidden
+            rounded-3xl
+            border
+            border-white/10
+            bg-gradient-to-br
+            from-white/[0.08]
+            to-white/[0.03]
+            backdrop-blur-2xl
+            shadow-[0_20px_70px_rgba(0,0,0,0.45)]
+          "
+        >
+          <div
+            className="
+              grid
+              grid-cols-1
+              sm:grid-cols-2
+              md:grid-cols-3
+              lg:grid-cols-5
+            "
+          >
+            {features.map((item, index) => {
+              const Icon = item.icon;
 
-                <h3 className="font-semibold text-slate-800">
-                  {item.title}
-                </h3>
-              </motion.div>
-            );
-          })}
+              return (
+                <motion.div
+                  key={item.title}
+                  whileHover={{
+                    y: -6,
+                    transition: { duration: 0.25 },
+                  }}
+                  className={`
+                    group
+                    relative
+                    flex
+                    items-center
+                    gap-4
+                    p-5
+                    sm:p-6
+                    transition-all
+                    duration-300
 
+                    border-white/10
+
+                    ${
+                      index !== features.length - 1
+                        ? "lg:border-r md:border-r sm:border-r"
+                        : ""
+                    }
+
+                    ${
+                      index < features.length - 1
+                        ? "border-b lg:border-b-0"
+                        : ""
+                    }
+                  `}
+                >
+                  {/* Hover Background */}
+                  <div
+                    className="
+                      absolute
+                      inset-0
+                      bg-gradient-to-r
+                      from-yellow-400/5
+                      to-transparent
+                      opacity-0
+                      transition-opacity
+                      duration-300
+                      group-hover:opacity-100
+                    "
+                  />
+
+                  {/* Icon */}
+                  <div
+                    className="
+                      relative
+                      flex
+                      h-14
+                      w-14
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-2xl
+                      bg-yellow-400
+                      shadow-lg
+                      transition-all
+                      duration-300
+                      group-hover:scale-110
+                      group-hover:rotate-3
+                    "
+                  >
+                    <Icon
+                      size={24}
+                      className="text-black"
+                    />
+                  </div>
+
+                  {/* Text */}
+                  <div className="relative">
+                    <h3
+                      className="
+                        text-lg
+                        font-bold
+                        text-white
+                      "
+                    >
+                      {item.title}
+                    </h3>
+
+                    <p
+                      className="
+                        mt-1
+                        text-sm
+                        text-white/60
+                      "
+                    >
+                      {item.subtitle}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      </motion.div>
+
+      {/* Bottom Fade */}
+      <div
+        className="
+          absolute
+          bottom-0
+          left-0
+          right-0
+          h-20
+          bg-gradient-to-b
+          from-transparent
+          to-[#1a1028]
+        "
+      />
     </section>
   );
 }

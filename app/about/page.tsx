@@ -1,4 +1,5 @@
 import AboutPage from "@/components/about/AboutUs";
+import HappyCustomer from "@/components/about/HappyCustomers";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       {/* Other Sections */}
         <Navbar />
       <AboutPage />
+      <HappyCustomer />
       <Footer />
     </main>
   );

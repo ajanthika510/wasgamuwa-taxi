@@ -38,16 +38,16 @@ const packages = [
   },
 
   {
-    title: "Complete Sri Lanka",
-    subtitle: "Island Wide Experience",
-    image: "/images/srilanka.jpg",
-    rating: "4.9",
-    features:[
-      "Luxury Vehicle",
-      "Hotels",
-      "Flexible Plan"
-    ],
-  },
+  title: "South Coast Sri Lanka",
+  subtitle: "Tropical Beach Escape",
+  image: "/images/southbeach.jpg",
+  rating: "4.9",
+  features: [
+    "Golden Beaches",
+    "Whale Watching",
+    "Surfing Experience",
+  ],
+},
 ];
 
 

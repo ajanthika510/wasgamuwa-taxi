@@ -18,69 +18,86 @@ import SectionHeading from "./SectionHeading";
 const services = [
   {
     title: "Airport Transfers",
-    subtitle: "Start Your Journey Smoothly",
+    subtitle: "Stress-Free Airport Pickups",
     description:
-      "Reliable airport pickup and drop-off services with professional drivers and comfortable vehicles.",
+      "Reliable airport pickup and drop-off services to and from Bandaranaike International Airport with professional drivers and comfortable vehicles.",
     image: "/images/airport.jpg",
     icon: Plane,
-    location: "Colombo Airport → Any Destination",
-    button: "Book Airport Pickup",
+    location: "Airport → Anywhere in Sri Lanka",
+    button: "Book Airport Transfer",
     href: "/#hero",
     features: [
-      "24/7 Service",
-      "Flight Tracking",
+      "24/7 Airport Service",
+      "Flight Monitoring",
       "Meet & Greet",
     ],
   },
 
   {
-    title: "Premium Taxi Service",
-    subtitle: "Travel With Comfort",
+    title: "National Park Safaris",
+    subtitle: "Experience Sri Lanka's Wildlife",
     description:
-      "Experience safe and comfortable rides around Sri Lanka with modern luxury vehicles.",
-    image: "/images/taxi.jpg",
-    icon: Car,
-    location: "City Rides & Long Distance",
-    button: "Book Ride",
-    href: "/#hero",
-    features: [
-      "Luxury Vehicles",
-      "Professional Drivers",
-      "Door Pickup",
-    ],
-  },
-
-  {
-    title: "Safari Adventures",
-    subtitle: "Discover Wild Sri Lanka",
-    description:
-      "Explore Sri Lanka wildlife with experienced local drivers and flexible safari journeys.",
+      "Explore Sri Lanka's famous national parks with experienced safari drivers and comfortable 4x4 vehicles for unforgettable wildlife adventures.",
     image: "/images/safaritour.jpg",
     icon: PawPrint,
-    location: "Yala • Udawalawe • Wilpattu",
-    button: "View Safari",
+    location: "Minneriya • Kaudulla • Hurulu • Wasgamuwa",
+    button: "Explore Safaris",
     href: "/tours",
     features: [
-      "Private Safari",
-      "Local Guides",
-      "Flexible Trips",
+      "Private Safari Tours",
+      "Experienced Drivers",
+      "Flexible Schedule",
     ],
   },
 
   {
-    title: "Custom Island Tours",
-    subtitle: "Create Your Experience",
+    title: "Riverston Tours",
+    subtitle: "Escape to the Mountains",
     description:
-      "Build your dream Sri Lankan holiday with personalized routes and destinations.",
-    image: "/images/customtour.jpg",
+      "Visit the breathtaking Riverston mountain range, waterfalls, viewpoints, and scenic hiking trails with our comfortable guided tours.",
+    image: "/customer/cus6.jpeg",
     icon: Map,
-    location: "Beach • Mountains • Culture",
-    button: "Plan My Trip",
+    location: "Riverston • Pitawala Pathana",
+    button: "View Riverston Tour",
     href: "/tours",
     features: [
-      "Custom Routes",
-      "Hotel Support",
-      "Complete Planning",
+      "Scenic Viewpoints",
+      "Nature Trails",
+      "Private Day Tours",
+    ],
+  },
+
+  {
+    title: "Sigiriya & Dambulla Tours",
+    subtitle: "Discover Sri Lanka's Heritage",
+    description:
+      "Explore the iconic Sigiriya Rock Fortress and the magnificent Dambulla Cave Temple on a comfortable private day tour.",
+    image: "/images/sigiriyaex.jpg",
+    icon: Map,
+    location: "Sigiriya • Dambulla",
+    button: "Explore Heritage Tour",
+    href: "/tours",
+    features: [
+      "Private Tour",
+      "Flexible Itinerary",
+      "Hotel Pickup",
+    ],
+  },
+
+  {
+    title: "Long-Distance Transfers",
+    subtitle: "Travel Anywhere in Sri Lanka",
+    description:
+      "Comfortable intercity taxi transfers to any destination across Sri Lanka with professional, friendly, and experienced drivers.",
+    image: "/images/taxi.jpg",
+    icon: Car,
+    location: "Islandwide Service",
+    button: "Book Your Ride",
+    href: "/#hero",
+    features: [
+      "Anywhere in Sri Lanka",
+      "Comfortable Vehicles",
+      "Door-to-Door Service",
     ],
   },
 ];

@@ -4,64 +4,86 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+
 import {
   MapPin,
   Star,
   Clock3,
   ArrowRight,
+  Route,
 } from "lucide-react";
 
 
-const tours = [
+const routes = [
   {
-    title: "Ella Adventure",
-    location: "Ella",
-    duration: "Full Day",
+    title: "Colombo to Kandy Taxi",
+    location: "Colombo → Kandy",
+    duration: "3.5 Hours • 115 km",
     rating: "4.9",
-    image: "/images/ellaAd.jpg",
+    image: "/images/kandyheri.jpg",
     description:
-      "Discover mountains, waterfalls, Nine Arch Bridge and breathtaking landscapes.",
+      "Comfortable private taxi transfer from Colombo to Kandy with professional drivers and scenic mountain views.",
   },
+
   {
-    title: "Sigiriya Explorer",
-    location: "Sigiriya",
-    duration: "Day Tour",
+    title: "Sigiriya to Kandy Taxi",
+    location: "Sigiriya → Kandy",
+    duration: "3 Hours • 90 km",
     rating: "5.0",
     image: "/images/sigiriyaex.jpg",
     description:
-      "Explore the ancient Lion Rock fortress and experience Sri Lankan history.",
+      "Reliable taxi service connecting Sigiriya and Kandy with flexible pickup locations and comfortable vehicles.",
   },
+
+
   {
-    title: "Kandy Heritage",
-    location: "Kandy",
-    duration: "Day Tour",
-    rating: "4.8",
-    image: "/images/kandyheri.jpg",
+    title: "Airport to Sigiriya Transfer",
+    location: "Airport → Sigiriya",
+    duration: "3.5 Hours • 146 km",
+    rating: "4.9",
+    image: "/images/sigiriyaex.jpg",
     description:
-      "Visit temples, lakes and cultural attractions with a private driver.",
+      "Direct airport taxi transfer to Sigiriya Lion Rock with experienced local drivers.",
   },
+
+
   {
-    title: "Yala Safari",
-    location: "Yala",
-    duration: "Safari Tour",
+    title: "Sigiriya to Ella Taxi",
+    location: "Sigiriya → Ella",
+    duration: "4.5 Hours • 177 km",
+    rating: "5.0",
+    image: "/images/ellaAd.jpg",
+    description:
+      "Enjoy a scenic private journey from Sigiriya to Ella through Sri Lanka's beautiful countryside.",
+  },
+
+
+  {
+    title: "Airport to Wasgamuwa Taxi",
+    location: "Airport → Wasgamuwa",
+    duration: "4.5 Hours • 205 km",
     rating: "5.0",
     image: "/images/yala.jpg",
     description:
-      "Experience wildlife adventures with comfortable private transport.",
+      "Safe long-distance airport transfer service to Wasgamuwa with comfortable private vehicles.",
   },
+
 ];
 
 
 
-export default function Tours() {
+
+export default function PopularRoutes(){
+
 
 const [active,setActive] = useState(0);
+
 
 
 return (
 
 <section
-id="tours"
+id="routes"
 className="
 relative
 overflow-hidden
@@ -73,6 +95,7 @@ bg-[#F8FAFC]
 
 {/* Background */}
 
+
 <div
 className="
 absolute
@@ -83,9 +106,8 @@ bg-[radial-gradient(circle_at_top,#E2E8F0,transparent_50%)]
 
 
 
-
-
 {/* Amber Glow */}
+
 
 <motion.div
 
@@ -116,8 +138,8 @@ blur-[150px]
 
 
 
-
 {/* Green Glow */}
+
 
 <motion.div
 
@@ -145,6 +167,8 @@ blur-[160px]
 
 />
 
+
+
 <div
 className="
 relative
@@ -154,7 +178,10 @@ px-6
 "
 >
 
+
+
 {/* Heading */}
+
 
 <motion.div
 
@@ -180,6 +207,8 @@ className="text-center"
 <span
 className="
 inline-flex
+items-center
+gap-2
 rounded-full
 border
 border-amber-400/30
@@ -192,9 +221,13 @@ text-amber-600
 "
 >
 
-POPULAR TOURS
+<Route size={16}/>
+
+POPULAR TAXI ROUTES
 
 </span>
+
+
 
 <h2
 className="
@@ -207,7 +240,7 @@ md:text-6xl
 "
 >
 
-Explore
+Travel Across
 
 <span
 className="
@@ -223,8 +256,6 @@ text-amber-500
 
 
 
-
-
 <p
 className="
 mx-auto
@@ -234,12 +265,15 @@ text-slate-500
 "
 >
 
-Private taxi journeys designed for unforgettable experiences.
+Private taxi transfers connecting Sri Lanka's most popular destinations.
 
 </p>
 
 
+
 </motion.div>
+
+{/* CONTENT */}
 
 <div
 className="
@@ -250,7 +284,8 @@ lg:grid-cols-2
 "
 >
 
-{/* IMAGE AREA */}
+
+{/* MAIN IMAGE */}
 
 
 <AnimatePresence mode="wait">
@@ -296,11 +331,13 @@ shadow-2xl
 
 <Image
 
-src={tours[active].image}
+src={routes[active].image}
 
-alt={tours[active].title}
+alt={routes[active].title}
 
 fill
+
+priority
 
 className="
 object-cover
@@ -308,16 +345,20 @@ object-cover
 
 />
 
+
+
 <div
 className="
 absolute
 inset-0
 bg-gradient-to-t
 from-[#0F172A]
-via-black/40
+via-black/50
 to-transparent
 "
 />
+
+
 
 <div
 className="
@@ -328,10 +369,12 @@ text-white
 "
 >
 
+
 <div
 className="
 mb-5
 flex
+flex-wrap
 gap-5
 text-sm
 text-white/80
@@ -339,58 +382,98 @@ text-white/80
 >
 
 
-<span className="flex items-center gap-2">
+
+<span
+className="
+flex
+items-center
+gap-2
+"
+>
 
 <MapPin
+
 size={17}
-className="text-emerald-400"
+
+className="
+text-emerald-400
+"
+
 />
 
-{tours[active].location}
+{routes[active].location}
 
 </span>
 
-<span className="flex items-center gap-2">
+
+
+<span
+className="
+flex
+items-center
+gap-2
+"
+>
 
 <Clock3
+
 size={17}
-className="text-amber-400"
+
+className="
+text-amber-400
+"
+
 />
 
-{tours[active].duration}
+{routes[active].duration}
 
 </span>
 
-<span className="flex items-center gap-2">
+
+
+<span
+className="
+flex
+items-center
+gap-2
+"
+>
 
 <Star
+
 size={17}
+
 className="
 fill-amber-400
 text-amber-400
 "
+
 />
 
-{tours[active].rating}
+{routes[active].rating}
 
 </span>
 
 
+
 </div>
+
+
+
+
 
 <h3
 className="
 font-[Playfair_Display]
-text-5xl
+text-4xl
 font-bold
+md:text-5xl
 "
 >
 
-{tours[active].title}
+{routes[active].title}
 
 </h3>
-
-
 
 
 
@@ -405,11 +488,17 @@ text-white/80
 "
 >
 
-{tours[active].description}
+{routes[active].description}
 
 </p>
 
-<Link href="/tours">
+
+
+
+
+<Link href="/booking">
+
+
 <motion.button
 
 whileHover={{
@@ -434,18 +523,19 @@ shadow-lg
 
 >
 
-Explore Tour
+Book Taxi
 
 <ArrowRight size={18}/>
 
+
 </motion.button>
+
+
 </Link>
 
 
 
-
 </div>
-
 
 
 
@@ -459,13 +549,7 @@ Explore Tour
 
 
 
-
-
-
-
-
-
-{/* TOUR LIST */}
+{/* ROUTE LIST */}
 
 
 <div
@@ -476,12 +560,13 @@ space-y-5
 
 
 {
-tours.map((tour,index)=>(
+routes.map((route,index)=>(
 
 
 <motion.div
 
-key={tour.title}
+
+key={route.title}
 
 
 initial={{
@@ -494,8 +579,12 @@ opacity:1,
 x:0
 }}
 
+viewport={{
+once:true
+}}
+
 transition={{
-delay:index*.1
+delay:index*0.1
 }}
 
 
@@ -512,7 +601,6 @@ onClick={()=>setActive(index)}
 
 
 className={`
-
 cursor-pointer
 rounded-3xl
 border
@@ -530,16 +618,11 @@ active===index
 :
 
 "border-slate-200"
-
 }
 
 `}
 
 >
-
-
-
-
 
 
 <div
@@ -551,13 +634,12 @@ gap-5
 
 
 
-
-
 <div
 className="
 relative
 h-28
 w-36
+shrink-0
 overflow-hidden
 rounded-2xl
 "
@@ -566,9 +648,9 @@ rounded-2xl
 
 <Image
 
-src={tour.image}
+src={route.image}
 
-alt={tour.title}
+alt={route.title}
 
 fill
 
@@ -588,54 +670,98 @@ hover:scale-110
 
 
 
-
-
-
-<div>
+<div
+className="
+flex-1
+"
+>
 
 
 <h3
-
 className="
-text-2xl
+text-xl
 font-bold
 text-slate-900
 "
-
 >
 
-{tour.title}
+{route.title}
 
 </h3>
 
 
 
-
-
 <p
-
 className="
-mt-3
-text-slate-500
+mt-2
+text-sm
+font-medium
+text-emerald-600
 "
-
 >
 
-{tour.description}
+{route.location}
 
 </p>
 
 
 
+<p
+className="
+mt-2
+text-sm
+text-slate-500
+"
+>
+
+{route.duration}
+
+</p>
+
+
+
+<div
+className="
+mt-3
+inline-flex
+items-center
+gap-1
+rounded-full
+bg-amber-50
+px-3
+py-1
+text-xs
+font-semibold
+text-amber-600
+"
+>
+
+
+<Star
+
+size={13}
+
+className="
+fill-amber-400
+text-amber-400
+"
+
+/>
+
+
+{route.rating}
+
+Rated Route
+
 </div>
 
 
 
-
-
 </div>
 
 
+
+</div>
 
 
 
@@ -643,21 +769,16 @@ text-slate-500
 
 
 ))
+
 }
 
 
-
 </div>
 
 
 
 
-
-
 </div>
-
-
-
 
 
 
@@ -665,6 +786,7 @@ text-slate-500
 
 
 </section>
+
 
 );
 

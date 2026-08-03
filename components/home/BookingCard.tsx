@@ -51,7 +51,18 @@ export default function BookingCard({
       return;
     }
 
+    const formattedDate = new Date(
+    formData.date
+  ).toLocaleDateString("en-GB",{
+    day:"2-digit",
+    month:"long",
+    year:"numeric"
+  });
+
     const message = `Wasgamuwa Taxi & Tours Booking
+    Hello,
+
+I would like to book a taxi.
 
 Pickup Location:
 ${formData.pickup}
@@ -60,7 +71,7 @@ Destination:
 ${formData.destination}
 
 Date:
-${formData.date}
+${formattedDate}
 
 Time:
 ${formData.time}
@@ -68,7 +79,9 @@ ${formData.time}
 Travellers:
 ${formData.travellers}
 
-Thank you for choosing us.`;
+Please confirm availability and fare.
+
+Thank you.`;
 
     const phone = "94763433434";
 
@@ -126,7 +139,7 @@ setFormData({
       className="
         relative
         w-full
-        max-w-md
+        max-w-lg
         overflow-hidden
         rounded-[32px]
         border
@@ -147,7 +160,12 @@ setFormData({
         "
       />
 
-      <div className="relative p-5 sm:p-7">
+      <div className="
+relative
+p-5
+sm:p-7
+lg:p-8
+">
         <h3 className="text-3xl font-bold text-white">
           Book Your Ride
         </h3>
@@ -218,15 +236,16 @@ setFormData({
               })
             }
             className="
-              w-full
-              rounded-2xl
-              border
-              border-white/15
-              bg-white/10
-              px-4
-              py-3
-              text-white
-              outline-none
+            w-full
+            rounded-2xl
+            border
+            border-white/15
+            bg-black/30
+            px-4
+            py-3
+            text-white
+            outline-none
+            backdrop-blur-xl
             "
           >
             <option className="text-black">
