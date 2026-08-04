@@ -153,7 +153,7 @@ href="https://www.instagram.com/wasgamuwataxi?utm_source=qr"
 
 <Social 
 icon={<FaYoutube size={18}/>} 
-href="https://www.youtube.com/YOUR_YOUTUBE_CHANNEL"
+href="https://youtube.com/@wasgamuwataxitours?si=GgRZXuTC-XNaDIxK"
 />
 </div>
 
