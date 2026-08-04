@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+
 import {
   Plus,
   ArrowRight,
@@ -15,683 +16,908 @@ import {
 
 
 const faqs = [
-  {
-    question: "Do you offer customised tour packages?",
-    answer:
-      "Yes. We create personalised itineraries based on your travel dates, interests, budget and preferred destinations throughout Sri Lanka.",
-  },
-  {
-    question: "Can you pick us up from the airport or hotel?",
-    answer:
-      "Absolutely. We provide airport transfers and hotel pickups anywhere in Sri Lanka for a smooth start to your journey.",
-  },
-  {
-    question: "What vehicles are available?",
-    answer:
-      "We offer comfortable cars, SUVs and vans suitable for solo travellers, couples, families and larger groups.",
-  },
-  {
-    question: "Can I change my itinerary during the tour?",
-    answer:
-      "Yes. Whenever possible, our flexible tours allow itinerary adjustments based on your preferences and travel conditions.",
-  },
-  {
-    question: "How do I book a tour?",
-    answer:
-      "Simply contact us through WhatsApp, phone or our enquiry form. We'll confirm availability and help you plan the perfect trip.",
-  },
+{
+question:"Do you offer customised tour packages?",
+answer:
+"Yes. We create personalised itineraries based on your travel dates, interests, budget and preferred destinations throughout Sri Lanka.",
+},
+
+{
+question:"Can you pick us up from the airport or hotel?",
+answer:
+"Absolutely. We provide airport transfers and hotel pickups anywhere in Sri Lanka for a smooth start to your journey.",
+},
+
+{
+question:"What vehicles are available?",
+answer:
+"We offer comfortable cars, SUVs and vans suitable for solo travellers, couples, families and larger groups.",
+},
+
+{
+question:"Can I change my itinerary during the tour?",
+answer:
+"Yes. Whenever possible, our flexible tours allow itinerary adjustments based on your preferences and travel conditions.",
+},
+
+{
+question:"How do I book a tour?",
+answer:
+"Simply contact us through WhatsApp, phone or our enquiry form. We'll confirm availability and help you plan the perfect trip.",
+},
 ];
 
 
-export default function FaqCTA() {
-
-  const [open,setOpen] = useState<number | null>(0);
-
 
-  return (
+export default function FaqCTA(){
 
-    <>
 
-    {/* FAQ SECTION */}
-
-    <section className="
-      relative
-      overflow-hidden
-      bg-[#050816]
-      py-20
-      md:py-28
-    ">
+const [open,setOpen]=useState<number|null>(0);
 
 
-      <div className="
-        absolute
-        left-0
-        top-0
-        h-80
-        w-80
-        rounded-full
-        bg-amber-500/10
-        blur-[120px]
-      "/>
-
-
-      <div className="
-        absolute
-        right-0
-        bottom-0
-        h-96
-        w-96
-        rounded-full
-        bg-cyan-500/10
-        blur-[150px]
-      "/>
+return(
 
+<>
 
 
-      <div className="
-        container
-        relative
-        mx-auto
-        px-5
-        sm:px-6
-      ">
+<section
 
+className="
+relative
+overflow-hidden
+bg-[#050816]
+py-20
+md:py-28
+"
 
-        <motion.div
+>
 
-          initial={{
-            opacity:0,
-            y:40
-          }}
 
-          whileInView={{
-            opacity:1,
-            y:0
-          }}
+{/* Green Glow */}
 
-          viewport={{
-            once:true
-          }}
+<div
 
-          transition={{
-            duration:.7
-          }}
+className="
+absolute
+left-0
+top-0
+h-80
+w-80
+rounded-full
+bg-green-500/10
+blur-[120px]
+"
 
-          className="
-            mx-auto
-            mb-12
-            md:mb-16
-            max-w-3xl
-            text-center
-          "
+/>
 
-        >
 
 
+<div
 
-          <span className="
-            inline-block
-            rounded-full
-            border
-            border-amber-400/30
-            bg-amber-400/10
-            px-5
-            py-2
-            text-xs
-            sm:text-sm
-            uppercase
-            tracking-[0.2em]
-            text-amber-300
-          ">
-            Frequently Asked Questions
-          </span>
+className="
+absolute
+right-0
+bottom-0
+h-96
+w-96
+rounded-full
+bg-lime-400/10
+blur-[150px]
+"
 
+/>
 
 
-          <h2 className="
-            mt-6
-            text-3xl
-            sm:text-4xl
-            md:text-5xl
-            font-black
-            text-white
-          ">
-            Everything You Need To Know
-          </h2>
 
 
 
-          <p className="
-            mt-5
-            sm:mt-6
-            text-base
-            sm:text-lg
-            leading-7
-            sm:leading-8
-            text-slate-400
-          ">
-            Find answers to common questions before planning your Sri Lankan adventure.
-          </p>
+<div
 
+className="
+container
+relative
+mx-auto
+px-5
+sm:px-6
+"
 
-        </motion.div>
+>
 
 
+<motion.div
 
+initial={{
+opacity:0,
+y:40
+}}
 
+whileInView={{
+opacity:1,
+y:0
+}}
 
-        <div className="
-          mx-auto
-          max-w-4xl
-          space-y-4
-          md:space-y-5
-        ">
+viewport={{
+once:true
+}}
 
+transition={{
+duration:.7
+}}
 
-          {
-            faqs.map((faq,index)=>{
+className="
+mx-auto
+mb-12
+md:mb-16
+max-w-3xl
+text-center
+"
 
+>
 
-              const isOpen = open === index;
 
+<span
 
-              return (
+className="
+inline-block
+rounded-full
+border
+border-green-400/30
+bg-green-400/10
+px-5
+py-2
+text-xs
+sm:text-sm
+uppercase
+tracking-[0.2em]
+text-green-300
+"
 
-                <motion.div
+>
 
-                  key={faq.question}
+Frequently Asked Questions
 
-                  layout
+</span>
 
-                  className="
-                    overflow-hidden
-                    rounded-3xl
-                    border
-                    border-white/10
-                    bg-white/5
-                    backdrop-blur-xl
-                  "
 
-                >
+<h2
 
+className="
+mt-6
+text-3xl
+sm:text-4xl
+md:text-5xl
+font-black
+text-white
+"
 
+>
 
-                  <button
+Everything You Need To Know
 
-                    onClick={()=>setOpen(isOpen ? null:index)}
+</h2>
 
-                    className="
-                      flex
-                      w-full
-                      items-center
-                      justify-between
-                      gap-4
-                      p-5
-                      md:p-7
-                      text-left
-                    "
 
-                  >
+<p
 
+className="
+mt-5
+sm:mt-6
+text-base
+sm:text-lg
+leading-7
+sm:leading-8
+text-slate-400
+"
 
-                    <h3 className="
-                      text-sm
-                      sm:text-lg
-                      font-semibold
-                      text-white
-                    ">
-                      {faq.question}
-                    </h3>
+>
 
+Find answers to common questions before planning your Sri Lankan adventure.
 
+</p>
 
-                    <motion.div
 
-                      animate={{
-                        rotate:isOpen ? 45 : 0
-                      }}
+</motion.div>
+{/* FAQ LIST */}
 
-                      transition={{
-                        duration:.25
-                      }}
+<div
 
-                      className="
-                        shrink-0
-                        rounded-full
-                        bg-amber-400
-                        p-2
-                      "
+className="
+mx-auto
+max-w-4xl
+space-y-4
+md:space-y-5
+"
 
-                    >
+>
 
-                      <Plus
-                        className="text-black"
-                        size={18}
-                      />
 
-                    </motion.div>
+{
 
+faqs.map((faq,index)=>{
 
-                  </button>
 
+const isOpen=open===index;
 
 
+return(
 
+<motion.div
 
-                  <AnimatePresence>
+key={faq.question}
 
+layout
 
-                    {
-                      isOpen && (
+className="
+overflow-hidden
+rounded-3xl
+border
+border-white/10
+bg-white/5
+backdrop-blur-xl
+"
 
-                        <motion.div
+>
 
-                          initial={{
-                            height:0,
-                            opacity:0
-                          }}
 
-                          animate={{
-                            height:"auto",
-                            opacity:1
-                          }}
+<button
 
-                          exit={{
-                            height:0,
-                            opacity:0
-                          }}
+onClick={()=>setOpen(isOpen ? null:index)}
 
-                          transition={{
-                            duration:.35
-                          }}
+className="
+flex
+w-full
+items-center
+justify-between
+gap-4
+p-5
+md:p-7
+text-left
+"
 
-                        >
+>
 
 
-                          <p className="
-                            px-5
-                            pb-6
-                            md:px-7
-                            md:pb-7
-                            leading-7
-                            text-sm
-                            sm:text-base
-                            text-slate-300
-                          ">
+<h3
 
-                            {faq.answer}
+className="
+text-sm
+sm:text-lg
+font-semibold
+text-white
+"
 
-                          </p>
+>
 
+{faq.question}
 
-                        </motion.div>
+</h3>
 
-                      )
-                    }
 
 
-                  </AnimatePresence>
 
+<motion.div
 
-                </motion.div>
+animate={{
+rotate:isOpen ? 45 : 0
+}}
 
-              )
+transition={{
+duration:.25
+}}
 
+className="
+shrink-0
+rounded-full
+bg-lime-300
+p-2
+"
 
-            })
-          }
+>
 
+<Plus
 
-        </div>
+className="
+text-green-950
+"
 
+size={18}
 
-      </div>
+/>
 
+</motion.div>
 
-    </section>
 
+</button>
 
 
 
 
 
+<AnimatePresence>
 
-    {/* CTA SECTION */}
 
+{
 
-    <section className="
-      relative
-      overflow-hidden
-      px-5
-      sm:px-6
-      pb-20
-      md:pb-28
-    ">
+isOpen && (
 
+<motion.div
 
-      <div className="container mx-auto">
+initial={{
+height:0,
+opacity:0
+}}
 
+animate={{
+height:"auto",
+opacity:1
+}}
 
+exit={{
+height:0,
+opacity:0
+}}
 
-        <motion.div
+transition={{
+duration:.35
+}}
 
-          initial={{
-            opacity:0,
-            y:80
-          }}
+>
 
-          whileInView={{
-            opacity:1,
-            y:0
-          }}
 
-          viewport={{
-            once:true
-          }}
+<p
 
-          transition={{
-            duration:.7
-          }}
+className="
+px-5
+pb-6
+md:px-7
+md:pb-7
+leading-7
+text-sm
+sm:text-base
+text-slate-300
+"
 
-          className="
-            relative
-            overflow-hidden
-            rounded-[35px]
-            md:rounded-[40px]
-          "
+>
 
-        >
+{faq.answer}
 
+</p>
 
 
-          <Image
+</motion.div>
 
-            src="/images/tours/cta.jpg"
+)
 
-            alt="Sri Lanka"
+}
 
-            width={1800}
 
-            height={900}
+</AnimatePresence>
 
-            className="
-              h-[720px]
-              sm:h-[650px]
-              lg:h-[550px]
-              w-full
-              object-cover
-            "
 
-          />
+</motion.div>
 
 
+)
 
-          <div className="
-            absolute
-            inset-0
-            bg-gradient-to-r
-            from-black/90
-            via-black/70
-            to-black/50
-          "/>
 
+})
 
 
-          <div className="
-            absolute
-            -left-20
-            top-0
-            h-72
-            w-72
-            rounded-full
-            bg-amber-500/20
-            blur-[120px]
-          "/>
+}
 
 
+</div>
 
-          <div className="
-            absolute
-            right-0
-            bottom-0
-            h-80
-            w-80
-            rounded-full
-            bg-cyan-500/20
-            blur-[150px]
-          "/>
 
+</div>
 
 
+</section>
 
 
 
-          <div className="
-            absolute
-            inset-0
-            flex
-            items-center
-          ">
 
 
 
-            <div className="
-              max-w-3xl
-              px-6
-              sm:px-8
-              md:px-16
-            ">
 
 
 
-              <span className="
-                rounded-full
-                border
-                border-amber-400/30
-                bg-amber-400/10
-                px-5
-                py-2
-                text-xs
-                sm:text-sm
-                uppercase
-                tracking-[0.2em]
-                text-amber-300
-              ">
-                PLAN YOUR ADVENTURE
-              </span>
+{/* CTA SECTION */}
 
 
+<section
 
+className="
+relative
+overflow-hidden
+px-5
+sm:px-6
+pb-20
+md:pb-28
+"
 
+>
 
-              <h2 className="
-                mt-7
-                text-4xl
-                sm:text-5xl
-                lg:text-6xl
-                font-black
-                leading-tight
-                text-white
-              ">
 
-                Ready to Visit
+<div className="container mx-auto">
 
-                <span className="block text-amber-400">
-                  Sri Lanka?
-                </span>
 
-              </h2>
+<motion.div
 
+initial={{
+opacity:0,
+y:80
+}}
 
+whileInView={{
+opacity:1,
+y:0
+}}
 
+viewport={{
+once:true
+}}
 
+transition={{
+duration:.7
+}}
 
-              <p className="
-                mt-5
-                sm:mt-6
-                max-w-2xl
-                text-base
-                sm:text-lg
-                leading-7
-                sm:leading-8
-                text-slate-300
-              ">
+className="
+relative
+overflow-hidden
+rounded-[35px]
+md:rounded-[40px]
+"
 
-                Whether you're planning a relaxing holiday, an adventurous getaway or a family vacation, we'll design a personalised tour that matches your travel style.
+>
 
-              </p>
 
+<Image
 
+src="/images/tours/cta.jpg"
 
+alt="Sri Lanka"
 
+width={1800}
 
-              <div className="
-                mt-8
-                grid
-                grid-cols-1
-                sm:flex
-                sm:flex-wrap
-                gap-4
-                sm:gap-6
-              ">
+height={900}
 
+className="
+h-[720px]
+sm:h-[650px]
+lg:h-[550px]
+w-full
+object-cover
+"
 
-                <div className="flex items-center gap-2 text-white">
-                  <Star className="fill-yellow-400 text-yellow-400" size={18}/>
-                  4.9 Customer Rating
-                </div>
+/>
 
 
-                <div className="flex items-center gap-2 text-white">
-                  <ShieldCheck className="text-emerald-400" size={18}/>
-                  Licensed Drivers
-                </div>
 
 
-                <div className="flex items-center gap-2 text-white">
-                  <Headphones className="text-sky-400" size={18}/>
-                  24/7 Support
-                </div>
 
+<div
 
-              </div>
+className="
+absolute
+inset-0
+bg-gradient-to-r
+from-black/90
+via-black/70
+to-black/50
+"
 
+/>
 
 
 
 
 
-              <div className="
-                mt-10
-                flex
-                flex-col
-                sm:flex-row
-                gap-5
-              ">
+<div
 
+className="
+absolute
+-left-20
+top-0
+h-72
+w-72
+rounded-full
+bg-green-500/20
+blur-[120px]
+"
 
-                <a
+/>
 
-                  href={`https://wa.me/94763433434?text=${encodeURIComponent(
-                    "Hello! I would like to book a custom tour with Wasgamuwa Taxi & Tours."
-                  )}`}
 
-                  target="_blank"
 
-                  rel="noopener noreferrer"
+<div
 
-                >
+className="
+absolute
+right-0
+bottom-0
+h-80
+w-80
+rounded-full
+bg-lime-400/20
+blur-[150px]
+"
 
-                  <button className="
-                    group
-                    flex
-                    w-full
-                    sm:w-auto
-                    items-center
-                    justify-center
-                    gap-3
-                    rounded-full
-                    bg-gradient-to-r
-                    from-amber-400
-                    to-orange-500
-                    px-8
-                    py-4
-                    font-semibold
-                    text-black
-                    transition
-                    hover:scale-105
-                  ">
+/>
+<div
 
-                    Request a Custom Tour
+className="
+absolute
+inset-0
+flex
+items-center
+"
 
-                    <ArrowRight className="group-hover:translate-x-1 transition"/>
+>
 
-                  </button>
 
-                </a>
+<div
 
+className="
+max-w-3xl
+px-6
+sm:px-8
+md:px-16
+"
 
+>
 
 
 
-                <Link href="/contact">
+<span
 
-                  <button className="
-                    flex
-                    w-full
-                    sm:w-auto
-                    items-center
-                    justify-center
-                    gap-3
-                    rounded-full
-                    border
-                    border-white/20
-                    bg-white/10
-                    px-8
-                    py-4
-                    font-semibold
-                    text-white
-                    backdrop-blur-xl
-                    transition
-                    hover:bg-white/20
-                  ">
+className="
+rounded-full
+border
+border-green-400/30
+bg-green-400/10
+px-5
+py-2
+text-xs
+sm:text-sm
+uppercase
+tracking-[0.2em]
+text-green-300
+"
 
+>
 
-                    <CarFront size={18}/>
+PLAN YOUR ADVENTURE
 
-                    Contact Us
+</span>
 
 
-                  </button>
 
 
-                </Link>
 
 
-              </div>
+<h2
 
+className="
+mt-7
+text-4xl
+sm:text-5xl
+lg:text-6xl
+font-black
+leading-tight
+text-white
+"
 
+>
 
-            </div>
+Ready to Visit
 
 
+<span
 
-          </div>
+className="
+block
+text-lime-300
+"
 
+>
 
+Sri Lanka?
 
-        </motion.div>
+</span>
 
 
+</h2>
 
-      </div>
 
 
 
-    </section>
 
 
-    </>
+<p
 
-  );
+className="
+mt-5
+sm:mt-6
+max-w-2xl
+text-base
+sm:text-lg
+leading-7
+sm:leading-8
+text-slate-300
+"
+
+>
+
+Whether you're planning a relaxing holiday, an adventurous getaway or a family vacation, we'll design a personalised tour that matches your travel style.
+
+</p>
+
+
+
+
+
+
+
+<div
+
+className="
+mt-8
+grid
+grid-cols-1
+sm:flex
+sm:flex-wrap
+gap-4
+sm:gap-6
+"
+
+>
+
+
+
+<div
+
+className="
+flex
+items-center
+gap-2
+text-white
+"
+
+>
+
+<Star
+
+className="
+fill-lime-400
+text-lime-400
+"
+
+size={18}
+
+/>
+
+4.9 Customer Rating
+
+</div>
+
+
+
+
+
+
+<div
+
+className="
+flex
+items-center
+gap-2
+text-white
+"
+
+>
+
+<ShieldCheck
+
+className="
+text-green-400
+"
+
+size={18}
+
+/>
+
+Licensed Drivers
+
+</div>
+
+
+
+
+
+
+<div
+
+className="
+flex
+items-center
+gap-2
+text-white
+"
+
+>
+
+<Headphones
+
+className="
+text-lime-300
+"
+
+size={18}
+
+/>
+
+24/7 Support
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div
+
+className="
+mt-10
+flex
+flex-col
+sm:flex-row
+gap-5
+"
+
+>
+
+
+
+
+
+<a
+
+href={`https://wa.me/94763433434?text=${encodeURIComponent(
+"Hello! I would like to book a custom tour with Wasgamuwa Taxi & Tours."
+)}`}
+
+target="_blank"
+
+rel="noopener noreferrer"
+
+>
+
+
+<button
+
+className="
+group
+flex
+w-full
+sm:w-auto
+items-center
+justify-center
+gap-3
+rounded-full
+bg-gradient-to-r
+from-lime-300
+to-green-600
+px-8
+py-4
+font-semibold
+text-green-950
+transition
+hover:scale-105
+"
+
+>
+
+Request a Custom Tour
+
+
+<ArrowRight
+
+className="
+group-hover:translate-x-1
+transition
+"
+
+/>
+
+
+</button>
+
+
+</a>
+
+
+
+
+
+
+
+
+<Link href="/contact">
+
+
+<button
+
+className="
+flex
+w-full
+sm:w-auto
+items-center
+justify-center
+gap-3
+rounded-full
+border
+border-white/20
+bg-white/10
+px-8
+py-4
+font-semibold
+text-white
+backdrop-blur-xl
+transition
+hover:bg-white/20
+"
+
+>
+
+
+<CarFront size={18}/>
+
+
+Contact Us
+
+
+</button>
+
+
+</Link>
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</motion.div>
+
+
+</div>
+
+
+</section>
+
+
+</>
+
+
+);
+
 }

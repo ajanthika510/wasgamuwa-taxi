@@ -11,70 +11,64 @@ import {
 
 const testimonials = [
 
-  {
-    name: "Emily Antony",
-    location: "London, United Kingdom",
-    image: "/customer/cus4.jpeg",
-    review:
-      "Excellent service from start to finish. The driver arrived early, the vehicle was spotless, and the journey was incredibly comfortable. Highly recommended.",
-  },
+{
+name:"Emily Antony",
+location:"London, United Kingdom",
+image:"/customer/cus4.jpeg",
+review:
+"Excellent service from start to finish. The driver arrived early, the vehicle was spotless, and the journey was incredibly comfortable. Highly recommended.",
+},
 
+{
+name:"Daniel Wilson",
+location:"Melbourne, Australia",
+image:"/customer/cus1.jpeg",
+review:
+"Booking was effortless and communication was excellent. The driver was professional and made our family trip completely stress-free.",
+},
 
-  {
-    name: "Daniel Wilson",
-    location: "Melbourne, Australia",
-    image: "/customer/cus1.jpeg",
-    review:
-      "Booking was effortless and communication was excellent. The driver was professional and made our family trip completely stress-free.",
-  },
+{
+name:"Sophia Brown",
+location:"Toronto, Canada",
+image:"/customer/cus2.jpeg",
+review:
+"The best taxi service we used during our Sri Lanka vacation. Safe driving, luxury vehicle, and exceptional hospitality.",
+},
 
-
-  {
-    name: "Sophia Brown",
-    location: "Toronto, Canada",
-    image: "/customer/cus2.jpeg",
-    review:
-      "The best taxi service we used during our Sri Lanka vacation. Safe driving, luxury vehicle, and exceptional hospitality.",
-  },
-
-
-  {
-    name: "Michael Lee",
-    location: "Singapore",
-    image: "/customer/cus3.jpeg",
-    review:
-      "Punctual, friendly, and reliable. Every journey was smooth and comfortable. I'll definitely book again on my next visit.",
-  },
+{
+name:"Michael Lee",
+location:"Singapore",
+image:"/customer/cus3.jpeg",
+review:
+"Punctual, friendly, and reliable. Every journey was smooth and comfortable. I'll definitely book again on my next visit.",
+},
 
 ];
-
 
 
 const stats = [
 
-  {
-    number:"4.9/5",
-    label:"Average Rating",
-  },
+{
+number:"4.9/5",
+label:"Average Rating",
+},
 
-  {
-    number:"2,500+",
-    label:"Happy Customers",
-  },
+{
+number:"2,500+",
+label:"Happy Customers",
+},
 
-  {
-    number:"15,000+",
-    label:"Successful Trips",
-  },
+{
+number:"15,000+",
+label:"Successful Trips",
+},
 
-  {
-    number:"100%",
-    label:"Professional Drivers",
-  },
+{
+number:"100%",
+label:"Professional Drivers",
+},
 
 ];
-
-
 
 
 
@@ -83,47 +77,50 @@ export default function Testimonials(){
 
 return (
 
-
 <section
 id="testimonials"
 className="
 relative
 overflow-hidden
-bg-[#F8F6F2]
+bg-[#F8FAFC]
 py-20
 md:py-24
 ">
 
 
-{/* Background Glow */}
+{/* Green Glow */}
 
-<div className="
+<div
+className="
 absolute
 -top-40
 -left-32
 h-96
 w-96
 rounded-full
-bg-[#D4AF37]/10
+bg-green-500/10
 blur-[120px]
-"/>
+"
+/>
 
 
-<div className="
+<div
+className="
 absolute
 -bottom-40
 -right-32
 h-96
 w-96
 rounded-full
-bg-black/5
+bg-green-900/10
 blur-[120px]
-"/>
+"
+/>
 
 
 
-
-<div className="
+<div
+className="
 relative
 mx-auto
 max-w-7xl
@@ -131,12 +128,6 @@ px-5
 sm:px-6
 lg:px-8
 ">
-
-
-
-
-
-{/* Heading */}
 
 
 <motion.div
@@ -165,16 +156,17 @@ max-w-3xl
 text-center
 "
 
-
 >
 
 
-<span className="
+<span
+
+className="
 inline-block
 rounded-full
 border
-border-[#D4AF37]/30
-bg-[#D4AF37]/10
+border-green-400/30
+bg-green-400/10
 px-5
 py-2
 text-xs
@@ -182,8 +174,10 @@ sm:text-sm
 font-semibold
 tracking-wider
 uppercase
-text-[#B8860B]
-">
+text-green-700
+"
+
+>
 
 Testimonials
 
@@ -191,23 +185,27 @@ Testimonials
 
 
 
+<h2
 
-<h2 className="
+className="
 mt-6
 text-3xl
 sm:text-4xl
 md:text-5xl
 font-bold
 text-[#111827]
-">
+"
+
+>
 
 Trusted by Travelers Across Sri Lanka
 
 </h2>
 
 
+<p
 
-<p className="
+className="
 mt-5
 sm:mt-6
 text-base
@@ -215,40 +213,30 @@ sm:text-lg
 leading-7
 sm:leading-8
 text-gray-600
-">
+"
+
+>
 
 From airport transfers to long-distance journeys, our professional drivers and premium vehicles deliver an experience our customers genuinely love.
 
 </p>
 
 
-
 </motion.div>
-
-
-
-
-
-
-
 {/* Cards */}
 
-
-
-<div className="
+<div
+className="
 mt-14
 md:mt-20
 grid
 gap-6
 md:grid-cols-2
-">
-
+"
+>
 
 {
-
 testimonials.map((item,index)=>(
-
-
 
 <motion.div
 
@@ -292,26 +280,25 @@ transition
 hover:shadow-2xl
 "
 
-
 >
-
 
 
 {/* Quote */}
 
-<div className="
+<div
+className="
 absolute
 right-6
 top-6
-">
-
+"
+>
 
 <Quote
 
 size={55}
 
 className="
-text-[#D4AF37]/20
+text-green-500/20
 transition
 duration-300
 group-hover:rotate-12
@@ -319,28 +306,23 @@ group-hover:rotate-12
 
 />
 
-
 </div>
-
-
 
 
 
 
 {/* Stars */}
 
-
-<div className="
+<div
+className="
 mb-6
 flex
 gap-1
-">
-
+"
+>
 
 {
-
 [...Array(5)].map((_,i)=>(
-
 
 <Star
 
@@ -349,30 +331,27 @@ key={i}
 size={18}
 
 className="
-fill-[#D4AF37]
-text-[#D4AF37]
+fill-lime-500
+text-lime-500
 "
 
 />
 
-
 ))
-
 }
-
 
 </div>
 
 
 
 
-
-
-<p className="
+<p
+className="
 leading-7
 sm:leading-8
 text-gray-600
-">
+"
+>
 
 "{item.review}"
 
@@ -382,29 +361,30 @@ text-gray-600
 
 
 
-
-
 {/* Customer */}
 
-
-<div className="
+<div
+className="
 mt-8
 flex
 items-center
 justify-between
 gap-4
-">
+"
+>
 
 
-
-<div className="
+<div
+className="
 flex
 items-center
 gap-4
-">
+"
+>
 
 
-<div className="
+<div
+className="
 relative
 h-14
 w-14
@@ -412,8 +392,9 @@ shrink-0
 overflow-hidden
 rounded-full
 border-2
-border-[#D4AF37]/40
-">
+border-green-500/40
+"
+>
 
 
 <Image
@@ -433,34 +414,33 @@ group-hover:scale-110
 
 />
 
-
 </div>
-
-
 
 
 
 <div>
 
-
-<h4 className="
+<h4
+className="
 text-base
 sm:text-lg
 font-semibold
 text-[#111827]
-">
+"
+>
 
 {item.name}
 
 </h4>
 
 
-
-<p className="
+<p
+className="
 mt-1
 text-sm
 text-gray-500
-">
+"
+>
 
 {item.location}
 
@@ -470,15 +450,15 @@ text-gray-500
 </div>
 
 
-
 </div>
 
 
 
 
 
+<div
 
-<div className="
+className="
 hidden
 sm:flex
 items-center
@@ -490,7 +470,9 @@ py-2
 text-sm
 font-medium
 text-green-700
-">
+"
+
+>
 
 
 <ShieldCheck size={18}/>
@@ -506,17 +488,12 @@ Verified
 
 
 
-
-
 </motion.div>
-
 
 
 ))
 
 }
-
-
 
 </div>
 
@@ -526,9 +503,7 @@ Verified
 
 
 
-
 {/* Stats */}
-
 
 
 <motion.div
@@ -555,62 +530,70 @@ className="
 mt-20
 md:mt-24
 rounded-[32px]
-bg-[#111827]
+bg-[#14532D]
 px-6
 py-10
 sm:px-8
 sm:py-12
 "
 
-
 >
 
 
+<div
 
-<div className="
+className="
 grid
 gap-8
 text-center
 sm:grid-cols-2
 lg:grid-cols-4
-">
+"
+
+>
 
 
 {
 
 stats.map((item,index)=>(
 
-
 <div key={index}>
 
 
-<h3 className="
+<h3
+
+className="
 text-3xl
 sm:text-4xl
 font-bold
-text-[#D4AF37]
-">
+text-lime-300
+"
+
+>
 
 {item.number}
 
 </h3>
 
 
-<p className="
+
+<p
+
+className="
 mt-3
 text-sm
 sm:text-base
-text-gray-300
-">
+text-green-100
+"
+
+>
 
 {item.label}
 
 </p>
 
 
-
 </div>
-
 
 
 ))
@@ -618,9 +601,7 @@ text-gray-300
 }
 
 
-
 </div>
-
 
 
 </motion.div>

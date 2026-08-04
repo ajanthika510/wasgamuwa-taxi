@@ -138,7 +138,7 @@ inset-0
 
 <Image
 
-src="/images/hero-bg.png"
+src="/images/hero/hero-bg.png"
 
 alt="Sri Lanka road"
 
@@ -185,53 +185,46 @@ to-black/40
 {/* Golden Glow */}
 
 <motion.div
-
-animate={{
-
-opacity:[
-0.2,
-0.5,
-0.2
-],
-
-
-scale:[
-1,
-1.3,
-1
-]
-
-}}
-
-transition={{
-
-duration:6,
-repeat:Infinity
-
-}}
-
-
-className="
+  animate={{
+    opacity: [0.15, 0.4, 0.15],
+    scale: [1, 1.25, 1],
+  }}
+  transition={{
+    duration: 7,
+    repeat: Infinity,
+  }}
+  className="
 absolute
--left-40
-top-40
-h-[400px]
-w-[400px]
-
-sm:h-[500px]
-sm:w-[500px]
-
+-left-48
+top-32
+h-[450px]
+w-[450px]
 rounded-full
-bg-yellow-500/20
-blur-[160px]
+bg-emerald-500/20
+blur-[180px]
 "
-
 />
 
-
-
-
-
+<motion.div
+  animate={{
+    opacity: [0.1, 0.3, 0.1],
+    scale: [1, 1.2, 1],
+  }}
+  transition={{
+    duration: 10,
+    repeat: Infinity,
+  }}
+  className="
+absolute
+right-0
+bottom-0
+h-[350px]
+w-[350px]
+rounded-full
+bg-green-400/20
+blur-[160px]
+"
+/>
 
 {/* MAIN CONTENT */}
 
@@ -312,13 +305,7 @@ duration:1
 className="
 text-white
 "
-
-
 >
-
-
-
-
 
 {/* Badge */}
 
@@ -333,7 +320,7 @@ gap-3
 rounded-full
 
 border
-border-yellow-400/30
+border-green-400/40
 
 bg-white/10
 
@@ -358,7 +345,7 @@ sm:text-sm
 size={18}
 
 className="
-text-yellow-400
+text-green-400
 "
 
 />
@@ -409,13 +396,14 @@ Wasgamuwa
 
 className="
 block
-
 font-serif
-
-text-yellow-400
-
+bg-gradient-to-r
+from-green-400
+via-lime-300
+to-lime-500
+bg-clip-text
+text-transparent
 "
-
 
 >
 
@@ -442,23 +430,14 @@ Taxi Service
 
 className="
 mt-7
-
 max-w-lg
-
 text-base
-
 leading-7
-
-text-white/70
-
+text-green-50/80
 sm:text-lg
-
 lg:max-w-xl
-
 "
-
 >
-
 
 Private chauffeur services, airport transfers
 and unforgettable island adventures designed
@@ -528,7 +507,7 @@ gap-3
 
 rounded-full
 
-bg-yellow-400
+bg-green-400
 
 px-8
 
@@ -595,9 +574,9 @@ rounded-full
 
 border
 
-border-white/30
+border-green-400/40
 
-bg-white/10
+bg-green-400/10
 
 px-8
 

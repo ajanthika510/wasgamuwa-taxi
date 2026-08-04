@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import {
   ShieldCheck,
   Users,
-  MapPin,
   Star,
   ArrowRight,
   Play,
@@ -18,7 +17,7 @@ export default function AboutPage() {
 
 return (
 
-<main className="overflow-hidden bg-[#04030A]">
+<main className="overflow-hidden bg-[#000000]">
 
 
 {/* =========================
@@ -33,7 +32,7 @@ flex
 min-h-screen
 items-center
 overflow-hidden
-bg-[#04030A]
+bg-[#000000]
 pt-20
 "
 >
@@ -67,13 +66,9 @@ inset-0
 <Image
 
 src="/images/about-bg.avif"
-
 alt="Wasgamuwa Taxi Sri Lanka"
-
 fill
-
 priority
-
 className="
 object-cover
 "
@@ -86,18 +81,19 @@ object-cover
 
 
 
-{/* DARK OVERLAY */}
+{/* DARK GREEN OVERLAY */}
 
 <div
 className="
 absolute
 inset-0
 bg-gradient-to-r
-from-black
-via-black/75
+from-[#000000]
+via-[#000000]/80
 to-black/20
 "
 />
+
 
 
 <div
@@ -105,9 +101,9 @@ className="
 absolute
 inset-0
 bg-gradient-to-b
-from-black/40
+from-[#031A12]/70
 via-transparent
-to-[#04030A]
+to-[#031A12]
 "
 />
 
@@ -115,14 +111,14 @@ to-[#04030A]
 
 
 
-{/* LIGHT EFFECTS */}
+{/* GREEN LIGHT EFFECTS */}
 
 
 <motion.div
 
 animate={{
 scale:[1,1.15,1],
-opacity:[0.2,0.4,0.2]
+opacity:[0.2,0.45,0.2]
 }}
 
 transition={{
@@ -139,7 +135,7 @@ w-[500px]
 sm:h-[700px]
 sm:w-[700px]
 rounded-full
-bg-purple-700
+bg-emerald-600
 blur-[180px]
 "
 
@@ -167,7 +163,7 @@ w-[400px]
 sm:h-[600px]
 sm:w-[600px]
 rounded-full
-bg-amber-500/20
+bg-green-400/20
 blur-[180px]
 "
 
@@ -260,8 +256,13 @@ backdrop-blur-xl
 >
 
 <ShieldCheck
+
 size={18}
-className="text-amber-400"
+
+className="
+text-green-400
+"
+
 />
 
 
@@ -272,7 +273,7 @@ sm:text-sm
 font-semibold
 uppercase
 tracking-[0.15em]
-text-amber-300
+text-green-300
 "
 >
 
@@ -282,6 +283,8 @@ Licensed Local Taxi Service
 
 
 </div>
+
+
 
 
 
@@ -328,14 +331,16 @@ Explore
 
 
 <span
+
 className="
 bg-gradient-to-r
-from-amber-300
-via-yellow-200
+from-green-300
+via-emerald-200
 to-white
 bg-clip-text
 text-transparent
 "
+
 >
 
 Sri Lanka
@@ -350,6 +355,8 @@ In Luxury
 
 
 </motion.h1>
+
+
 
 
 
@@ -400,6 +407,8 @@ professional travel experiences.
 
 
 
+
+
 {/* BUTTONS */}
 
 
@@ -443,13 +452,13 @@ justify-center
 gap-3
 rounded-full
 bg-gradient-to-r
-from-amber-400
-to-yellow-300
+from-green-400
+to-emerald-300
 px-8
 py-4
 font-semibold
-text-black
-shadow-[0_15px_60px_rgba(255,191,0,.35)]
+text-[#031A12]
+shadow-[0_15px_60px_rgba(34,197,94,.35)]
 transition
 hover:scale-105
 "
@@ -460,10 +469,12 @@ Book Your Ride
 
 
 <ArrowRight
+
 className="
 transition
 group-hover:translate-x-2
 "
+
 />
 
 
@@ -471,6 +482,7 @@ group-hover:translate-x-2
 
 
 </Link>
+
 
 
 
@@ -511,10 +523,6 @@ Watch Story
 
 
 </motion.div>
-
-
-
-
 
 {/* HERO STATS */}
 
@@ -587,24 +595,33 @@ border-white/10
 bg-white/10
 p-5
 backdrop-blur-xl
+hover:border-green-400/30
+transition
 "
 
 >
 
 
 <Icon
+
 size={22}
-className="text-amber-400"
+
+className="
+text-green-400
+"
+
 />
 
 
 <h3
+
 className="
 mt-4
 text-3xl
 font-black
 text-white
 "
+
 >
 
 {item.number}
@@ -613,11 +630,13 @@ text-white
 
 
 <p
+
 className="
 mt-2
 text-sm
 text-white/60
 "
+
 >
 
 {item.title}
@@ -638,6 +657,11 @@ text-white/60
 
 
 </motion.div>
+
+
+
+
+
 {/* =========================
         RIGHT HERO AREA
 ========================= */}
@@ -667,6 +691,8 @@ lg:block
 "
 
 >
+
+
 
 
 
@@ -708,8 +734,8 @@ backdrop-blur-2xl
 size={30}
 
 className="
-fill-amber-400
-text-amber-400
+fill-green-400
+text-green-400
 "
 
 />
@@ -749,6 +775,8 @@ across Sri Lanka.
 
 
 </motion.div>
+
+
 
 
 
@@ -807,26 +835,35 @@ w-12
 items-center
 justify-center
 rounded-xl
-bg-amber-400
+bg-green-400
 "
 
 >
 
 <ShieldCheck
-className="text-black"
+
+className="
+text-[#031A12]
+"
+
 />
 
 </div>
 
 
 
+
+
 <div>
 
+
 <h4
+
 className="
 font-bold
 text-white
 "
+
 >
 
 Safe Journey
@@ -835,10 +872,12 @@ Safe Journey
 
 
 <p
+
 className="
 text-sm
 text-white/60
 "
+
 >
 
 Licensed Professional Drivers
@@ -854,35 +893,48 @@ Licensed Professional Drivers
 
 
 
+
+
+
 <div
+
 className="
 mt-6
 h-px
 bg-white/10
 "
+
 />
 
 
 
 
+
+
+
 <div
+
 className="
 mt-5
 grid
 grid-cols-2
 gap-4
 "
+
 >
 
 
 <div>
 
+
 <h5
+
 className="
 text-xl
 font-bold
-text-amber-400
+text-green-400
 "
+
 >
 
 10K+
@@ -891,10 +943,12 @@ text-amber-400
 
 
 <p
+
 className="
 text-xs
 text-white/60
 "
+
 >
 
 Travellers
@@ -907,14 +961,18 @@ Travellers
 
 
 
+
 <div>
 
+
 <h5
+
 className="
 text-xl
 font-bold
-text-amber-400
+text-green-400
 "
+
 >
 
 Island
@@ -923,10 +981,12 @@ Island
 
 
 <p
+
 className="
 text-xs
 text-white/60
 "
+
 >
 
 Coverage
@@ -943,6 +1003,8 @@ Coverage
 </motion.div>
 
 
+
+
 </motion.div>
 
 
@@ -950,6 +1012,8 @@ Coverage
 
 
 </div>
+
+
 
 
 
@@ -1002,7 +1066,7 @@ mt-2
 h-3
 w-3
 rounded-full
-bg-amber-400
+bg-green-400
 "
 
 />
@@ -1018,17 +1082,9 @@ bg-amber-400
 </section>
 
 
-
-
-
-
-
-
-
 {/* =========================
         STORY SECTION
 ========================= */}
-
 
 
 <section
@@ -1038,12 +1094,14 @@ id="story"
 className="
 relative
 overflow-hidden
-bg-white
+bg-[#F7FAF7]
 py-20
 md:py-32
 "
 
 >
+
+
 
 
 
@@ -1059,7 +1117,7 @@ top-20
 h-[420px]
 w-[420px]
 rounded-full
-bg-amber-100
+bg-green-100
 blur-[120px]
 "
 
@@ -1076,11 +1134,12 @@ bottom-0
 h-[450px]
 w-[450px]
 rounded-full
-bg-purple-100
+bg-emerald-100
 blur-[140px]
 "
 
 />
+
 
 
 
@@ -1111,6 +1170,10 @@ lg:gap-20
 "
 
 >
+
+
+
+
 
 
 
@@ -1181,6 +1244,7 @@ hover:scale-105
 
 
 
+
 <div
 
 className="
@@ -1196,6 +1260,8 @@ to-transparent
 
 
 </div>
+
+
 
 
 
@@ -1239,7 +1305,7 @@ sm:p-8
 className="
 text-4xl
 font-black
-text-amber-500
+text-green-600
 sm:text-5xl
 "
 
@@ -1275,6 +1341,8 @@ Years Experience
 
 
 
+
+
 {/* RATING CARD */}
 
 
@@ -1295,7 +1363,7 @@ left-2
 bottom-6
 max-w-[260px]
 rounded-[28px]
-bg-[#050816]
+bg-[#032015]
 p-6
 text-white
 shadow-xl
@@ -1307,11 +1375,13 @@ sm:bottom-14
 
 
 <div
+
 className="
 flex
 items-center
 gap-3
 "
+
 >
 
 <Star
@@ -1319,18 +1389,21 @@ gap-3
 size={20}
 
 className="
-fill-amber-400
-text-amber-400
+fill-green-400
+text-green-400
 "
 
 />
 
 
+
 <span
+
 className="
 text-sm
 font-semibold
 "
+
 >
 
 4.9 Customer Rating
@@ -1342,13 +1415,17 @@ font-semibold
 
 
 
+
+
 <p
+
 className="
 mt-3
 text-sm
 leading-7
 text-white/70
 "
+
 >
 
 Trusted by thousands of travellers
@@ -1361,7 +1438,18 @@ for safe and comfortable journeys.
 
 
 
+
+
 </motion.div>
+
+
+
+
+
+
+
+
+
 {/* =========================
       STORY CONTENT
 ========================= */}
@@ -1395,14 +1483,14 @@ duration:.8
 className="
 inline-flex
 rounded-full
-bg-amber-100
+bg-green-100
 px-5
 py-2
 text-sm
 font-semibold
 uppercase
 tracking-[0.2em]
-text-amber-600
+text-green-700
 "
 
 >
@@ -1410,6 +1498,8 @@ text-amber-600
 Our Story
 
 </span>
+
+
 
 
 
@@ -1436,13 +1526,22 @@ More Than A Taxi Service,
 
 We Create
 
-<span className="text-amber-500">
+<span
+
+className="
+text-green-600
+"
+
+>
 
  Travel Experiences
 
 </span>
 
 </h2>
+
+
+
 
 
 
@@ -1498,6 +1597,8 @@ Cash payments are accepted and our team is available
 
 
 
+
+
 {/* QUOTE */}
 
 
@@ -1507,8 +1608,8 @@ className="
 mt-10
 rounded-[30px]
 border-l-4
-border-amber-500
-bg-amber-50
+border-green-600
+bg-green-50
 p-6
 sm:p-8
 "
@@ -1535,6 +1636,7 @@ to another. We want every traveller to remember the journey itself."
 
 
 
+
 <h4
 
 className="
@@ -1551,6 +1653,7 @@ text-slate-900
 
 
 </div>
+
 
 
 
@@ -1624,8 +1727,8 @@ border
 border-slate-200
 p-5
 transition
-hover:border-amber-300
-hover:bg-amber-50
+hover:border-green-300
+hover:bg-green-50
 "
 
 >
@@ -1640,7 +1743,7 @@ w-12
 items-center
 justify-center
 rounded-xl
-bg-amber-500
+bg-green-600
 text-white
 "
 
@@ -1649,6 +1752,7 @@ text-white
 <ShieldCheck size={22}/>
 
 </div>
+
 
 
 
@@ -1675,6 +1779,7 @@ text-slate-700
 </div>
 
 
+
 </motion.div>
 
 
@@ -1685,6 +1790,8 @@ text-slate-700
 
 
 </section>
+
+
 
 </main>
 

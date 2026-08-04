@@ -49,7 +49,7 @@ const features = [
     title: "Support",
     description: "Instant WhatsApp & phone support.",
     icon: Headset,
-    gradient: "from-blue-500 to-indigo-500",
+    gradient: "from-blue-900 to-indigo-500",
   },
 ];
 
@@ -65,9 +65,9 @@ className="
 relative
 overflow-hidden
 bg-gradient-to-b
-from-sky-100
-via-white
-to-[#fff7ed]
+from-[#F4FFF8]
+via-[#FFFFFF]
+to-[#ECFDF5]
 py-28
 "
 >
@@ -79,13 +79,13 @@ py-28
 className="
 absolute
 inset-0
-bg-[radial-gradient(circle_at_top,#E9D5FF,transparent_45%)]
+bg-[radial-gradient(circle_at_top,#DCFCE7,transparent_45%)]
 "
 />
 
 
 
-{/* Purple Glow */}
+{/* left Glow */}
 
 <motion.div
 
@@ -107,7 +107,7 @@ top-20
 h-[500px]
 w-[500px]
 rounded-full
-bg-purple-400/20
+bg-green-500/15
 blur-[180px]
 "
 
@@ -116,7 +116,7 @@ blur-[180px]
 
 
 
-{/* Pink Glow */}
+{/* right Glow */}
 
 <motion.div
 
@@ -138,7 +138,7 @@ bottom-0
 h-[450px]
 w-[450px]
 rounded-full
-bg-fuchsia-400/20
+bg-emerald-500/15
 blur-[180px]
 "
 
@@ -153,13 +153,9 @@ blur-[180px]
 className="
 absolute
 inset-0
-bg-[radial-gradient(circle_at_bottom_right,#FDE68A40,transparent_40%)]
+bg-[radial-gradient(circle_at_bottom_right,#86EFAC30,transparent_40%)]
 "
 />
-
-
-
-
 
 <div
 className="
@@ -169,8 +165,6 @@ mx-auto
 px-6
 "
 >
-
-
 
 
 
@@ -184,13 +178,13 @@ className="
 inline-flex
 rounded-full
 border
-border-amber-400/40
-bg-amber-100
+border-green-300
+bg-green-100
+text-green-700
 px-5
 py-2
 text-sm
 font-semibold
-text-amber-700
 "
 >
 
@@ -211,7 +205,7 @@ text-slate-900
 "
 >
 
-Luxury Travel Experience
+Travel Sri Lanka with Confidence
 
 </h2>
 
@@ -236,12 +230,7 @@ safety and reliability.
 </div>
 
 
-
-
-
-
 {/* Cards */}
-
 <div
 className="
 grid
@@ -309,18 +298,12 @@ group
 relative
 overflow-hidden
 rounded-3xl
-
 border
-border-slate-200/80
-
+border-slate-400/80
 bg-white/80
-
 backdrop-blur-2xl
-
-shadow-[0_20px_50px_rgba(124,58,237,0.08)]
-
+shadow-[0_25px_60px_rgba(22,163,74,0.12)]
 p-8
-
 h-[280px]
 
 transition-all
@@ -395,11 +378,6 @@ transition-transform
 duration-1000
 "
 />
-
-
-
-
-
 
 
 <div
@@ -493,21 +471,13 @@ duration:2
 className="
 text-slate-400
 transition
-group-hover:text-purple-600
+group-hover:text-green-600
 "
 
 />
 
-
 </motion.div>
-
-
 </div>
-
-
-
-
-
 
 
 <div>
@@ -603,7 +573,7 @@ inset-0
 rounded-3xl
 
 border
-border-purple-200/70
+border-green-200/70
 "
 
 />

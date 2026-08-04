@@ -179,9 +179,10 @@ id="services"
 className="
 relative
 overflow-hidden
-bg-gradient-to-r
-from-#efddfc
-to-[#fff7ed]
+bg-gradient-to-b
+from-[#F5FFF8]
+via-white
+to-[#ECFDF5]
 py-32
 "
 >
@@ -195,15 +196,12 @@ py-32
 className="
 absolute
 inset-0
-bg-[radial-gradient(circle_at_top,#E9D5FF,transparent_45%)]
+bg-[radial-gradient(circle_at_top,#DCFCE7,transparent_45%)]
 "
 />
 
 
-
-
-
-{/* Purple Ambient Glow */}
+{/* Green Ambient Glow */}
 
 
 
@@ -237,34 +235,17 @@ ease:"easeInOut"
 
 className="
 absolute
-
 left-[-150px]
-
 top-40
-
 h-[450px]
-
 w-[450px]
-
 rounded-full
-
-bg-purple-400/20
-
+bg-green-500/15
 blur-[160px]
-
 "
-
 />
 
-
-
-
-
-
-
 {/* Pink Ambient Glow */}
-
-
 
 <motion.div
 
@@ -296,29 +277,15 @@ ease:"easeInOut"
 
 className="
 absolute
-
 right-[-150px]
-
 bottom-20
-
 h-[450px]
-
 w-[450px]
-
 rounded-full
-
-bg-fuchsia-400/20
-
+bg-emerald-500/15
 blur-[160px]
-
 "
-
 />
-
-
-
-
-
 
 <div
 
@@ -363,35 +330,19 @@ max-w-6xl
 
 className="
 absolute
-
 left-6
-
 top-0
-
 h-full
-
 w-[2px]
-
 bg-gradient-to-b
-
-from-purple-300
-
-via-fuchsia-300
-
+from-green-300
+via-emerald-400
 to-transparent
-
-
 lg:left-1/2
-
 lg:-translate-x-1/2
 "
 
 />
-
-
-
-
-
 
 
 {
@@ -433,18 +384,11 @@ delay:index*.15
 
 className="
 relative
-
 mb-20
-
 pl-16
-
-
 lg:grid
-
 lg:grid-cols-2
-
 lg:gap-16
-
 lg:pl-0
 "
 
@@ -459,54 +403,30 @@ lg:pl-0
 
 className="
 absolute
-
 left-0
-
 top-8
-
-
 flex
-
 h-12
-
 w-12
-
 items-center
-
 justify-center
-
-
 rounded-full
 
-
 border
-
-border-purple-200
-
+border-green-200
 
 bg-gradient-to-br
-
-from-purple-500
-
-to-fuchsia-600
-
-
+from-green-500
+to-emerald-600
 text-white
-
-
-shadow-[0_0_35px_rgba(168,85,247,.35)]
+shadow-[0_0_35px_rgba(34,197,94,.35)]
 
 
 lg:left-1/2
-
 lg:h-16
-
 lg:w-16
-
 lg:-translate-x-1/2
-
 "
-
 >
 
 
@@ -532,7 +452,6 @@ size={22}
 <div
 
 className={`
-
 ${reverse ? "lg:order-2" : ""}
 
 `}
@@ -550,32 +469,16 @@ scale:1.04
 
 className="
 group
-
 relative
-
-
 h-[260px]
-
-
 sm:h-[320px]
-
-
 overflow-hidden
-
-
 rounded-[32px]
 
-
 border
-
-border-slate-200
-
-
-shadow-xl
-
+border-green-100
+shadow-[0_20px_50px_rgba(22,163,74,0.12)]
 "
-
-
 >
 
 
@@ -595,11 +498,8 @@ sizes="
 
 className="
 object-cover
-
 transition
-
 duration-700
-
 group-hover:scale-110
 
 "
@@ -614,17 +514,11 @@ group-hover:scale-110
 
 className="
 absolute
-
 inset-0
-
 bg-gradient-to-t
-
-from-black/80
-
-via-black/20
-
+from-[#052e16]/80
+via-[#14532d]/20
 to-transparent
-
 "
 
 />
@@ -636,28 +530,16 @@ to-transparent
 </div>
 
 
-
-
-
-
-
-
-
 {/* CONTENT */}
 
 
 <div
 
 className={`
-
 mt-6
-
-
 lg:mt-0
 
-
 ${reverse ? "lg:order-1" : ""}
-
 `}
 
 >
@@ -670,23 +552,12 @@ rounded-[32px]
 
 
 border
-
-border-slate-200/80
-
-
-bg-white/80
-
-
+border-green-100
+bg-white/90
 p-6
-
-
 sm:p-8
-
-
 backdrop-blur-xl
-
-
-shadow-[0_20px_50px_rgba(124,58,237,0.10)]
+shadow-[0_20px_50px_rgba(22,163,74,0.10)]
 
 "
 
@@ -699,12 +570,9 @@ shadow-[0_20px_50px_rgba(124,58,237,0.10)]
 
 className="
 text-xs
-
 uppercase
-
 tracking-[3px]
-
-text-purple-600
+text-green-600
 
 "
 
@@ -715,12 +583,6 @@ text-purple-600
 </p>
 
 
-
-
-
-
-
-
 <h3
 
 className="
@@ -728,16 +590,9 @@ mt-3
 
 
 font-[Playfair_Display]
-
-
 text-3xl
-
-
 font-bold
-
-
 text-slate-900
-
 "
 
 >
@@ -746,25 +601,12 @@ text-slate-900
 
 </h3>
 
-
-
-
-
-
-
-
-
 <p
 
 className="
 mt-4
-
-
 leading-7
-
-
 text-slate-500
-
 "
 
 >
@@ -774,25 +616,12 @@ text-slate-500
 </p>
 
 
-
-
-
-
-
-
-
-
 <div
 
 className="
 mt-5
-
-
 text-sm
-
-
 text-slate-500
-
 "
 
 >
@@ -801,28 +630,13 @@ text-slate-500
 
 </div>
 
-
-
-
-
-
-
-
-
 <div
 
 className="
 mt-6
-
-
 flex
-
-
 flex-wrap
-
-
 gap-2
-
 "
 
 >
@@ -840,40 +654,18 @@ key={feature}
 
 className="
 flex
-
-
 items-center
-
-
 gap-2
-
-
 rounded-full
 
-
 border
-
-
-border-purple-200
-
-
-bg-purple-50
-
-
+border-green-200
+bg-green-50
 px-3
-
-
 py-2
-
-
 text-xs
-
-
 font-medium
-
-
 text-slate-700
-
 "
 
 >
@@ -884,7 +676,7 @@ text-slate-700
 size={13}
 
 className="
-text-fuchsia-500
+text-green-600
 "
 
 />
@@ -902,17 +694,7 @@ text-fuchsia-500
 ))
 
 }
-
-
-
 </div>
-
-
-
-
-
-
-
 
 
 <Link
@@ -921,61 +703,27 @@ href={service.href}
 
 className="
 mt-7
-
-
 flex
-
-
 w-full
-
-
 sm:w-fit
-
-
 items-center
-
-
 justify-center
-
-
 gap-2
-
-
 rounded-full
-
-
 bg-gradient-to-r
-
-
-from-purple-500
-
-
-to-fuchsia-500
-
-
+from-green-600
+to-emerald-600
 px-6
-
-
 py-3
-
-
 text-sm
-
-
 font-semibold
-
-
 text-white
-
-
 shadow-xl
-
-
 transition
-
-
+transition-all
+duration-300
 hover:scale-105
-
+hover:shadow-[0_12px_30px_rgba(22,163,74,0.30)]
 "
 
 >

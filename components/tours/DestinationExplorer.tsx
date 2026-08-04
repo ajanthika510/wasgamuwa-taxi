@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+
 import {
   MapPin,
   Mountain,
@@ -20,7 +21,7 @@ const destinations = [
     image: "/images/beach.jpg",
     description:
       "Discover Sri Lanka's tropical paradise with golden beaches, crystal waters, surfing spots and unforgettable ocean experiences.",
-    highlights: [
+    highlights:[
       "Mirissa Beach",
       "Unawatuna Beach",
       "Weligama Bay",
@@ -29,13 +30,13 @@ const destinations = [
   },
 
   {
-    id: 2,
-    name: "Sigiriya",
-    type: "heritage",
-    image: "/images/sigiriyaex.jpg",
+    id:2,
+    name:"Sigiriya",
+    type:"heritage",
+    image:"/images/sigiriyaex.jpg",
     description:
       "Climb the famous Lion Rock Fortress and discover Sri Lanka's ancient heritage.",
-    highlights: [
+    highlights:[
       "Lion Rock",
       "Village Tour",
       "Pidurangala",
@@ -44,13 +45,13 @@ const destinations = [
 
 
   {
-    id: 3,
-    name: "Yala",
-    type: "wildlife",
-    image: "/images/yala.jpg",
+    id:3,
+    name:"Yala",
+    type:"wildlife",
+    image:"/images/yala.jpg",
     description:
       "Experience thrilling wildlife safaris with elephants, leopards and exotic birds.",
-    highlights: [
+    highlights:[
       "Leopard Safari",
       "Jeep Tour",
       "Wildlife",
@@ -59,13 +60,13 @@ const destinations = [
 
 
   {
-    id: 4,
-    name: "Galle",
-    type: "beach",
-    image: "/images/galleher.jpg",
+    id:4,
+    name:"Galle",
+    type:"beach",
+    image:"/images/galleher.jpg",
     description:
       "Walk through the historic Dutch Fort, enjoy beaches and stunning sunsets.",
-    highlights: [
+    highlights:[
       "Dutch Fort",
       "Beach",
       "Lighthouse",
@@ -74,13 +75,13 @@ const destinations = [
 
 
   {
-    id: 5,
-    name: "Ella",
-    type: "mountain",
-    image: "/images/ellaAd.jpg",
+    id:5,
+    name:"Ella",
+    type:"mountain",
+    image:"/images/ellaAd.jpg",
     description:
       "Explore the breathtaking Nine Arch Bridge, Little Adam's Peak and lush tea plantations.",
-    highlights: [
+    highlights:[
       "Nine Arch Bridge",
       "Little Adam's Peak",
       "Tea Factory",
@@ -90,502 +91,637 @@ const destinations = [
 
 
 
-export default function DestinationExplorer() {
+export default function DestinationExplorer(){
 
-  const [active, setActive] = useState(0);
 
+const [active,setActive]=useState(0);
 
-  return (
 
-    <section className="relative overflow-hidden bg-[#071018] py-28">
 
+return(
 
-      {/* Background Glow */}
+<section
 
-      <div className="
-        absolute left-0 top-0
-        h-80 w-80
-        rounded-full
-        bg-amber-500/10
-        blur-[140px]
-      "/>
+className="
+relative
+overflow-hidden
+bg-[#071018]
+py-28
+"
 
+>
 
-      <div className="
-        absolute right-0 bottom-0
-        h-96 w-96
-        rounded-full
-        bg-cyan-500/10
-        blur-[160px]
-      "/>
 
+{/* Background Glow */}
 
 
-      <div className="container mx-auto px-6">
+<div
 
+className="
+absolute
+left-0
+top-0
 
+h-80
+w-80
 
-        {/* Heading */}
+rounded-full
 
-        <motion.div
-          initial={{
-            opacity:0,
-            y:40
-          }}
-          whileInView={{
-            opacity:1,
-            y:0
-          }}
-          transition={{
-            duration:.7
-          }}
-          viewport={{
-            once:true
-          }}
-          className="mb-16 text-center"
-        >
+bg-green-500/10
 
+blur-[140px]
 
-          <span className="
-            rounded-full
-            border border-amber-400/20
-            bg-amber-400/10
-            px-5 py-2
-            text-sm
-            text-amber-300
-          ">
-            DESTINATIONS
-          </span>
+"
 
+/>
 
 
-          <h2 className="
-            mt-6
-            text-4xl
-            md:text-5xl
-            font-black
-            text-white
-          ">
-            Discover Amazing Places
-          </h2>
 
+<div
 
+className="
+absolute
+right-0
+bottom-0
 
-          <p className="
-            mx-auto
-            mt-5
-            max-w-2xl
-            text-slate-400
-          ">
-            Select a destination and explore the unforgettable experiences waiting for you in Sri Lanka.
-          </p>
+h-96
+w-96
 
+rounded-full
 
-        </motion.div>
+bg-lime-400/10
 
+blur-[160px]
 
+"
 
+/>
 
 
-        <div className="
-          grid
-          items-center
-          gap-12
-          lg:grid-cols-2
-        ">
 
 
 
+<div className="
+container
+mx-auto
+px-6
+">
 
-          {/* LEFT IMAGE AREA */}
 
 
-          <AnimatePresence mode="wait">
 
 
-            <motion.div
+{/* Heading */}
 
-              key={active}
 
-              initial={{
-                opacity:0,
-                x:-40,
-                scale:.95
-              }}
+<motion.div
 
-              animate={{
-                opacity:1,
-                x:0,
-                scale:1
-              }}
+initial={{
+opacity:0,
+y:40
+}}
 
-              exit={{
-                opacity:0,
-                x:40
-              }}
+whileInView={{
+opacity:1,
+y:0
+}}
 
-              transition={{
-                duration:.6
-              }}
+transition={{
+duration:.7
+}}
 
-              className="
-                relative
-                h-[600px]
-                overflow-hidden
-                rounded-[40px]
-              "
+viewport={{
+once:true
+}}
 
-            >
+className="
+mb-16
+text-center
+"
 
+>
 
 
-              <Image
+<span
 
-                src={destinations[active].image}
+className="
+rounded-full
+border
+border-green-400/20
 
-                alt={destinations[active].name}
+bg-green-400/10
 
-                fill
+px-5
+py-2
 
-                className="
-                  object-cover
-                  transition
-                  duration-700
-                "
+text-sm
 
-              />
+text-green-300
+"
 
+>
 
+DESTINATIONS
 
-              <div className="
-                absolute
-                inset-0
-                bg-gradient-to-t
-                from-black
-                via-black/30
-                to-transparent
-              "/>
+</span>
 
 
 
 
 
-              <div className="
-                absolute
-                bottom-0
-                p-8
-                md:p-10
-              ">
+<h2
 
+className="
+mt-6
+text-4xl
+md:text-5xl
+font-black
+text-white
+"
 
+>
 
-                <div className="
-                  mb-4
-                  flex
-                  items-center
-                  gap-2
-                  text-white
-                ">
+Discover Amazing Places
 
-                  <MapPin size={18}/>
+</h2>
 
-                  {destinations[active].name}
 
-                </div>
 
+<p
 
+className="
+mx-auto
+mt-5
+max-w-2xl
+text-slate-400
+"
 
+>
 
-                <h3 className="
-                  text-4xl
-                  md:text-5xl
-                  font-bold
-                  text-white
-                ">
+Select a destination and explore the unforgettable experiences waiting for you in Sri Lanka.
 
-                  {destinations[active].name}
+</p>
 
-                </h3>
 
+</motion.div>
 
 
 
 
-                <p className="
-                  mt-5
-                  max-w-xl
-                  text-lg
-                  text-white/80
-                ">
 
-                  {destinations[active].description}
+<div
 
-                </p>
+className="
+grid
+items-center
+gap-12
+lg:grid-cols-2
+"
 
+>
+  {/* LEFT IMAGE AREA */}
 
+<AnimatePresence mode="wait">
 
+<motion.div
 
+key={active}
 
-                <div className="
-                  mt-7
-                  flex
-                  flex-wrap
-                  gap-3
-                ">
+initial={{
+opacity:0,
+x:-40,
+scale:.95
+}}
 
+animate={{
+opacity:1,
+x:0,
+scale:1
+}}
 
-                  {destinations[active].highlights.map((item)=>(
+exit={{
+opacity:0,
+x:40
+}}
 
+transition={{
+duration:.6
+}}
 
-                    <span
+className="
+relative
+h-[600px]
+overflow-hidden
+rounded-[40px]
+"
 
-                      key={item}
+>
 
-                      className="
-                        rounded-full
-                        bg-white/15
-                        px-4 py-2
-                        text-sm
-                        text-white
-                        backdrop-blur-xl
-                      "
 
-                    >
+<Image
 
-                      {item}
+src={destinations[active].image}
 
-                    </span>
+alt={destinations[active].name}
 
+fill
 
-                  ))}
+className="
+object-cover
+transition
+duration-700
+"
 
+/>
 
-                </div>
 
 
+<div
 
+className="
+absolute
+inset-0
+bg-gradient-to-t
+from-black
+via-black/30
+to-transparent
+"
 
+/>
 
-                <Link href="/#hero">
 
 
-                  <button className="
-                    mt-8
-                    flex
-                    items-center
-                    gap-3
-                    rounded-full
-                    bg-gradient-to-r
-                    from-amber-400
-                    to-orange-500
-                    px-7
-                    py-4
-                    font-semibold
-                    text-black
-                    transition
-                    hover:scale-105
-                  ">
+<div
 
+className="
+absolute
+bottom-0
+p-8
+md:p-10
+"
 
-                    Book to go to Destination
+>
 
-                    <ArrowRight size={18}/>
 
+<div
 
-                  </button>
+className="
+mb-4
+flex
+items-center
+gap-2
+text-white
+"
 
+>
 
-                </Link>
 
+<MapPin
 
+size={18}
 
-              </div>
+className="
+text-green-400
+"
 
+/>
 
 
-            </motion.div>
+{destinations[active].name}
 
 
+</div>
 
-          </AnimatePresence>
 
 
 
+<h3
 
+className="
+text-4xl
+md:text-5xl
+font-bold
+text-white
+"
 
+>
 
+{destinations[active].name}
 
-          {/* RIGHT DESTINATION LIST */}
+</h3>
 
 
-          <div className="space-y-5">
 
 
+<p
 
-            {destinations.map((item,index)=>(
+className="
+mt-5
+max-w-xl
+text-lg
+text-white/80
+"
 
+>
 
+{destinations[active].description}
 
-              <motion.button
+</p>
 
-                key={item.id}
 
-                onClick={() => setActive(index)}
 
-                whileHover={{
-                  x:10
-                }}
 
-                className={`
 
-                  group
-                  flex
-                  w-full
-                  items-center
-                  justify-between
-                  rounded-[28px]
-                  border
-                  p-6
-                  text-left
-                  transition
+<div
 
-                  ${
-                    active===index
+className="
+mt-7
+flex
+flex-wrap
+gap-3
+"
 
-                    ?
+>
 
-                    "border-amber-400 bg-amber-400/10"
 
-                    :
+{
 
-                    "border-white/10 bg-white/5 hover:bg-white/10"
+destinations[active].highlights.map((item)=>(
 
-                  }
 
-                `}
+<span
 
-              >
+key={item}
 
+className="
+rounded-full
+bg-white/15
+px-4
+py-2
+text-sm
+text-white
+backdrop-blur-xl
+"
 
+>
 
+{item}
 
-                <div className="
-                  flex
-                  items-center
-                  gap-4
-                ">
+</span>
 
 
+))
 
+}
 
-                  <div className={`
 
-                    flex
-                    h-12
-                    w-12
-                    items-center
-                    justify-center
-                    rounded-xl
+</div>
 
-                    ${
-                      active===index
 
-                      ?
 
-                      "bg-amber-400 text-black"
 
-                      :
 
-                      "bg-white/10 text-white"
+<Link href="/#hero">
 
-                    }
 
-                  `}>
+<button
 
+className="
+mt-8
+flex
+items-center
+gap-3
+rounded-full
+bg-gradient-to-r
+from-lime-300
+to-green-600
+px-7
+py-4
+font-semibold
+text-green-950
+transition
+hover:scale-105
+"
 
-                    {
-                      item.name === "South Coast Sri Lanka"
+>
 
-                      ?
+Book to go to Destination
 
-                      <Waves size={22}/>
 
-                      :
+<ArrowRight size={18}/>
 
-                      <Mountain size={22}/>
-                    }
 
+</button>
 
-                  </div>
 
+</Link>
 
 
 
 
-                  <h3 className="
-                    text-xl
-                    font-bold
-                    text-white
-                  ">
+</div>
 
-                    {item.name}
 
-                  </h3>
+</motion.div>
 
 
+</AnimatePresence>
 
-                </div>
 
 
 
 
 
-                <ArrowRight
 
-                  className={`
 
-                    transition
 
-                    ${
-                      active===index
+{/* RIGHT DESTINATION LIST */}
 
-                      ?
 
-                      "translate-x-2 text-amber-400"
+<div className="space-y-5">
 
-                      :
 
-                      "text-slate-500"
+{
 
-                    }
+destinations.map((item,index)=>(
 
-                  `}
 
-                />
+<motion.button
 
+key={item.id}
 
+onClick={()=>setActive(index)}
 
+whileHover={{
+x:10
+}}
 
-              </motion.button>
+className={`
 
+group
+flex
+w-full
+items-center
+justify-between
+rounded-[28px]
+border
+p-6
+text-left
+transition
 
-            ))}
 
+${
+active===index
 
+?
 
-          </div>
+"border-green-400 bg-green-400/10"
 
+:
 
+"border-white/10 bg-white/5 hover:bg-white/10"
 
+}
 
+`}
 
-        </div>
+>
 
 
-      </div>
+<div
 
+className="
+flex
+items-center
+gap-4
+"
 
-    </section>
+>
 
-  );
+
+<div
+
+className={`
+
+flex
+h-12
+w-12
+items-center
+justify-center
+rounded-xl
+
+
+${
+active===index
+
+?
+
+"bg-lime-300 text-green-950"
+
+:
+
+"bg-white/10 text-white"
+
+}
+
+`}
+
+>
+
+
+{
+
+item.name==="South Coast Sri Lanka"
+
+?
+
+<Waves size={22}/>
+
+:
+
+<Mountain size={22}/>
+
+}
+
+
+</div>
+
+
+
+
+<h3
+
+className="
+text-xl
+font-bold
+text-white
+"
+
+>
+
+{item.name}
+
+</h3>
+
+
+
+</div>
+
+
+
+
+
+
+<ArrowRight
+
+className={`
+
+transition
+
+
+${
+active===index
+
+?
+
+"translate-x-2 text-lime-300"
+
+:
+
+"text-slate-500"
+
+}
+
+`}
+
+/>
+
+
+
+
+</motion.button>
+
+
+))
+
+}
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+);
+
 }

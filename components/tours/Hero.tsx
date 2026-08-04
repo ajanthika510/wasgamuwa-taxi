@@ -15,7 +15,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 
 
-export default function Hero() {
+export default function Hero(){
 
 
 const router = useRouter();
@@ -23,8 +23,8 @@ const router = useRouter();
 const searchParams = useSearchParams();
 
 
-
-const today = new Date()
+const today =
+new Date()
 .toISOString()
 .split("T")[0];
 
@@ -41,11 +41,6 @@ travellers:"1 Traveller"
 
 
 
-
-/*
-  Load booking data
-  when coming back to hero
-*/
 
 useEffect(()=>{
 
@@ -87,8 +82,7 @@ travellers:travellers || "1 Traveller"
 
 
 
-
-const handleBooking = () => {
+const handleBooking=()=>{
 
 
 router.push(
@@ -104,9 +98,8 @@ router.push(
 
 
 
+return(
 
-
-return (
 
 <section
 
@@ -125,9 +118,8 @@ pt-20
 
 
 
-
-
 {/* Background */}
+
 
 <motion.div
 
@@ -136,13 +128,9 @@ scale:[1,1.08,1]
 }}
 
 transition={{
-
 duration:20,
-
 repeat:Infinity,
-
 ease:"easeInOut"
-
 }}
 
 className="
@@ -177,8 +165,8 @@ object-cover
 
 
 
-
 {/* Overlay */}
+
 
 <div
 
@@ -200,29 +188,20 @@ to-black/60
 
 
 
+{/* Green Glow */}
 
-{/* Amber Glow */}
 
 <motion.div
 
-
 animate={{
-
 x:[-80,80,-80],
-
 y:[-40,60,-40]
-
 }}
-
 
 transition={{
-
 duration:15,
-
 repeat:Infinity
-
 }}
-
 
 className="
 absolute
@@ -231,13 +210,11 @@ top-10
 h-80
 w-80
 rounded-full
-bg-amber-400/20
+bg-green-500/20
 blur-[120px]
 "
 
 />
-
-
 
 
 
@@ -264,38 +241,25 @@ px-6
 
 
 
-
-
 {/* Heading */}
+
 
 
 <motion.div
 
-
 initial={{
-
 opacity:0,
-
 y:70
-
 }}
-
 
 animate={{
-
 opacity:1,
-
 y:0
-
 }}
-
 
 transition={{
-
 duration:.8
-
 }}
-
 
 className="
 mx-auto
@@ -306,21 +270,20 @@ text-center
 >
 
 
-
 <span
 
 className="
 rounded-full
 border
-border-amber-400/30
-bg-amber-400/10
+border-green-400/30
+bg-green-400/10
 px-5
 py-2
 text-sm
 font-medium
 uppercase
 tracking-[0.2em]
-text-amber-300
+text-green-300
 "
 
 >
@@ -328,7 +291,6 @@ text-amber-300
 Discover Sri Lanka
 
 </span>
-
 
 
 
@@ -352,14 +314,15 @@ md:text-7xl
 Every Journey
 
 
+
 <span
 
 className="
 block
 bg-gradient-to-r
-from-amber-300
-via-yellow-400
-to-orange-500
+from-lime-300
+via-green-400
+to-emerald-500
 bg-clip-text
 text-transparent
 "
@@ -398,11 +361,7 @@ Discover breathtaking beaches, misty mountains, ancient cities and unforgettable
 
 
 
-
 </motion.div>
-
-
-
 
 
 
@@ -417,32 +376,19 @@ Discover breathtaking beaches, misty mountains, ancient cities and unforgettable
 
 <motion.div
 
-
 initial={{
-
 opacity:0,
-
 y:80
-
 }}
-
 
 animate={{
-
 opacity:1,
-
 y:0
-
 }}
-
 
 transition={{
-
 delay:.3
-
 }}
-
-
 
 className="
 mx-auto
@@ -460,8 +406,6 @@ backdrop-blur-2xl
 >
 
 
-
-
 <div
 
 className="
@@ -471,10 +415,6 @@ lg:grid-cols-4
 "
 
 >
-
-
-
-
 
 
 
@@ -498,12 +438,13 @@ p-5
 
 
 <MapPin
-className="text-amber-400"
+className="
+text-lime-400
+"
 />
 
 
 <div className="w-full">
-
 
 <p
 
@@ -515,22 +456,15 @@ text-slate-400
 "
 
 >
-
 Destination
-
 </p>
-
-
 
 
 <input
 
-
 value={formData.destination}
 
-
 onChange={(e)=>
-
 
 setFormData({
 
@@ -538,16 +472,11 @@ setFormData({
 
 destination:e.target.value
 
-
 })
-
 
 }
 
-
-
 placeholder="Where to?"
-
 
 className="
 mt-1
@@ -564,13 +493,7 @@ placeholder:text-slate-400
 </div>
 
 
-
 </div>
-
-
-
-
-
 
 
 
@@ -598,14 +521,14 @@ p-5
 
 <CalendarDays
 
-className="text-amber-400"
+className="
+text-lime-400
+"
 
 />
 
 
-
 <div className="w-full">
-
 
 <p
 
@@ -617,30 +540,19 @@ text-slate-400
 "
 
 >
-
 Date
-
 </p>
-
-
-
 
 
 <input
 
-
 type="date"
-
 
 min={today}
 
-
 value={formData.date}
 
-
-
 onChange={(e)=>
-
 
 setFormData({
 
@@ -648,13 +560,9 @@ setFormData({
 
 date:e.target.value
 
-
 })
 
-
 }
-
-
 
 className="
 mt-1
@@ -667,16 +575,10 @@ outline-none
 />
 
 
-
 </div>
 
 
-
 </div>
-
-
-
-
 
 
 
@@ -698,30 +600,53 @@ rounded-2xl
 bg-white/10
 p-5
 "
+
 >
+
+
 <Users
-className="text-amber-400"
+
+className="
+text-lime-400
+"
+
 />
+
+
 <div className="w-full">
+
+
 <p
+
 className="
 text-xs
 uppercase
 tracking-wide
 text-slate-400
 "
+
 >
+
 Travellers
+
 </p>
 
+
+
 <select
+
 value={formData.travellers}
 
 onChange={(e)=>
+
 setFormData({
+
 ...formData,
+
 travellers:e.target.value
+
 })
+
 }
 
 className="
@@ -731,25 +656,46 @@ bg-transparent
 text-white
 outline-none
 "
+
 >
+
 <option className="text-black">
 1 Traveller
 </option>
+
 <option className="text-black">
 2 Travellers
 </option>
+
 <option className="text-black">
 3 Travellers
 </option>
+
 <option className="text-black">
 4+ Travellers
 </option>
+
 </select>
-</div>
+
+
 </div>
 
+
+</div>
+
+
+
+
+
+
+
+
+
 {/* Button */}
+
+
 <motion.button
+
 onClick={handleBooking}
 
 whileHover={{
@@ -758,7 +704,6 @@ scale:1.03
 
 whileTap={{
 scale:.97
-
 }}
 
 className="
@@ -768,22 +713,43 @@ justify-center
 gap-3
 rounded-2xl
 bg-gradient-to-r
-from-amber-400
-to-orange-500
+from-lime-300
+to-green-600
 px-6
 py-5
 font-semibold
-text-black
+text-green-950
 "
+
 >
+
+
 <Search size={20}/>
+
 Book Your Journey
+
 <ArrowRight size={18}/>
+
+
 </motion.button>
+
+
+
+
+
 </div>
+
+
 </motion.div>
+
+
+
 </div>
+
+
 </section>
+
+
 );
 
 }

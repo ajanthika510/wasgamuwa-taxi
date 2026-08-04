@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+
 import {
   Phone,
   Mail,
@@ -10,85 +11,100 @@ import {
   Send,
 } from "lucide-react";
 
+
 export default function ContactSection() {
 
-  const [formData,setFormData] = useState({
-    name:"",
-    email:"",
-    phone:"",
-    message:"",
-  });
 
+const [formData,setFormData] = useState({
 
-  const handleChange = (
-    e:React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement
-    >
-  )=>{
+name:"",
+email:"",
+phone:"",
+message:"",
 
-
-    const {name,value}=e.target;
+});
 
 
 
-    // Only letters for name
-    if(name==="name"){
+const handleChange = (
+e:React.ChangeEvent<
+HTMLInputElement | HTMLTextAreaElement
+>
+)=>{
 
-      setFormData({
-        ...formData,
-        name:value.replace(
-          /[^a-zA-Z\s]/g,
-          ""
-        )
-      });
 
-      return;
-    }
+const {name,value}=e.target;
 
 
 
-    // Only numbers for phone
-    if(name==="phone"){
+if(name==="name"){
 
-      setFormData({
-        ...formData,
-        phone:value.replace(
-          /[^0-9]/g,
-          ""
-        )
-      });
+setFormData({
 
-      return;
-    }
+...formData,
 
+name:value.replace(
+/[^a-zA-Z\s]/g,
+""
+)
 
+});
 
-    setFormData({
-      ...formData,
-      [name]:value
-    });
+return;
 
-  };
+}
 
 
 
+if(name==="phone"){
+
+setFormData({
+
+...formData,
+
+phone:value.replace(
+/[^0-9]/g,
+""
+)
+
+});
+
+return;
+
+}
 
 
 
-  const handleSubmit = (
-    e:React.FormEvent<HTMLFormElement>
-  )=>{
+setFormData({
 
-    e.preventDefault();
+...formData,
 
+[name]:value
 
-
-    const whatsappNumber =
-    "94763433434";
+});
 
 
+};
 
-    const message = `
+
+
+
+
+
+
+const handleSubmit = (
+e:React.FormEvent<HTMLFormElement>
+)=>{
+
+e.preventDefault();
+
+
+const whatsappNumber =
+"94763433434";
+
+
+
+const message = `
 
 *New Booking Enquiry*
 
@@ -107,35 +123,35 @@ ${formData.phone}
 *Message:*
 ${formData.message}
 
-
 `;
 
 
 
-    const whatsappURL =
-    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      message
-    )}`;
+const whatsappURL =
+`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+message
+)}`;
 
 
 
-    window.open(
-      whatsappURL,
-      "_blank"
-    );
+window.open(
+whatsappURL,
+"_blank"
+);
 
 
 
-    setFormData({
+setFormData({
 
-      name:"",
-      email:"",
-      phone:"",
-      message:""
+name:"",
+email:"",
+phone:"",
+message:""
 
-    });
+});
 
-  };
+
+};
 
 
 
@@ -153,7 +169,7 @@ className="
 relative
 min-h-screen
 overflow-hidden
-bg-[#0F172A]
+bg-[#031A12]
 pt-28
 sm:pt-32
 lg:pt-36
@@ -162,15 +178,20 @@ lg:pt-36
 >
 
 
-{/* Background Glow */}
+
+
+
+{/* BACKGROUND GLOW */}
 
 
 <div
+
 className="
 absolute
 inset-0
 overflow-hidden
 "
+
 >
 
 
@@ -185,11 +206,12 @@ w-72
 sm:h-96
 sm:w-96
 rounded-full
-bg-amber-400/10
+bg-green-500/10
 blur-[120px]
 "
 
 />
+
 
 
 <div
@@ -203,14 +225,18 @@ w-72
 sm:h-96
 sm:w-96
 rounded-full
-bg-blue-500/10
+bg-emerald-600/20
 blur-[120px]
 "
 
 />
 
 
+
 </div>
+
+
+
 
 
 
@@ -234,27 +260,39 @@ lg:px-8
 
 
 
-{/* Heading */}
+
+
+{/* HEADING */}
 
 
 <motion.div
 
 initial={{
+
 opacity:0,
+
 y:40
+
 }}
 
 whileInView={{
+
 opacity:1,
+
 y:0
+
 }}
 
 transition={{
+
 duration:.7
+
 }}
 
 viewport={{
+
 once:true
+
 }}
 
 className="
@@ -266,18 +304,21 @@ text-center
 >
 
 
+
+
+
 <span
 
 className="
 inline-block
 rounded-full
-bg-amber-400/20
+bg-green-400/20
 px-4
 py-2
 text-xs
 sm:text-sm
 font-semibold
-text-amber-400
+text-green-300
 "
 
 >
@@ -285,6 +326,8 @@ text-amber-400
 CONTACT US
 
 </span>
+
+
 
 
 
@@ -307,14 +350,23 @@ text-white
 
 Ready For Your
 
-<span className="text-amber-400">
+
+<span
+
+className="
+text-green-400
+"
+
+>
 
  Next Ride?
 
 </span>
 
 
+
 </h2>
+
 
 
 
@@ -330,7 +382,7 @@ max-w-2xl
 text-sm
 sm:text-base
 leading-7
-text-zinc-300
+text-slate-300
 "
 
 >
@@ -346,6 +398,10 @@ and comfortable.
 
 
 </motion.div>
+
+
+
+
 
 
 
@@ -367,26 +423,41 @@ lg:gap-12
 
 
 
-{/* Contact Details */}
+
+
+
+{/* CONTACT DETAILS */}
+
+
 
 <motion.div
 
 initial={{
+
 opacity:0,
+
 x:-50
+
 }}
 
 whileInView={{
+
 opacity:1,
+
 x:0
+
 }}
 
 transition={{
+
 duration:.7
+
 }}
 
 viewport={{
+
 once:true
+
 }}
 
 className="
@@ -397,13 +468,15 @@ sm:space-y-6
 >
 
 
-{
-[
+{[
+
+
 {
 icon:Phone,
 title:"Call Us",
 value:"+94 76 343 3434"
 },
+
 
 {
 icon:Mail,
@@ -411,17 +484,21 @@ title:"Email",
 value:"wasgamuwataxi@gmail.com"
 },
 
+
 {
 icon:MapPin,
 title:"Location",
 value:"Wasgamuwa, Sri Lanka"
 },
 
+
 {
 icon:Clock,
 title:"Working Hours",
 value:"Open 24 Hours"
 }
+
+
 
 ].map((item,index)=>(
 
@@ -431,8 +508,11 @@ value:"Open 24 Hours"
 key={index}
 
 whileHover={{
+
 scale:1.03,
+
 y:-5
+
 }}
 
 className="
@@ -456,7 +536,7 @@ backdrop-blur-xl
 className="
 shrink-0
 rounded-2xl
-bg-amber-400
+bg-green-400
 p-3
 sm:p-4
 "
@@ -466,7 +546,9 @@ sm:p-4
 
 <item.icon
 
-className="text-black"
+className="
+text-[#031A12]
+"
 
 size={22}
 
@@ -487,7 +569,7 @@ size={22}
 className="
 text-xs
 sm:text-sm
-text-zinc-400
+text-slate-400
 "
 
 >
@@ -522,297 +604,324 @@ text-white
 </motion.div>
 
 
-))
-}
+))}
+
 
 
 </motion.div>
-        {/* Contact Form */}
+{/* CONTACT FORM */}
 
-        <motion.form
-          onSubmit={handleSubmit}
 
-          initial={{
-            opacity:0,
-            x:60
-          }}
+<motion.form
 
-          whileInView={{
-            opacity:1,
-            x:0
-          }}
+onSubmit={handleSubmit}
 
-          transition={{
-            duration:.7
-          }}
+initial={{
+opacity:0,
+x:60
+}}
 
-          viewport={{
-            once:true
-          }}
+whileInView={{
+opacity:1,
+x:0
+}}
 
-          className="
-          rounded-[30px]
-          border
-          border-white/10
-          bg-white/5
-          p-5
-          sm:p-8
-          backdrop-blur-xl
-          shadow-2xl
-          "
-        >
+transition={{
+duration:.7
+}}
 
+viewport={{
+once:true
+}}
 
-          <div className="grid gap-5">
+className="
+rounded-[30px]
+border
+border-white/10
+bg-white/5
+p-5
+sm:p-8
+backdrop-blur-xl
+shadow-2xl
+"
 
+>
 
 
-            {/* Name */}
+<div className="grid gap-5">
 
-            <input
 
-              type="text"
 
-              name="name"
 
-              required
 
-              value={formData.name}
+{/* NAME */}
 
-              onChange={handleChange}
 
-              placeholder="Full Name"
+<input
 
-              inputMode="text"
+type="text"
 
-              className="
-              w-full
-              rounded-xl
-              border
-              border-white/10
-              bg-white/10
-              px-4
-              sm:px-5
-              py-3.5
-              sm:py-4
-              text-sm
-              sm:text-base
-              text-white
-              placeholder:text-zinc-400
-              outline-none
-              transition
-              focus:border-amber-400
-              "
+name="name"
 
-            />
+required
 
+value={formData.name}
 
+onChange={handleChange}
 
+placeholder="Full Name"
 
+inputMode="text"
 
+className="
+w-full
+rounded-xl
+border
+border-white/10
+bg-white/10
+px-4
+sm:px-5
+py-3.5
+sm:py-4
+text-sm
+sm:text-base
+text-white
+placeholder:text-slate-400
+outline-none
+transition
+focus:border-green-400
+focus:ring-2
+focus:ring-green-400/20
+"
 
-            {/* Email */}
+/>
 
-            <input
 
-              type="email"
 
-              name="email"
 
-              required
 
-              value={formData.email}
 
-              onChange={handleChange}
 
-              placeholder="Email Address"
+{/* EMAIL */}
 
-              className="
-              w-full
-              rounded-xl
-              border
-              border-white/10
-              bg-white/10
-              px-4
-              sm:px-5
-              py-3.5
-              sm:py-4
-              text-sm
-              sm:text-base
-              text-white
-              placeholder:text-zinc-400
-              outline-none
-              transition
-              focus:border-amber-400
-              "
 
-            />
+<input
 
+type="email"
 
+name="email"
 
+required
 
+value={formData.email}
 
+onChange={handleChange}
 
+placeholder="Email Address"
 
-            {/* Phone */}
+className="
+w-full
+rounded-xl
+border
+border-white/10
+bg-white/10
+px-4
+sm:px-5
+py-3.5
+sm:py-4
+text-sm
+sm:text-base
+text-white
+placeholder:text-slate-400
+outline-none
+transition
+focus:border-green-400
+focus:ring-2
+focus:ring-green-400/20
+"
 
-            <input
+/>
 
-              type="tel"
 
-              name="phone"
 
-              required
 
-              value={formData.phone}
 
-              onChange={handleChange}
 
-              placeholder="Phone Number"
 
-              inputMode="numeric"
+{/* PHONE */}
 
-              pattern="[0-9]*"
 
-              className="
-              w-full
-              rounded-xl
-              border
-              border-white/10
-              bg-white/10
-              px-4
-              sm:px-5
-              py-3.5
-              sm:py-4
-              text-sm
-              sm:text-base
-              text-white
-              placeholder:text-zinc-400
-              outline-none
-              transition
-              focus:border-amber-400
-              "
+<input
 
-            />
+type="tel"
 
+name="phone"
 
+required
 
+value={formData.phone}
 
+onChange={handleChange}
 
+placeholder="Phone Number"
 
+inputMode="numeric"
 
+pattern="[0-9]*"
 
-            {/* Message */}
+className="
+w-full
+rounded-xl
+border
+border-white/10
+bg-white/10
+px-4
+sm:px-5
+py-3.5
+sm:py-4
+text-sm
+sm:text-base
+text-white
+placeholder:text-slate-400
+outline-none
+transition
+focus:border-green-400
+focus:ring-2
+focus:ring-green-400/20
+"
 
-            <textarea
+/>
 
-              rows={5}
 
-              name="message"
 
-              required
 
-              value={formData.message}
 
-              onChange={handleChange}
 
-              placeholder="Your Message"
 
-              className="
-              w-full
-              resize-none
-              rounded-xl
-              border
-              border-white/10
-              bg-white/10
-              px-4
-              sm:px-5
-              py-3.5
-              sm:py-4
-              text-sm
-              sm:text-base
-              text-white
-              placeholder:text-zinc-400
-              outline-none
-              transition
-              focus:border-amber-400
-              "
+{/* MESSAGE */}
 
-            />
 
+<textarea
 
+rows={5}
 
+name="message"
 
+required
 
+value={formData.message}
 
+onChange={handleChange}
 
+placeholder="Your Message"
 
-            {/* WhatsApp Button */}
+className="
+w-full
+resize-none
+rounded-xl
+border
+border-white/10
+bg-white/10
+px-4
+sm:px-5
+py-3.5
+sm:py-4
+text-sm
+sm:text-base
+text-white
+placeholder:text-slate-400
+outline-none
+transition
+focus:border-green-400
+focus:ring-2
+focus:ring-green-400/20
+"
 
-            <button
+/>
 
-              type="submit"
 
-              className="
-              group
-              mt-3
-              flex
-              w-full
-              items-center
-              justify-center
-              gap-3
-              rounded-xl
-              bg-amber-400
-              py-4
-              text-sm
-              sm:text-base
-              font-semibold
-              text-black
-              transition-all
-              duration-300
-              hover:scale-[1.02]
-              hover:bg-amber-500
-              "
 
-            >
 
-              Send via WhatsApp
 
 
-              <Send
 
-                size={18}
 
-                className="
-                transition-transform
-                duration-300
-                group-hover:translate-x-1
-                "
 
-              />
+{/* WHATSAPP BUTTON */}
 
 
-            </button>
+<button
 
+type="submit"
 
+className="
+group
+mt-3
+flex
+w-full
+items-center
+justify-center
+gap-3
+rounded-xl
+bg-gradient-to-r
+from-green-400
+to-emerald-500
+py-4
+text-sm
+sm:text-base
+font-semibold
+text-[#031A12]
+transition-all
+duration-300
+hover:scale-[1.02]
+hover:shadow-[0_15px_40px_rgba(34,197,94,.35)]
+"
 
+>
 
-          </div>
 
+Send via WhatsApp
 
-        </motion.form>
 
 
-      </div>
+<Send
 
+size={18}
 
-    </div>
+className="
+transition-transform
+duration-300
+group-hover:translate-x-1
+"
 
+/>
 
-  </section>
+
+
+</button>
+
+
+
+
+
+</div>
+
+
+</motion.form>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
 
 
 );
-
 
 }

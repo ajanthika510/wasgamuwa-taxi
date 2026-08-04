@@ -9,7 +9,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-
 import {
   FaFacebookF,
   FaInstagram,
@@ -33,7 +32,7 @@ text-white
 >
 
 
-{/* Glow */}
+{/* Green Glow */}
 
 <div
 className="
@@ -43,7 +42,7 @@ top-20
 h-[400px]
 w-[400px]
 rounded-full
-bg-yellow-500/10
+bg-green-500/10
 blur-[140px]
 "
 />
@@ -57,7 +56,7 @@ right-0
 h-[350px]
 w-[350px]
 rounded-full
-bg-amber-400/10
+bg-lime-400/10
 blur-[120px]
 "
 />
@@ -106,7 +105,7 @@ Wasgamuwa
 
 <span
 className="
-text-yellow-400
+text-lime-300
 "
 >
  Taxi
@@ -144,20 +143,23 @@ gap-4
 
 <Social 
 icon={<FaFacebookF size={18}/>} 
+href="https://www.facebook.com/share/1E43DZb69i/"
 />
 
 <Social 
 icon={<FaInstagram size={18}/>} 
+href="https://www.instagram.com/wasgamuwataxi?utm_source=qr"
 />
 
 <Social 
 icon={<FaYoutube size={18}/>} 
+href="https://www.youtube.com/YOUR_YOUTUBE_CHANNEL"
 />
-
 </div>
 
 
 </div>
+
 
 
 
@@ -175,7 +177,7 @@ icon={<FaYoutube size={18}/>}
 className="
 text-lg
 font-semibold
-text-yellow-400
+text-green-400
 "
 >
 
@@ -191,36 +193,77 @@ space-y-3
 text-white/60
 "
 >
+
 <Link href="/#hero">
-<li className="hover:text-yellow-400 transition">
+
+<li
+className="
+transition
+hover:text-lime-300
+"
+>
+
 Home
+
 </li>
+
 </Link>
+
 
 <Link href="/about">
-<li className="hover:text-yellow-400 transition">
+
+<li
+className="
+transition
+hover:text-lime-300
+"
+>
+
 About Us
+
 </li>
+
 </Link>
 
+
 <Link href="/tours">
-<li className="hover:text-yellow-400 transition">
+
+<li
+className="
+transition
+hover:text-lime-300
+"
+>
+
 Tours
+
 </li>
+
 </Link>
 
 
 
 <Link href="/contact">
-<li className="hover:text-yellow-400 transition">
+
+<li
+className="
+transition
+hover:text-lime-300
+"
+>
+
 Contact
+
 </li>
+
 </Link>
+
 
 </ul>
 
 
 </div>
+
 
 
 
@@ -233,14 +276,17 @@ Contact
 
 <div>
 
+
 <h3
 className="
 text-lg
 font-semibold
-text-yellow-400
+text-green-400
 "
 >
+
 Our Services
+
 </h3>
 
 
@@ -253,52 +299,106 @@ text-white/60
 >
 
 <li>
+
 <Link
+
 href="/#services"
-className="transition hover:text-yellow-400"
+
+className="
+transition
+hover:text-lime-300
+"
+
 >
+
 Airport Transfers
+
 </Link>
+
 </li>
 
 
+
 <li>
+
 <Link
+
 href="/#services"
-className="transition hover:text-yellow-400"
+
+className="
+transition
+hover:text-lime-300
+"
+
 >
+
 Wildlife Safari Tours
+
 </Link>
+
 </li>
 
 
+
 <li>
+
 <Link
+
 href="/#services"
-className="transition hover:text-yellow-400"
+
+className="
+transition
+hover:text-lime-300
+"
+
 >
+
 Custom Sri Lanka Tours
+
 </Link>
+
 </li>
 
 
+
 <li>
+
 <Link
+
 href="/#services"
-className="transition hover:text-yellow-400"
+
+className="
+transition
+hover:text-lime-300
+"
+
 >
+
 Hotel Transfers
+
 </Link>
+
 </li>
 
 
+
 <li>
+
 <Link
+
 href="/#services"
-className="transition hover:text-yellow-400"
+
+className="
+transition
+hover:text-lime-300
+"
+
 >
+
 Private Chauffeur
+
 </Link>
+
 </li>
 
 
@@ -306,15 +406,6 @@ Private Chauffeur
 
 
 </div>
-
-
-
-
-
-
-
-
-
 {/* CONTACT */}
 
 <div>
@@ -324,7 +415,7 @@ Private Chauffeur
 className="
 text-lg
 font-semibold
-text-yellow-400
+text-green-400
 "
 >
 
@@ -351,8 +442,13 @@ gap-3
 >
 
 <MapPin
-className="text-yellow-400"
+
+className="
+text-green-400
+"
+
 size={20}
+
 />
 
 <span>
@@ -373,8 +469,13 @@ gap-3
 >
 
 <Phone
-className="text-yellow-400"
+
+className="
+text-green-400
+"
+
 size={20}
+
 />
 
 <span>
@@ -395,8 +496,13 @@ gap-3
 >
 
 <Mail
-className="text-yellow-400"
+
+className="
+text-green-400
+"
+
 size={20}
+
 />
 
 <span>
@@ -427,6 +533,7 @@ wasgamuwataxi@gmail.com
 
 
 {/* CTA */}
+
 
 <motion.div
 
@@ -484,7 +591,9 @@ Book your private journey today.
 
 
 
+
 <Link href="/#hero">
+
 <button
 
 className="
@@ -492,11 +601,11 @@ flex
 items-center
 gap-3
 rounded-full
-bg-yellow-400
+bg-lime-300
 px-7
 py-3
 font-semibold
-text-black
+text-green-950
 transition
 hover:scale-105
 "
@@ -508,10 +617,12 @@ Book Now
 <ArrowRight size={18}/>
 
 </button>
+
 </Link>
 
 
 </motion.div>
+
 
 
 
@@ -538,22 +649,36 @@ text-white/50
 
 © {new Date().getFullYear()} Wasgamuwa Taxi & Tours.
 All rights reserved.
-<br>
-</br>
+
+<br></br>
+
 <p>
 
-            Designed and Developed by{" "}
+Designed and Developed by{" "}
 
-            <a
-              href="https://www.neirahtech.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 font-semibold hover:text-cyan-300 transition"
-            >
-              Neirahtech
-            </a>
+<a
 
-          </p>
+href="https://www.neirahtech.com/"
+
+target="_blank"
+
+rel="noopener noreferrer"
+
+className="
+text-green-400
+font-semibold
+hover:text-lime-300
+transition
+"
+
+>
+
+Neirahtech
+
+</a>
+
+
+</p>
 
 
 
@@ -568,6 +693,7 @@ All rights reserved.
 
 </footer>
 
+
 )
 
 }
@@ -579,19 +705,35 @@ All rights reserved.
 
 
 
+
 function Social({
-icon
+
+icon,
+href
+
 }:{
-icon:React.ReactNode
+
+icon:React.ReactNode,
+href:string
+
 }){
 
 
 return(
 
-<motion.div
+<motion.a
+
+href={href}
+
+target="_blank"
+
+rel="noopener noreferrer"
 
 whileHover={{
-y:-5
+
+y:-5,
+scale:1.08
+
 }}
 
 className="
@@ -606,16 +748,17 @@ border
 border-white/20
 bg-white/5
 transition
-hover:border-yellow-400
-hover:text-yellow-400
+hover:border-green-400
+hover:text-green-400
 "
 
 >
 
 {icon}
 
-</motion.div>
+</motion.a>
 
 )
 
 }
+

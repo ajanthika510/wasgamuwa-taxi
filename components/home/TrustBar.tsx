@@ -67,25 +67,15 @@ return(
 <section
 
 className="
-
 relative
-
 overflow-hidden
-
 py-8
-
 sm:py-10
-
 lg:py-14
-
 bg-gradient-to-b
-
-from-[#090909]
-
-via-[#111111]
-
-to-[#1a1028]
-
+from-[#04140B]
+via-[#0B2E1A]
+to-[#103B23]
 "
 
 
@@ -99,61 +89,34 @@ to-[#1a1028]
 <div
 
 className="
-
 absolute
-
 left-1/2
-
 top-0
-
 h-40
-
 w-[22rem]
-
 sm:w-[28rem]
-
 -translate-x-1/2
-
 rounded-full
-
-bg-yellow-400/15
-
+bg-green-400/15
 blur-3xl
 
 "
 
 />
 
-
-
-
-
-
-
 {/* Bottom Glow */}
 
-
 <div
-
 className="
-
 absolute
-
 bottom-0
-
 left-1/2
-
 h-40
-
 w-[26rem]
-
 sm:w-[34rem]
-
 -translate-x-1/2
-
 rounded-full
-
-bg-purple-700/20
+bg-green-400/20
 
 blur-3xl
 
@@ -394,7 +357,7 @@ inset-0
 
 bg-gradient-to-r
 
-from-yellow-400/5
+from-green-400/5
 
 to-transparent
 
@@ -439,23 +402,14 @@ sm:w-14
 
 
 shrink-0
-
 items-center
-
 justify-center
-
 rounded-2xl
-
-bg-yellow-400
-
+bg-lime-500
 shadow-lg
-
 transition-all
-
 duration-300
-
 group-hover:scale-110
-
 group-hover:rotate-3
 
 "
@@ -464,52 +418,29 @@ group-hover:rotate-3
 
 
 <Icon
-
 size={22}
-
 className="text-black"
 
 />
 
-
-
 </div>
 
-
-
-
-
-
-
-
 {/* Text */}
-
-
 <div
-
 className="relative"
-
 >
 
 
 <h3
-
 className="
-
 text-base
-
 sm:text-lg
-
 font-bold
-
 text-white
-
 "
-
 >
 
 {item.title}
-
 </h3>
 
 
@@ -518,38 +449,21 @@ text-white
 <p
 
 className="
-
 mt-1
-
 text-xs
-
 sm:text-sm
-
 text-white/60
-
 "
-
 >
-
 {item.subtitle}
 
 </p>
 
-
-
 </div>
-
-
-
-
-
 
 </motion.div>
 
-
-
 );
-
 
 }
 
@@ -579,23 +493,14 @@ text-white/60
 <div
 
 className="
-
 absolute
-
 bottom-0
-
 left-0
-
 right-0
-
 h-20
-
 bg-gradient-to-b
-
 from-transparent
-
 to-[#1a1028]
-
 "
 
 />

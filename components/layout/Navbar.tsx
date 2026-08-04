@@ -75,13 +75,10 @@ transition-all
 duration-300
 
 ${
-scrolled
-?
-"bg-white/95 shadow-xl backdrop-blur-xl"
-:
-"bg-white/80 backdrop-blur-md"
+  scrolled
+    ? "bg-white/90 backdrop-blur-xl border-b border-green-100 shadow-[0_10px_30px_rgba(22,163,74,0.12)]"
+    : "bg-white/70 backdrop-blur-lg"
 }
-
 `}
 
 >
@@ -139,29 +136,28 @@ object-cover
 <div>
 
 <h2
-className="
-text-lg
-sm:text-xl
-lg:text-2xl
-font-bold
-text-zinc-900
-"
+  className="
+  text-lg
+  sm:text-xl
+  lg:text-2xl
+  font-bold
+  text-zinc-900
+  "
 >
-Wasgamuwa
+  Wasgamuwa
 </h2>
 
-
 <p
-className="
--mt-1
-text-xs
-sm:text-sm
-lg:text-base
-font-semibold
-text-amber-500
-"
+  className="
+  -mt-1
+  text-xs
+  sm:text-sm
+  lg:text-base
+  font-semibold
+  text-green-600
+  "
 >
-Taxi & Tours
+  Taxi & Tours
 </p>
 
 
@@ -178,69 +174,51 @@ Taxi & Tours
 {/* DESKTOP MENU */}
 
 <nav
-className="
-hidden
-lg:flex
-items-center
-gap-8
-xl:gap-10
-"
+  className="
+  hidden
+  lg:flex
+  items-center
+  gap-8
+  xl:gap-10
+  "
 >
+  {links.map((link) => (
+    <Link
+      key={link.name}
+      href={link.href}
+      className="
+      group
+      relative
+      text-base
+      xl:text-lg
+      font-medium
+      text-zinc-700
+      transition-all
+      duration-300
+      hover:text-green-600
+      "
+    >
+      {link.name}
 
-{
-links.map((link)=>(
-
-<Link
-
-key={link.name}
-
-href={link.href}
-
-className="
-group
-relative
-text-base
-xl:text-lg
-font-semibold
-text-zinc-700
-transition
-hover:text-amber-500
-"
-
->
-
-{link.name}
-
-
-<span
-className="
-absolute
-left-0
--bottom-2
-h-[2px]
-w-0
-bg-amber-500
-transition-all
-duration-300
-group-hover:w-full
-"
-/>
-
-
-</Link>
-
-))
-}
-
-
+      <span
+        className="
+        absolute
+        left-0
+        -bottom-2
+        h-[3px]
+        w-0
+        rounded-full
+        bg-gradient-to-r
+        from-green-500
+        to-emerald-500
+        transition-all
+        duration-300
+        group-hover:w-full
+        "
+      />
+    </Link>
+  ))}
 </nav>
-
-
-
-
-
-
-
 
 {/* DESKTOP ACTIONS */}
 
@@ -255,64 +233,57 @@ gap-3
 
 
 <a
-
-href="tel:+94763434343"
-
-className="
-flex
-items-center
-gap-2
-rounded-full
-border
-bg-white
-px-4
-py-2
-text-sm
-shadow-sm
-hover:shadow-lg
-transition
-"
-
+  href="tel:+94763434343"
+  className="
+  flex
+  items-center
+  gap-2
+  rounded-full
+  border
+  border-green-100
+  bg-white
+  px-4
+  py-2
+  text-sm
+  shadow-sm
+  transition-all
+  duration-300
+  hover:border-green-300
+  hover:shadow-lg
+  "
 >
+  <Phone
+    size={18}
+    className="text-green-600"
+  />
 
-<Phone
-size={18}
-className="text-amber-500"
-/>
-
-
-<span className="font-semibold">
-+94 76 343 3434
-</span>
-
-
+  <span className="font-semibold">
+    +94 76 343 3434
+  </span>
 </a>
-
-
-
 
 <Link href="/#hero">
 
 <button
-
-className="
-rounded-xl
-bg-amber-400
-px-5
-py-3
-font-semibold
-text-black
-transition
-hover:scale-105
-hover:bg-amber-500
-"
-
+  className="
+  rounded-xl
+  bg-gradient-to-r
+  from-green-600
+  to-emerald-600
+  px-5
+  py-3
+  font-semibold
+  text-white
+  transition-all
+  duration-300
+  hover:scale-105
+  hover:from-green-700
+  hover:to-emerald-700
+  hover:shadow-[0_12px_30px_rgba(22,163,74,0.35)]
+  "
 >
-
-Book Now
-
+  Book Now
 </button>
-
 
 </Link>
 
@@ -328,39 +299,22 @@ Book Now
 {/* MOBILE BUTTON */}
 
 <button
-
-onClick={()=>setOpen(!open)}
-
-className="
-lg:hidden
-rounded-lg
-p-2
-"
-
+  onClick={() => setOpen(!open)}
+  className="
+  lg:hidden
+  rounded-xl
+  p-2
+  transition
+  hover:bg-green-50
+  "
 >
-
-{
-open
-?
-<X size={28}/>
-:
-<Menu size={28}/>
-}
-
+  {open ? <X size={28} /> : <Menu size={28} />}
 </button>
-
 
 </div>
 
 
 </motion.header>
-
-
-
-
-
-
-
 
 
 
@@ -453,7 +407,9 @@ className="
 mt-6
 w-full
 rounded-xl
-bg-amber-400
+bg-gradient-to-r
+from-green-600
+to-emerald-600
 py-4
 font-semibold
 text-black
