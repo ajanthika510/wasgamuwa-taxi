@@ -56,21 +56,17 @@ return;
 
 
 
-if(name==="phone"){
+if (name === "phone") {
+  const phone = value
+    .replace(/\D/g, "")
+    .slice(0, 10);
 
-setFormData({
+  setFormData({
+    ...formData,
+    phone,
+  });
 
-...formData,
-
-phone:value.replace(
-/[^0-9]/g,
-""
-)
-
-});
-
-return;
-
+  return;
 }
 
 
@@ -98,6 +94,18 @@ e:React.FormEvent<HTMLFormElement>
 
 e.preventDefault();
 
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const phoneRegex = /^[0-9]{10}$/;
+
+if (!emailRegex.test(formData.email)) {
+  alert("Please enter a valid email address.");
+  return;
+}
+
+if (!phoneRegex.test(formData.phone)) {
+  alert("Phone number must contain exactly 10 digits.");
+  return;
+}
 
 const whatsappNumber =
 "94763433434";
@@ -706,47 +714,35 @@ focus:ring-green-400/20
 
 
 <input
-
-type="email"
-
-name="email"
-
-required
-
-value={formData.email}
-
-onChange={handleChange}
-
-placeholder="Email Address"
-
-className="
-w-full
-rounded-xl
-border
-border-white/10
-bg-white/10
-px-4
-sm:px-5
-py-3.5
-sm:py-4
-text-sm
-sm:text-base
-text-white
-placeholder:text-slate-400
-outline-none
-transition
-focus:border-green-400
-focus:ring-2
-focus:ring-green-400/20
-"
-
+  type="email"
+  name="email"
+  required
+  value={formData.email}
+  onChange={handleChange}
+  placeholder="Email Address"
+  pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"
+  title="Please enter a valid email address (e.g. name@example.com)"
+  className="
+  w-full
+  rounded-xl
+  border
+  border-white/10
+  bg-white/10
+  px-4
+  sm:px-5
+  py-3.5
+  sm:py-4
+  text-sm
+  sm:text-base
+  text-white
+  placeholder:text-slate-400
+  outline-none
+  transition
+  focus:border-green-400
+  focus:ring-2
+  focus:ring-green-400/20
+  "
 />
-
-
-
-
-
-
 
 {/* PHONE */}
 
@@ -767,7 +763,9 @@ placeholder="Phone Number"
 
 inputMode="numeric"
 
-pattern="[0-9]*"
+maxLength={10}
+pattern="[0-9]{10}"
+title="Phone number must contain exactly 10 digits"
 
 className="
 w-full

@@ -238,73 +238,47 @@ return(
 
 <motion.div
 
-
+id="booking"
 initial={{
-
 opacity:0,
-
 x:60,
-
 scale:.95
-
 }}
 
 
 animate={{
-
 opacity:1,
-
 x:0,
-
 scale:1
-
 }}
 
 
 
 transition={{
-
 duration:.8,
-
 delay:.5
-
 }}
 
 
 whileHover={{
-
 y:-8
-
 }}
 
 
 
 className="
-
 relative
-
 w-full
-
 max-w-lg
-
 mx-auto
-
 overflow-hidden
-
 rounded-[28px]
-
 sm:rounded-[32px]
-
 border
-
 border-white/20
-
 bg-white/10
-
 backdrop-blur-2xl
-
 shadow-[0_25px_60px_rgba(0,0,0,.35)]
-
 "
 
 >
@@ -315,62 +289,34 @@ shadow-[0_25px_60px_rgba(0,0,0,.35)]
 
 
 <div
-
 className="
-
 absolute
-
 inset-0
-
 bg-gradient-to-br
-
 from-white/10
-
 via-transparent
-
 to-amber-300/10
-
 "
-
 />
 
-
-
-
-
-
 <div
-
 className="
-
 relative
-
 p-4
-
 sm:p-6
-
 lg:p-8
-
 "
-
 >
 
 
 
 <h3
-
 className="
-
 text-2xl
-
 sm:text-3xl
-
 font-bold
-
 text-white
-
 "
-
 >
 
 Book Your Ride
@@ -381,71 +327,39 @@ Book Your Ride
 
 
 <p
-
 className="
-
 mt-1
-
 text-sm
-
 text-white/70
-
 "
-
 >
 
 Fast • Safe • Comfortable
-
 </p>
 
 
 
-
-
-
-
 <div
-
 className="
-
 mt-6
-
 space-y-3
-
 "
-
 >
 
 
 
 <InputBox
-
 icon={<MapPin size={20}/>}
-
 color="text-amber-300"
-
 placeholder="Pickup Location"
-
 value={formData.pickup}
-
 onChange={(e)=>
-
 setFormData({
-
 ...formData,
-
 pickup:e.target.value
-
 })
-
 }
-
 />
-
-
-
-
-
 
 
 <InputBox

@@ -398,37 +398,19 @@ text-emerald-700
 
 POPULAR TAXI ROUTES
 
-
 </span>
-
-
-
-
-
-
-
-
 
 <h2
 
-
 className="
 mt-8
-
 font-[Playfair_Display]
-
 text-4xl
-
 font-bold
-
 text-slate-900
-
 sm:text-5xl
-
 md:text-6xl
-
 "
-
 >
 
 
@@ -450,15 +432,7 @@ Sri Lanka
 
 </span>
 
-
-
 </h2>
-
-
-
-
-
-
 
 
 <p
@@ -919,7 +893,7 @@ sm:text-lg
 {/* BUTTON */}
 
 
-<Link href="#hero">
+<Link href="#booking">
 
 
 

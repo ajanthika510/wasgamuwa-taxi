@@ -635,7 +635,7 @@ text-center
 >
 
 
-<Link href="/#hero">
+<Link href="/#booking">
 
 
 <button

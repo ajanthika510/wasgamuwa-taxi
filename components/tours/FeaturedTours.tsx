@@ -473,7 +473,7 @@ gap-2
 
 
 
-<Link href="/#hero">
+<Link href="/#booking">
 
 
 <motion.button

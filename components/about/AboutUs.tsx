@@ -437,7 +437,7 @@ sm:flex-row
 >
 
 
-<Link href="/#hero">
+<Link href="/#booking">
 
 
 <button

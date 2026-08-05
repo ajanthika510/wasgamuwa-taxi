@@ -481,8 +481,9 @@ backdrop-blur-xl
 
 
 
-<Link href="/#hero">
+<Link href="/#booking"
 
+>
 
 <button
 

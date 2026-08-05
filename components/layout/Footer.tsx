@@ -592,7 +592,7 @@ Book your private journey today.
 
 
 
-<Link href="/#hero">
+<Link href="/#booking">
 
 <button
 

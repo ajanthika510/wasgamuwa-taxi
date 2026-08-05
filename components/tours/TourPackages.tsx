@@ -449,7 +449,8 @@ className="text-green-400"
 
 
 
-<Link href="/#hero">
+<Link href="/#booking"
+scroll={false}>
 
 <button
 

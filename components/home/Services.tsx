@@ -21,48 +21,30 @@ const services = [
 
 {
 title:"Airport Transfers",
-
 subtitle:"Stress-Free Airport Pickups",
-
 description:
 "Reliable airport pickup and drop-off services to and from Bandaranaike International Airport with professional drivers and comfortable vehicles.",
-
 image:"/images/airport.jpg",
-
 icon:Plane,
-
 location:"Airport → Anywhere in Sri Lanka",
-
 button:"Book Airport Transfer",
-
-href:"/#hero",
+href:"#booking",
 
 features:[
 "24/7 Airport Service",
 "Flight Monitoring",
 "Meet & Greet",
 ],
-
 },
-
-
-
 {
 title:"National Park Safaris",
-
 subtitle:"Experience Sri Lanka's Wildlife",
-
 description:
 "Explore Sri Lanka's famous national parks with experienced safari drivers and comfortable 4x4 vehicles for unforgettable wildlife adventures.",
-
 image:"/images/safaritour.jpg",
-
 icon:PawPrint,
-
 location:"Minneriya • Kaudulla • Hurulu • Wasgamuwa",
-
 button:"Explore Safaris",
-
 href:"/tours",
 
 features:[
@@ -73,24 +55,15 @@ features:[
 
 },
 
-
-
 {
 title:"Riverston Tours",
-
 subtitle:"Escape to the Mountains",
-
 description:
 "Visit the breathtaking Riverston mountain range, waterfalls, viewpoints, and scenic hiking trails with our comfortable guided tours.",
-
 image:"/customer/cus6.jpeg",
-
 icon:Map,
-
 location:"Riverston • Pitawala Pathana",
-
 button:"View Riverston Tour",
-
 href:"/tours",
 
 features:[
@@ -100,25 +73,15 @@ features:[
 ],
 
 },
-
-
-
 {
 title:"Sigiriya & Dambulla Tours",
-
 subtitle:"Discover Sri Lanka's Heritage",
-
 description:
 "Explore the iconic Sigiriya Rock Fortress and the magnificent Dambulla Cave Temple on a comfortable private day tour.",
-
 image:"/images/sigiriyaex.jpg",
-
 icon:Map,
-
 location:"Sigiriya • Dambulla",
-
 button:"Explore Heritage Tour",
-
 href:"/tours",
 
 features:[
@@ -126,29 +89,18 @@ features:[
 "Flexible Itinerary",
 "Hotel Pickup",
 ],
-
 },
-
-
-
 
 {
 title:"Long-Distance Transfers",
-
 subtitle:"Travel Anywhere in Sri Lanka",
-
 description:
 "Comfortable intercity taxi transfers to any destination across Sri Lanka with professional, friendly, and experienced drivers.",
-
 image:"/images/taxi.jpg",
-
 icon:Car,
-
 location:"Islandwide Service",
-
 button:"Book Your Ride",
-
-href:"/#hero",
+href:"#booking",
 
 features:[
 "Anywhere in Sri Lanka",
@@ -167,9 +119,7 @@ features:[
 
 export default function Services(){
 
-
 return (
-
 
 <section
 

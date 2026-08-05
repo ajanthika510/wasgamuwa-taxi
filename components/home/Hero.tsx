@@ -51,9 +51,6 @@ const [bookingData,setBookingDataState] = useState({
 });
 
 
-
-
-
 useEffect(()=>{
 
 
@@ -617,68 +614,28 @@ View Experiences
 
 
 
-
-
-
-
-
-
 {/* BOOKING CARD */}
 
-
-
 <motion.div
-
-
-initial={{
-
-opacity:0,
-
-x:80
-
-}}
-
-
-animate={{
-
-opacity:1,
-
-x:0
-
-}}
-
-
-
-transition={{
-
-duration:.8,
-
-delay:.5
-
-}}
-
-
-
-className="
-flex
-
-justify-center
-
-lg:justify-end
-
-"
-
-
+  initial={{
+    opacity: 0,
+    x: 80,
+  }}
+  animate={{
+    opacity: 1,
+    x: 0,
+  }}
+  transition={{
+    duration: 0.8,
+    delay: 0.5,
+  }}
+  className="
+  flex
+  justify-center
+  lg:justify-end
+  "
 >
-
-
-<BookingCard
-
-bookingData={bookingData}
-
-/>
-
-
+  <BookingCard bookingData={bookingData} />
 </motion.div>
 
 
